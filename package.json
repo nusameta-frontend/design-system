@@ -1,27 +1,51 @@
 {
   "name": "design-system",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "./dist/index.cjs.js",
+  "module": "./dist/index.es.js",
+  "types": "./dist/index.d.ts",
   "packageManager": "yarn@4.9.1",
-  "dependencies": {
-    "react": "^19.2.3",
-    "react-dom": "^19.2.3"
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.cjs.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "storybook dev -p 6006",
+    "storybook": "storybook dev -p 6006",
+    "build": "yarn run vite build",
+    "preview": "yarn run vite preview",
+    "build-storybook": "storybook build",
+    "lint": "eslint ."
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^5.0.0",
     "@storybook/addon-a11y": "^10.1.11",
-    "@storybook/addon-docs": "^10.1.11",
-    "@storybook/addon-vitest": "^10.1.11",
     "@storybook/react-vite": "^10.1.11",
+    "@types/node": "^22.0.0",
     "@types/react": "^19.2.8",
     "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^4.3.4",
     "@vitest/browser-playwright": "^4.0.17",
     "@vitest/coverage-v8": "^4.0.17",
     "playwright": "^1.57.0",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
     "storybook": "^10.1.11",
     "typescript": "^5.9.3",
+    "vite": "^6.0.0",
+    "vite-plugin-banner": "^0.8.0",
+    "vite-plugin-dts": "^4.5.0",
     "vitest": "^4.0.17"
-  },
-  "scripts": {
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
   }
 }

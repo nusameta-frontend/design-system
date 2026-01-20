@@ -1,16 +1,24 @@
 import type { StorybookConfig } from "@storybook/react-vite";
 
 const config: StorybookConfig = {
-  stories: [
-    "../stories/**/*.mdx",
-    "../components/**/*.stories.@(js|jsx|mjs|ts|tsx)",
-  ],
+  stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
+
   addons: [
-    "@chromatic-com/storybook",
-    "@storybook/addon-vitest",
+    "@storybook/addon-essentials",
+    "@storybook/addon-interactions",
     "@storybook/addon-a11y",
     "@storybook/addon-docs",
   ],
-  framework: "@storybook/react-vite",
+
+  framework: {
+    name: "@storybook/react-vite",
+    options: {},
+  },
+
+  // Konfigurasi tambahan untuk memastikan Vite berjalan mulus
+  async viteFinal(config) {
+    return config;
+  },
 };
+
 export default config;

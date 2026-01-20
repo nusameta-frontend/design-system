@@ -1,35 +1,88 @@
-# ❖ Nusameta Design System
+# Nusameta Design System
 
-[![npm version](https://img.shields.io/npm/v/@username/design-system.svg?style=flat-square)](https://www.npmjs.com/package/@username/design-system)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue.svg?style=flat-square)](https://www.typescriptlang.org/)
-[![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@main/badge/badge-storybook.svg)](https://storybook.js.org/)
+Design System berbasis React, TypeScript, dan Vite yang modern, ringan, dan siap untuk Next.js App Router.
 
-**Nusameta Design System** adalah pustaka komponen UI (User Interface) yang dibangun di atas **React**, **TypeScript**, dan **Vite**. Library ini dirancang khusus agar **ringan**, **type-safe**, dan **kompatibel secara native** dengan **Next.js App Router**.
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![TypeScript](https://img.shields.io/badge/TypeScript-Ready-blue)
 
 ---
 
 ## ✨ Fitur Utama
 
-- 🚀 **Next.js App Router Ready**: Setiap komponen otomatis menyertakan direktif `"use client"`, sehingga aman digunakan di dalam Server Components.
-- 📦 **Tree-Shakable**: Menggunakan Rollup untuk memastikan hanya kode yang Anda gunakan yang masuk ke bundle aplikasi.
-- 🎨 **CSS Terisolasi**: Gaya (Styles) dibundel dalam satu file CSS yang mudah dikelola.
-- 📘 **Type Safety**: Dilengkapi dengan definisi tipe TypeScript (`.d.ts`) bawaan.
-- 📚 **Dokumentasi Storybook**: Lingkungan pengembangan terisolasi untuk menguji komponen.
+- 🚀 **Next.js Ready**: Kompatibel penuh dengan App Router (otomatis "use client").
+- 📦 **Ringan**: Menggunakan Rollup untuk tree-shaking yang optimal.
+- 🎨 **Mudah Dikustomisasi**: CSS terisolasi dan mudah di-override.
+- 📘 **Type Safe**: Dukungan TypeScript penuh dengan definisi tipe (.d.ts).
 
 ---
 
 ## 📦 Instalasi
 
-Pastikan Anda telah menginstal `react` dan `react-dom` (versi 18 atau lebih baru) di proyek Anda.
+Jalankan perintah berikut di terminal proyek Anda:
 
-```bash
-# Menggunakan Yarn (Rekomendasi)
-yarn add @username/design-system
+    yarn add @username/design-system
 
-# Menggunakan NPM
-npm install @username/design-system
+Atau jika menggunakan NPM:
 
-# Menggunakan PNPM
-pnpm add @username/design-system
-```
+    npm install @username/design-system
+
+> **Catatan:** Ganti `@username` dengan scope NPM Anda yang sebenarnya.
+
+---
+
+## 🚀 Cara Penggunaan
+
+### 1. Import CSS Global (Wajib)
+
+Agar tampilan komponen muncul dengan benar, Anda harus mengimpor file CSS library ini **satu kali** di file entry point aplikasi Anda.
+
+**Untuk Next.js (App Router)**, buka `app/layout.tsx`:
+
+    import type { Metadata } from 'next';
+    import { Inter } from 'next/font/google';
+    import './globals.css';
+
+    // 👇 Import CSS Design System di sini
+    import '@username/design-system/dist/index.css';
+
+    export default function RootLayout({ children }: { children: React.ReactNode }) {
+      return (
+        <html lang="en">
+          <body>{children}</body>
+        </html>
+      );
+    }
+
+### 2. Menggunakan Komponen
+
+Anda bisa langsung mengimpor komponen dan menggunakannya di halaman manapun.
+
+    import { Button } from '@username/design-system';
+
+    export default function HomePage() {
+      return (
+        <div style={{ padding: '20px' }}>
+          <h1>Contoh Penggunaan</h1>
+
+          <Button
+            label="Klik Saya"
+            primary={true}
+            onClick={() => alert('Berhasil!')}
+          />
+        </div>
+      );
+    }
+
+---
+
+## 🛠 Pengembangan (Development)
+
+Jika Anda ingin berkontribusi mengembangkan library ini, memperbaiki bug, atau menambah komponen baru, silakan baca panduan lengkapnya di sini:
+
+👉 **[Baca Panduan Kontribusi (CONTRIBUTING.md)](./CONTRIBUTING.md)**
+
+---
+
+## 📝 Lisensi
+
+Proyek ini dilisensikan di bawah **MIT License**.

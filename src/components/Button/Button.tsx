@@ -1,47 +1,72 @@
-import React from "react";
+import * as React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
-import { cn } from "../../lib/utils";
+import {
+  Button as AriaButton,
+  composeRenderProps,
+  type ButtonProps as AriaButtonProps,
+} from "react-aria-components";
 
-import "./button.css";
+import { cn } from "@/lib/utils";
 
-// Devinisi Varian (config)
-const buttonVariants =
-  cva();
-  // Base styles
-export interface ButtonProps {
-  /** Is this the principal call to action on the page? */
-  primary?: boolean;
-  /** What background color to use */
-  backgroundColor?: string;
-  /** How large should the button be? */
-  size?: "small" | "medium" | "large";
-  /** Button contents */
-  label: string;
-  /** Optional click handler */
-  onClick?: () => void;
-}
+const buttonVariants = cva(
+  [
+    "nm-inline-flex nm-items-center nm-justify-center nm-whitespace-nowrap nm-rounded-md nm-text-sm nm-font-medium nm-ring-offset-background nm-transition-colors",
+    /* Disabled */
+    "nm-data-disabled:pointer-events-none nm-data-disabled:nm-opacity-50 ",
+    /* Focus Visible */
+    "nm-data-focus-visible:outline-none nm-data-focus-visible:nm-ring-2 nm-data-focus-visible:nm-ring-ring nm-data-focus-visible:nm-nm-ring-offset-2",
+    /* Resets */
+    "nm-focus-visible:outline-none",
+  ],
+  {
+    variants: {
+      variant: {
+        default:
+          "nm-bg-primary nm-text-primary-foreground nm-data-hovered:nm-bg-primary/90",
+        destructive:
+          "nm-bg-destructive nm-text-destructive-foreground nm-data-hovered:nm-bg-destructive/90",
+        outline:
+          "nm-border nm-border-input nm-bg-background nm-data-hovered:nm-bg-accent nm-data-hovered:nm-text-accent-foreground",
+        secondary:
+          "nm-bg-secondary nm-text-secondary-foreground nm-data-hovered:nm-bg-secondary/80",
+        ghost:
+          "nm-data-hovered:nm-bg-accent nm-data-hovered:nm-text-accent-foreground",
+        link: "nm-text-primary nm-underline-offset-4 nm-data-hovered:nm-underline",
+      },
+      size: {
+        default: "nm-h-10 nm-px-4 nm-py-2",
+        sm: "nm-h-9 nm-rounded-md nm-px-3",
+        lg: "nm-h-11 nm-rounded-md nm-px-8",
+        icon: "nm-size-10",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
+      size: "default",
+    },
+  }
+);
 
-/** Primary UI component for user interaction */
-export const Button = ({
-  primary = false,
-  size = "medium",
-  backgroundColor,
-  label,
-  ...props
-}: ButtonProps) => {
-  const mode = primary
-    ? "storybook-button--primary"
-    : "storybook-button--secondary";
+interface ButtonProps
+  extends AriaButtonProps,
+    VariantProps<typeof buttonVariants> {}
+
+const Button = ({ className, variant, size, ...props }: ButtonProps) => {
   return (
-    <button
-      type="button"
-      className={["storybook-button", `storybook-button--${size}`, mode].join(
-        " "
+    <AriaButton
+      className={composeRenderProps(className, (className) =>
+        cn(
+          buttonVariants({
+            variant,
+            size,
+            className,
+          })
+        )
       )}
-      style={{ backgroundColor }}
       {...props}
-    >
-      {label}
-    </button>
+    />
   );
 };
+
+export { Button, buttonVariants };
+export type { ButtonProps };

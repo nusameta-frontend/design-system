@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+@theme {
+  /* Di v4, Anda bisa set variabel theme langsung di CSS */
+  --color-primary: hsl(221 83% 53%);
+  --radius-md: 0.5rem;
+}

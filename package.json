@@ -1,6 +1,6 @@
 {
   "name": "design-system",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "type": "module",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.es.js",
@@ -29,6 +29,7 @@
     "react-dom": ">=18.0.0"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.29.8",
     "@chromatic-com/storybook": "^5.0.0",
     "@storybook/addon-a11y": "^10.1.11",
     "@storybook/react-vite": "^10.1.11",
@@ -47,5 +48,13 @@
     "vite-plugin-banner": "^0.8.0",
     "vite-plugin-dts": "^4.5.0",
     "vitest": "^4.0.17"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.18",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "react-aria-components": "^1.14.0",
+    "tailwind-merge": "^3.4.0",
+    "tailwindcss": "^4.1.18"
   }
 }

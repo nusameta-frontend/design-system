@@ -1,11 +1,19 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import dts from "vite-plugin-dts";
 import banner from "vite-plugin-banner";
 import path from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), banner(' "use client"; ')],
+  plugins: [
+    react(),
+    dts({
+      insertTypesEntry: true,
+      include: ["src"],
+    }),
+    banner(' "use client"; '),
+  ],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),

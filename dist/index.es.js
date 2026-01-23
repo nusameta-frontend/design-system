@@ -4443,21 +4443,21 @@ const Yo = Ar(
   [
     "nm-inline-flex nm-items-center nm-justify-center nm-whitespace-nowrap nm-rounded-md nm-text-sm nm-font-medium nm-ring-offset-background nm-transition-colors",
     /* Disabled */
-    "nm-data-[disabled]:nm-pointer-events-none nm-data-[disabled]:nm-opacity-50 ",
+    "data-[disabled]:nm-pointer-events-none data-[disabled]:nm-opacity-50 ",
     /* Focus Visible */
-    "nm-data-[focus-visible]:nm-outline-none nm-data-[focus-visible]:nm-ring-2 nm-data-[focus-visible]:nm-ring-ring nm-data-[focus-visible]:nm-ring-offset-2",
+    "data-[focus-visible]:nm-outline-none data-[focus-visible]:nm-ring-2 data-[focus-visible]:nm-ring-ring data-[focus-visible]:nm-ring-offset-2",
     /* Resets */
-    "nm-focus-visible:nm-outline-none"
+    "focus-visible:nm-outline-none"
   ],
   {
     variants: {
       variant: {
-        default: "nm-bg-primary nm-text-primary-foreground nm-data-[hovered]:nm-bg-primary/90",
-        destructive: "nm-bg-destructive nm-text-destructive-foreground nm-data-[hovered]:nm-bg-destructive/90",
-        outline: "nm-border nm-border-input nm-bg-background nm-data-[hovered]:nm-bg-accent nm-data-[hovered]:nm-text-accent-foreground",
-        secondary: "nm-bg-secondary nm-text-secondary-foreground nm-data-[hovered]:nm-bg-secondary/80",
-        ghost: "nm-data-[hovered]:nm-bg-accent nm-data-[hovered]:nm-text-accent-foreground",
-        link: "nm-text-primary nm-underline-offset-4 nm-data-[hovered]:nm-underline"
+        default: "nm-bg-primary nm-text-primary-foreground data-[hovered]:nm-bg-primary/90",
+        destructive: "nm-bg-destructive nm-text-destructive-foreground data-[hovered]:nm-bg-destructive/90",
+        outline: "nm-border nm-border-input nm-bg-background data-[hovered]:nm-bg-accent data-[hovered]:nm-text-accent-foreground",
+        secondary: "nm-bg-secondary nm-text-secondary-foreground data-[hovered]:nm-bg-secondary/80",
+        ghost: "data-[hovered]:nm-bg-accent data-[hovered]:nm-text-accent-foreground",
+        link: "nm-text-primary nm-underline-offset-4 data-[hovered]:nm-underline"
       },
       size: {
         default: "nm-h-10 nm-px-4 nm-py-2",

@@ -56,6 +56,38 @@ export const Default: Story = {
   },
 };
 
+export const Destructive: Story = {
+  args: {
+    variant: "destructive",
+    size: "default",
+    children: "Delete Data",
+  },
+};
+
+export const Outline: Story = {
+  args: {
+    variant: "outline",
+    size: "default",
+    children: "Simpan Data",
+  },
+};
+
+export const Secondary: Story = {
+  args: {
+    variant: "secondary",
+    size: "default",
+    children: "Simpan Data",
+  },
+};
+
+export const Ghost: Story = {
+  args: {
+    variant: "ghost",
+    size: "default",
+    children: "Simpan Data",
+  },
+};
+
 // 8. State: Disabled (Fitur bawaan React Aria)
 export const Disabled: Story = {
   args: {

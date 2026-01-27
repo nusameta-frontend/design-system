@@ -20,13 +20,11 @@ Design System berbasis React, TypeScript, dan Vite yang modern, ringan, dan siap
 
 Jalankan perintah berikut di terminal proyek Anda:
 
-    yarn add @username/design-system
+    yarn add @nusameta/design-system
 
 Atau jika menggunakan NPM:
 
-    npm install @username/design-system
-
-> **Catatan:** Ganti `@username` dengan scope NPM Anda yang sebenarnya.
+    npm install @nusameta/design-system
 
 ---
 
@@ -43,7 +41,7 @@ Agar tampilan komponen muncul dengan benar, Anda harus mengimpor file CSS librar
     import './globals.css';
 
     // 👇 Import CSS Design System di sini
-    import '@username/design-system/dist/index.css';
+    import '@nusameta/design-system/dist/index.css';
 
     export default function RootLayout({ children }: { children: React.ReactNode }) {
       return (
@@ -57,7 +55,7 @@ Agar tampilan komponen muncul dengan benar, Anda harus mengimpor file CSS librar
 
 Anda bisa langsung mengimpor komponen dan menggunakannya di halaman manapun.
 
-    import { Button } from '@username/design-system';
+    import { Button } from '@nusameta/design-system';
 
     export default function HomePage() {
       return (

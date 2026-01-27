@@ -1,54 +1,97 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from "@storybook/react";
+import { Button } from "./button";
+import { Mail, Trash2, Loader2, Save } from "lucide-react"; // Contoh icon
 
-import { fn } from 'storybook/test';
-
-import { Button } from './Button';
-
-// More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
+// 1. Konfigurasi Metadata
 const meta = {
-  title: 'Example/Button',
+  title: "Components/Atoms/Button",
   component: Button,
   parameters: {
-    // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
-    layout: 'centered',
+    layout: "centered", // Posisi komponen di tengah canvas
   },
-  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
-  tags: ['autodocs'],
-  // More on argTypes: https://storybook.js.org/docs/api/argtypes
+  tags: ["autodocs"], // Otomatis generate halaman Docs
+
+  // Konfigurasi Controls (Panel bawah Storybook)
   argTypes: {
-    backgroundColor: { control: 'color' },
+    variant: {
+      control: "select",
+      options: [
+        "default",
+        "destructive",
+        "outline",
+        "secondary",
+        "ghost",
+        "link",
+      ],
+      description: "Gaya visual tombol",
+      table: {
+        defaultValue: { summary: "default" },
+      },
+    },
+    size: {
+      control: "select",
+      options: ["default", "sm", "lg", "icon"],
+      description: "Ukuran dimensi tombol",
+    },
+    isDisabled: {
+      control: "boolean",
+      description: "Status apakah tombol bisa diklik atau tidak",
+    },
+    // React Aria menggunakan onPress, bukan onClick
+    onPress: { action: "pressed" },
   },
-  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#story-args
-  args: { onClick: fn() },
 } satisfies Meta<typeof Button>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const Primary: Story = {
+// --- DAFTAR STORIES ---
+
+// 2. Default Story (Playground utama)
+export const Default: Story = {
   args: {
-    primary: true,
-    label: 'Button',
+    variant: "default",
+    size: "default",
+    children: "Simpan Data", // Konten default
+  },
+};
+
+export const Destructive: Story = {
+  args: {
+    variant: "destructive",
+    size: "default",
+    children: "Delete Data",
+  },
+};
+
+export const Outline: Story = {
+  args: {
+    variant: "outline",
+    size: "default",
+    children: "Simpan Data",
   },
 };
 
 export const Secondary: Story = {
   args: {
-    label: 'Button',
+    variant: "secondary",
+    size: "default",
+    children: "Simpan Data",
   },
 };
 
-export const Large: Story = {
+export const Ghost: Story = {
   args: {
-    size: 'large',
-    label: 'Button',
+    variant: "ghost",
+    size: "default",
+    children: "Simpan Data",
   },
 };
 
-export const Small: Story = {
+// 8. State: Disabled (Fitur bawaan React Aria)
+export const Disabled: Story = {
   args: {
-    size: 'small',
-    label: 'Button',
+    isDisabled: true,
+    children: "Tidak Bisa Diklik",
   },
 };

@@ -14,6 +14,11 @@ export default defineConfig({
     }),
     banner(' "use client"; '),
   ],
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./src"),
+    },
+  },
   build: {
     lib: {
       entry: path.resolve(__dirname, "src/index.ts"),
@@ -30,12 +35,13 @@ export default defineConfig({
           "react/jsx-runtime": "jsxRuntime",
         },
         assetFileNames: (assetInfo) => {
-          if (assetInfo.name === "style.css") return "index.css";
+          if (assetInfo.name?.endsWith(".css")) return "index.css";
           return assetInfo.name || "assets/[name]-[hash][extname]";
         },
       },
     },
     sourcemap: true,
+    cssCodeSplit: false,
     minify: "esbuild",
   },
 });

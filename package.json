@@ -25,6 +25,10 @@
     "lint": "eslint .",
     "release": "yarn run build && changeset publish"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nusameta-frontend/design-system.git"
+  },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
     "access": "public",

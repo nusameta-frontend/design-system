@@ -1,6 +1,6 @@
 {
-  "name": "design-system",
-  "version": "0.0.1",
+  "name": "@nusameta/design-system",
+  "version": "0.0.3",
   "type": "module",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.es.js",
@@ -22,7 +22,13 @@
     "build": "yarn run vite build",
     "preview": "yarn run vite preview",
     "build-storybook": "storybook build",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "release": "yarn run build && changeset publish"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public",
+    "provenance": true
   },
   "peerDependencies": {
     "react": ">=18.0.0",

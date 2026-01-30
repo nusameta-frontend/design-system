@@ -1,10 +1,10 @@
-import { Button } from "./components/Atoms/Button/Button";
+import { Button } from "./components/atoms/button/Button";
 import {
   TextField,
   Input,
   WrappedField,
   TextArea,
-} from "./components/TextField/Textfield";
+} from "./components/atoms/textfield/Textfield";
 import {
   Label,
   labelVariants,
@@ -12,9 +12,16 @@ import {
   fieldGroupVariants,
   FieldError,
   FormDescription,
-} from "./components/TextField/Field";
+} from "./components/atoms/textfield/Field";
+import {
+  Popover,
+  PopoverTrigger,
+  PopoverDialog,
+} from "./components/molecules/popover/Popover";
+import { Checkbox } from "./components/atoms/checkbox/Checkbox";
 
 export { Button };
+export { Checkbox };
 export { TextField, Input, WrappedField, TextArea };
 export {
   Label,
@@ -24,3 +31,4 @@ export {
   FieldError,
   FormDescription,
 };
+export { Popover, PopoverTrigger, PopoverDialog };

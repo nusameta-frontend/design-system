@@ -20,6 +20,9 @@
   --nm-input: oklch(0.922 0 0);
   --nm-ring: oklch(0.708 0 0);
 
+  /* 1. Default Button */
+  --nm-btn-default-border: none;
+
   /* 1. Primary Button */
   --nm-btn-primary-bg: var(--nm-primary);
   --nm-btn-primary-fg: var(--nm-primary-foreground);
@@ -38,6 +41,38 @@
   /* 4. Ghost/Accent Button */
   --nm-btn-ghost-hover-bg: var(--nm-accent);
   --nm-btn-ghost-hover-fg: var(--nm-accent-foreground);
+
+  /* TextField Component */
+  --nm-textfield-bg: var(--nm-background);
+  --nm-textfield-fg: var(--nm-foreground);
+  --nm-textfield-border: var(--nm-input);
+  --nm-textfield-ring: var(--nm-ring);
+  --nm-textfield-placeholder: var(--nm-muted-foreground);
+
+  /* TextField Focus State */
+  --nm-textfield-focus-ring: var(--nm-ring);
+
+  /* TextField Disabled State */
+  --nm-textfield-disabled-bg: var(--nm-muted);
+  --nm-textfield-disabled-fg: var(--nm-muted-foreground);
+
+  /* TextField Error State */
+  --nm-textfield-error-border: var(--nm-destructive);
+  --nm-textfield-error-fg: var(--nm-destructive);
+
+  /* TextField Success State */
+  --nm-textfield-success-border: oklch(0.497 0.146 142.495);
+  --nm-textfield-success-fg: oklch(0.497 0.146 142.495);
+
+  /* TextField Label */
+  --nm-textfield-label-fg: var(--nm-foreground);
+  --nm-textfield-label-error-fg: var(--nm-destructive);
+
+  /* TextField Helper Text */
+  --nm-textfield-helper-fg: var(--nm-muted-foreground);
+  --nm-textfield-helper-error-fg: var(--nm-destructive);
+  --nm-textfield-helper-success-fg: oklch(0.497 0.146 142.495);
+  --nm-textfield-helper-info-fg: var(--nm-ring);
 
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);

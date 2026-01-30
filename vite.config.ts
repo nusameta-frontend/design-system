@@ -12,7 +12,6 @@ export default defineConfig({
       insertTypesEntry: true,
       include: ["src"],
     }),
-    banner(' "use client"; '),
   ],
   resolve: {
     alias: {
@@ -21,7 +20,11 @@ export default defineConfig({
   },
   build: {
     lib: {
-      entry: path.resolve(__dirname, "src/index.ts"),
+      entry: {
+        index: path.resolve(__dirname, "src/index.ts"),
+        reset: path.resolve(__dirname, "src/styles/reset.css"),
+        style: path.resolve(__dirname, "src/styles/style.css"),
+      },
       name: "NusametaDesignSystem",
       fileName: (format) => `index.${format === "es" ? "es" : "cjs"}.js`,
       formats: ["es", "cjs"],
@@ -29,19 +32,21 @@ export default defineConfig({
     rollupOptions: {
       external: ["react", "react-dom", "react/jsx-runtime"],
       output: {
+        banner: '"use client";',
         globals: {
           react: "React",
           "react-dom": "ReactDOM",
           "react/jsx-runtime": "jsxRuntime",
         },
         assetFileNames: (assetInfo) => {
-          if (assetInfo.name?.endsWith(".css")) return "index.css";
+          if (assetInfo.name === "style.css") return "index.css";
+          if (assetInfo.name === "reset.css") return "reset.css";
           return assetInfo.name || "assets/[name]-[hash][extname]";
         },
       },
     },
     sourcemap: true,
-    cssCodeSplit: false,
+    cssCodeSplit: true,
     minify: "esbuild",
   },
 });

@@ -42,19 +42,19 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          # 1. Pastikan masuk mode pre (beta)
-          yarn changeset pre enter beta
+          # 👇 PERBAIKAN DISINI: Cek apakah file pre.json sudah ada?
+          # Jika BELUM ada (! -f), baru jalankan 'enter beta'
+          if [ ! -f .changeset/pre.json ]; then
+            yarn changeset pre enter beta
+          fi
 
-          # 2. Update version (misal: 1.0.1-beta.4 -> 1.0.1-beta.5)
+          # Lanjut seperti biasa
           yarn changeset version
-
-          # 3. Build (Opsional jika version masuk ke dalam code)
           yarn build
 
-          # 4. Publish ke NPM 
-          yarn changeset publish 
+          # Publish tanpa flag tag (karena sudah mode pre)
+          yarn changeset publish
 
-          # 5. Push perubahan version kembali ke main
           git add .
           git commit -m "chore: release beta version [skip ci]"
           git push

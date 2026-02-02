@@ -42,17 +42,13 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          # 👇 PERBAIKAN DISINI: Cek apakah file pre.json sudah ada?
-          # Jika BELUM ada (! -f), baru jalankan 'enter beta'
           if [ ! -f .changeset/pre.json ]; then
             yarn changeset pre enter beta
           fi
 
-          # Lanjut seperti biasa
           yarn changeset version
           yarn build
 
-          # Publish tanpa flag tag (karena sudah mode pre)
           yarn changeset publish
 
           git add .

@@ -14,6 +14,13 @@ import {
   FormDescription,
 } from "./components/atoms/textfield/Field";
 import {
+  SearchField,
+  SearchFieldGroup,
+  SearchFieldInput,
+  SearchFieldClear,
+  JollySearchField,
+} from "./components/atoms/searchfield/Searchfield";
+import {
   Popover,
   PopoverTrigger,
   PopoverDialog,
@@ -30,5 +37,12 @@ export {
   fieldGroupVariants,
   FieldError,
   FormDescription,
+};
+export {
+  SearchField,
+  SearchFieldGroup,
+  SearchFieldInput,
+  SearchFieldClear,
+  JollySearchField,
 };
 export { Popover, PopoverTrigger, PopoverDialog };

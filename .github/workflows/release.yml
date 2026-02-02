@@ -51,8 +51,8 @@ jobs:
           # 3. Build (Opsional jika version masuk ke dalam code)
           yarn build
 
-          # 4. Publish ke NPM dengan tag 'beta' 
-          yarn changeset publish --tag beta
+          # 4. Publish ke NPM 
+          yarn changeset publish 
 
           # 5. Push perubahan version kembali ke main
           git add .

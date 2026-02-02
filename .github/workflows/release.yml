@@ -37,16 +37,12 @@ jobs:
       - name: Build Library
         run: yarn build
 
-      # ========================================================
-      # LOGIKA BARU: MAIN LANGSUNG PUBLISH BETA
-      # ========================================================
       - name: Publish Beta (From Main)
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
           # 1. Pastikan masuk mode pre (beta)
-          # Perintah ini aman dijalankan berulang kali (idempotent)
           yarn changeset pre enter beta
 
           # 2. Update version (misal: 1.0.1-beta.4 -> 1.0.1-beta.5)
@@ -55,8 +51,7 @@ jobs:
           # 3. Build (Opsional jika version masuk ke dalam code)
           yarn build
 
-          # 4. Publish ke NPM dengan tag 'beta' (atau 'latest' juga boleh jika mau maksa)
-          # Saran: Tetap pakai tag beta agar semantic-nya benar
+          # 4. Publish ke NPM dengan tag 'beta' 
           yarn changeset publish --tag beta
 
           # 5. Push perubahan version kembali ke main

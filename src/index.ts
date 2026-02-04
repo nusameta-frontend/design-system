@@ -1,10 +1,10 @@
-import { Button } from "./components/Atoms/Button/Button";
+import { Button } from "./components/button/Button";
 import {
   TextField,
   Input,
   WrappedField,
   TextArea,
-} from "./components/Atoms/textfield/Textfield";
+} from "./components/textfield/Textfield";
 import {
   Label,
   labelVariants,
@@ -12,20 +12,20 @@ import {
   fieldGroupVariants,
   FieldError,
   FormDescription,
-} from "./components/Atoms/textfield/Field";
+} from "./components/textfield/Field";
 import {
   SearchField,
   SearchFieldGroup,
   SearchFieldInput,
   SearchFieldClear,
   JollySearchField,
-} from "./components/Atoms/searchfield/Searchfield";
+} from "./components/searchfield/Searchfield";
 import {
   Popover,
   PopoverTrigger,
   PopoverDialog,
-} from "./components/molecules/popover/Popover";
-import { Checkbox } from "./components/Atoms/checkbox/Checkbox";
+} from "./components/popover/Popover";
+import { Checkbox } from "./components/checkbox/Checkbox";
 
 export { Button };
 export { Checkbox };

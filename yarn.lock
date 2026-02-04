@@ -1224,7 +1224,7 @@ __metadata:
     playwright: "npm:^1.57.0"
     postcss: "npm:^8.5.6"
     react: "npm:^19.2.3"
-    react-aria-components: "npm:^1.14.0"
+    react-aria-components: "npm:^1.15.0"
     react-dom: "npm:^19.2.3"
     storybook: "npm:^10.2.4"
     tailwind-merge: "npm:^3.4.0"
@@ -6395,7 +6395,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-aria-components@npm:^1.14.0":
+"react-aria-components@npm:^1.15.0":
   version: 1.15.0
   resolution: "react-aria-components@npm:1.15.0"
   dependencies:

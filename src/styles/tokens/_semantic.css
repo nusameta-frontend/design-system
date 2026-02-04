@@ -1,0 +1,44 @@
+/**
+ * Design Tokens - Semantic Variables
+ * 
+ * Maps primitive colors to semantic meaning.
+ * Includes both light and dark mode definitions.
+ */
+
+:root {
+  /* Border Radius */
+  --nm-radius: 0.625rem;
+
+  /* Base Colors */
+  --nm-background: var(--color-white);
+  --nm-foreground: var(--color-gray-900);
+
+  /* Primary */
+  --nm-primary: var(--color-gray-800);
+  --nm-primary-foreground: var(--color-gray-50);
+
+  /* Secondary */
+  --nm-secondary: var(--color-gray-100);
+  --nm-secondary-foreground: var(--color-gray-800);
+
+  /* Muted */
+  --nm-muted: var(--color-gray-100);
+  --nm-muted-foreground: var(--color-gray-400);
+
+  /* Accent */
+  --nm-accent: var(--color-gray-100);
+  --nm-accent-foreground: var(--color-gray-800);
+
+  /* Destructive */
+  --nm-destructive: var(--color-red-500);
+  --nm-destructive-foreground: var(--color-gray-50);
+
+  /* Border & Input */
+  --nm-border: var(--color-gray-200);
+  --nm-input: var(--color-gray-200);
+  --nm-ring: var(--color-gray-300);
+}
+
+/* Dark Mode Overrides */
+.dark {
+}

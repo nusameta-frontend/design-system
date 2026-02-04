@@ -1,0 +1,39 @@
+/**
+ * Component Tokens - TextField
+ * 
+ * All text field and input-specific design tokens.
+ */
+
+:root {
+  /* TextField Base */
+  --nm-textfield-bg: var(--nm-background);
+  --nm-textfield-fg: var(--nm-foreground);
+  --nm-textfield-border: var(--nm-input);
+  --nm-textfield-ring: var(--nm-ring);
+  --nm-textfield-placeholder: var(--nm-muted-foreground);
+
+  /* TextField Focus State */
+  --nm-textfield-focus-ring: var(--nm-ring);
+
+  /* TextField Disabled State */
+  --nm-textfield-disabled-bg: var(--nm-muted);
+  --nm-textfield-disabled-fg: var(--nm-muted-foreground);
+
+  /* TextField Error State */
+  --nm-textfield-error-border: var(--nm-destructive);
+  --nm-textfield-error-fg: var(--nm-destructive);
+
+  /* TextField Success State */
+  --nm-textfield-success-border: var(--color-green-500);
+  --nm-textfield-success-fg: var(--color-green-500);
+
+  /* TextField Label */
+  --nm-textfield-label-fg: var(--nm-foreground);
+  --nm-textfield-label-error-fg: var(--nm-destructive);
+
+  /* TextField Helper Text */
+  --nm-textfield-helper-fg: var(--nm-muted-foreground);
+  --nm-textfield-helper-error-fg: var(--nm-destructive);
+  --nm-textfield-helper-success-fg: var(--color-green-500);
+  --nm-textfield-helper-info-fg: var(--nm-ring);
+}

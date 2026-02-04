@@ -1,0 +1,105 @@
+import { Meta, Source } from "@storybook/addon-docs/blocks";
+
+<Meta title="Foundation/Theming" />
+
+# Theming & Overrides
+
+Nusameta Design System dibangun menggunakan **CSS Variables** dengan struktur yang modular. Ini artinya kamu punya kontrol penuh buat ganti tampilan aplikasi—mulai dari warna brand global sampai detail kecil di satu komponen spesifik.
+
+Kita tetap pakai format warna **OKLCH** biar modern, tapi kamu bebas override pakai format apa aja (HEX, RGB, HSL) di aplikasi kamu.
+
+---
+
+## 1. Global Semantic Tokens
+
+Ini adalah variable "Master". Biasanya digunakan untuk mengatur warna brand utama, background aplikasi, dan radius standar.
+
+Kalau kamu ubah variable di sini (misal `--nm-primary`), **semua komponen** yang pakai warna primary akan ikut berubah otomatis. Praktis buat ganti tema secara cepat.
+
+<Source
+  language="css"
+  dark
+  code={`
+:root {
+  /* --- Colors: Background & Foreground --- */
+  --nm-background: oklch(1 0 0);
+  --nm-foreground: oklch(0.145 0 0);
+  
+  /* --- Colors: Brand & Status --- */
+  --nm-primary: oklch(0.205 0 0);
+  --nm-primary-foreground: oklch(0.985 0 0);
+  
+  --nm-secondary: oklch(0.97 0 0);
+  --nm-secondary-foreground: oklch(0.205 0 0);
+  
+  --nm-destructive: oklch(0.577 0.245 27.325);
+  --nm-destructive-foreground: oklch(0.985 0 0);
+  
+  /* --- UI Elements --- */
+  --nm-border: oklch(0.922 0 0);
+  --nm-input: oklch(0.922 0 0);
+  --nm-ring: oklch(0.708 0 0);
+  
+  /* --- Global Shape --- */
+  --nm-radius: 0.625rem;
+}
+`}
+/>
+
+---
+
+## 2. Component-Specific Tokens (Granular Control)
+
+Nah, ini fitur kuncinya. Setiap komponen di sistem ini punya **tokennya sendiri-sendiri**.
+
+Kenapa dipisah? Supaya styling lebih aman dan spesifik.
+* Misal kamu mau ubah warna **Button** jadi Merah, tapi mau warna **Input Border** tetap Biru.
+* Kalau cuma pakai Global Token, dua-duanya bakal berubah.
+* Dengan Component Token, kamu bisa ubah `--nm-btn-primary-bg` tanpa mengganggu komponen lain.
+
+### Contoh: Button Component
+Secara default, tombol akan "mewarisi" warna dari Global Token. Tapi kamu bisa memutus warisan itu dengan menimpa token khusus tombol ini.
+
+<Source
+  language="css"
+  dark
+  code={`
+:root {
+  /* ---------------------------------------------------- */
+  /* BUTTON TOKENS                                        */
+  /* ---------------------------------------------------- */
+
+  /* 1. Primary Button */
+  /* Default: Ambil dari global primary */
+  --nm-btn-primary-bg: var(--nm-primary);
+  --nm-btn-primary-fg: var(--nm-primary-foreground);
+  
+  /* Hover State */
+  --nm-btn-primary-hover: oklch(from var(--nm-primary) l c h / 0.9);
+
+  /* 2. Destructive Button */
+  --nm-btn-dest-bg: var(--nm-destructive);
+  --nm-btn-dest-fg: var(--nm-destructive-foreground);
+  --nm-btn-dest-hover: oklch(from var(--nm-destructive) l c h / 0.9);
+
+  /* 3. Secondary Button */
+  --nm-btn-sec-bg: var(--nm-secondary);
+  --nm-btn-sec-fg: var(--nm-secondary-foreground);
+
+  /* Mau ubah radius tombol jadi kotak, tapi card tetap bulat? */
+  /* --nm-btn-radius: 0px; (Jika tersedia di komponen) */
+}
+`}
+/>
+
+> **Lihat Detail Komponen Lain**
+>
+> Kode di atas hanya contoh untuk **Button**. Setiap komponen (TextField, Card, Sidebar, Checkbox, dll) memiliki daftar token uniknya sendiri.
+>
+> **Untuk melihat daftar lengkap token komponen lain, silakan buka tab "Docs" di halaman masing-masing komponen.**
+
+---
+
+## 3. Dark Mode
+
+***coming soon...***

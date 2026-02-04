@@ -1,0 +1,23 @@
+/**
+ * Component Tokens - Chart
+ * 
+ * All chart-specific design tokens.
+ */
+
+:root {
+  /* Charts */
+  --nm-chart-1: var(--color-chart-1);
+  --nm-chart-2: var(--color-chart-2);
+  --nm-chart-3: var(--color-chart-3);
+  --nm-chart-4: var(--color-chart-4);
+  --nm-chart-5: var(--color-chart-5);
+}
+
+/* Dark Mode Overrides */
+.dark {
+  --nm-chart-1: var(--color-chart-dark-1);
+  --nm-chart-2: var(--color-chart-dark-2);
+  --nm-chart-3: var(--color-chart-dark-3);
+  --nm-chart-4: var(--color-chart-dark-4);
+  --nm-chart-5: var(--color-chart-dark-5);
+}

@@ -1,0 +1,29 @@
+/**
+ * Component Tokens - Sidebar
+ * 
+ * All sidebar-specific design tokens.
+ */
+
+:root {
+  /* Sidebar */
+  --nm-sidebar: var(--color-gray-50);
+  --nm-sidebar-foreground: var(--color-gray-900);
+  --nm-sidebar-primary: var(--color-gray-800);
+  --nm-sidebar-primary-foreground: var(--color-gray-50);
+  --nm-sidebar-accent: var(--color-gray-100);
+  --nm-sidebar-accent-foreground: var(--color-gray-800);
+  --nm-sidebar-border: var(--color-gray-200);
+  --nm-sidebar-ring: var(--color-gray-300);
+}
+
+/* Dark Mode Overrides */
+.dark {
+  --nm-sidebar: var(--color-gray-800);
+  --nm-sidebar-foreground: var(--color-gray-50);
+  --nm-sidebar-primary: var(--color-chart-dark-1);
+  --nm-sidebar-primary-foreground: var(--color-gray-50);
+  --nm-sidebar-accent: var(--color-gray-dark-800);
+  --nm-sidebar-accent-foreground: var(--color-gray-50);
+  --nm-sidebar-border: var(--color-overlay-10);
+  --nm-sidebar-ring: var(--color-gray-400);
+}

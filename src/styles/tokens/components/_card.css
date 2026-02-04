@@ -1,0 +1,17 @@
+/**
+ * Component Tokens - Card
+ * 
+ * All card-specific design tokens.
+ */
+
+:root {
+  /* Card */
+  --nm-card: var(--color-white);
+  --nm-card-foreground: var(--color-gray-900);
+}
+
+/* Dark Mode Overrides */
+.dark {
+  --nm-card: var(--color-gray-800);
+  --nm-card-foreground: var(--color-gray-50);
+}

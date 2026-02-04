@@ -1,0 +1,17 @@
+/**
+ * Component Tokens - Popover
+ * 
+ * All popover-specific design tokens.
+ */
+
+:root {
+  /* Popover */
+  --nm-popover: var(--color-white);
+  --nm-popover-foreground: var(--color-gray-900);
+}
+
+/* Dark Mode Overrides */
+.dark {
+  --nm-popover: var(--color-gray-800);
+  --nm-popover-foreground: var(--color-gray-50);
+}

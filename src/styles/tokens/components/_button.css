@@ -1,0 +1,29 @@
+/**
+ * Component Tokens - Button
+ * 
+ * All button-specific design tokens.
+ */
+
+:root {
+  /* Default Button */
+  --nm-btn-default-border: none;
+
+  /* Primary Button */
+  --nm-btn-primary-bg: var(--nm-primary);
+  --nm-btn-primary-fg: var(--nm-primary-foreground);
+  --nm-btn-primary-hover: oklch(from var(--nm-primary) l c h / 0.9);
+
+  /* Destructive Button */
+  --nm-btn-dest-bg: var(--nm-destructive);
+  --nm-btn-dest-fg: var(--nm-destructive-foreground);
+  --nm-btn-dest-hover: oklch(from var(--nm-destructive) l c h / 0.9);
+
+  /* Secondary/Outline Button */
+  --nm-btn-sec-bg: var(--nm-secondary);
+  --nm-btn-sec-fg: var(--nm-secondary-foreground);
+  --nm-btn-sec-hover: oklch(from var(--nm-secondary) l c h / 0.8);
+
+  /* Ghost/Accent Button */
+  --nm-btn-ghost-hover-bg: var(--nm-accent);
+  --nm-btn-ghost-hover-fg: var(--nm-accent-foreground);
+}

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Button } from "../Button/Button";
+import { Button } from "./Button";
 import { Mail, Trash2, Loader2, Save } from "lucide-react"; // Contoh icon
 
 // 1. Konfigurasi Metadata

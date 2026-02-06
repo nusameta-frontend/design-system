@@ -1,0 +1,34 @@
+/**
+ * Component Tokens - Table
+ * 
+ * All table-specific design tokens.
+ */
+
+:root {
+  /* Table Base */
+  --nm-table-bg: var(--nm-background);
+  --nm-table-fg: var(--nm-foreground);
+
+  /* Table Header */
+  --nm-table-header-fg: var(--nm-muted-foreground);
+  --nm-table-header-bg: transparent;
+  --nm-table-header-border: var(--nm-border);
+
+  /* Table Row */
+  --nm-table-row-border: var(--nm-border);
+  --nm-table-row-hover-bg: var(--nm-muted);
+  --nm-table-row-selected-bg: var(--nm-muted);
+  --nm-table-row-selected-highlight-bg: var(--nm-primary);
+  --nm-table-row-selected-highlight-hover-bg: var(--nm-primary);
+
+  /* Table Cell */
+  --nm-table-cell-fg: var(--nm-foreground);
+  --nm-table-cell-padding: 1rem;
+
+  /* Table Column Resizer */
+  --nm-table-resizer-bg: var(--nm-muted-foreground);
+  --nm-table-resizer-active-bg: var(--nm-primary);
+
+  /* Table Focus Ring */
+  --nm-table-focus-ring: var(--nm-ring);
+}

@@ -29,13 +29,13 @@ const Input = ({ className, ...props }: InputProps) => {
         cn(
           "nm-flex nm-h-10 nm-w-full nm-rounded-md nm-border nm-px-3 nm-py-2 nm-text-sm nm-ring-offset-background nm-transition-colors",
           /* Base Styles from Tokens */
-          "[border-color:var(--nm-textfield-border)] [color:var(--nm-textfield-fg)] [background-color:var(--nm-textfield-bg)]",
+          "nm-border-textfield-border nm-text-textfield-foreground nm-bg-textfield",
           /* File Input Reset */
           "file:nm-border-0 file:nm-bg-transparent file:nm-text-sm file:nm-font-medium",
           /* Placeholder */
-          "[&::placeholder]:opacity-100 [&::placeholder]:[color:var(--nm-textfield-placeholder)]",
+          "placeholder:nm-opacity-100 placeholder:nm-text-textfield-placeholder",
           /* Disabled State */
-          "data-[disabled]:nm-cursor-not-allowed [data-disabled]:opacity-50 [data-disabled]:[background-color:var(--nm-textfield-disabled-bg)] [data-disabled]:[color:var(--nm-textfield-disabled-fg)]",
+          "data-[disabled]:nm-cursor-not-allowed data-[disabled]:nm-opacity-50 data-[disabled]:nm-bg-textfield-disabled data-[disabled]:nm-text-textfield-disabled-foreground",
           /* Focused State */
           "data-[focused]:nm-outline-none data-[focused]:nm-ring-2 [data-focused]:[--nm-textfield-focus-ring:var(--nm-textfield-ring)] data-[focused]:nm-ring-offset-2",
           /* Resets */
@@ -55,13 +55,13 @@ const TextArea = ({ className, ...props }: AriaTextAreaProps) => {
         cn(
           "nm-flex nm-min-h-[80px] nm-w-full nm-rounded-md nm-border nm-px-3 nm-py-2 nm-text-sm nm-ring-offset-background nm-transition-colors",
           /* Base Styles from Tokens */
-          "[border-color:var(--nm-textfield-border)] [color:var(--nm-textfield-fg)] [background-color:var(--nm-textfield-bg)]",
+          "nm-border-textfield-border nm-text-textfield-foreground nm-bg-textfield",
           /* Placeholder */
-          "[&::placeholder]:opacity-100 [&::placeholder]:[color:var(--nm-textfield-placeholder)]",
+          "placeholder:nm-opacity-100 placeholder:nm-text-textfield-placeholder",
           /* Focused State */
           "data-[focused]:nm-outline-none data-[focused]:nm-ring-2 [data-focused]:[--nm-textfield-focus-ring:var(--nm-textfield-ring)] data-[focused]:nm-ring-offset-2",
           /* Disabled State */
-          "data-[disabled]:nm-cursor-not-allowed [data-disabled]:opacity-50 [data-disabled]:[background-color:var(--nm-textfield-disabled-bg)] [data-disabled]:[color:var(--nm-textfield-disabled-fg)]",
+          "data-[disabled]:nm-cursor-not-allowed data-[disabled]:nm-opacity-50 data-[disabled]:nm-bg-textfield-disabled data-[disabled]:nm-text-textfield-disabled-foreground",
           /* Resets */
           "focus-visible:nm-outline-none",
           className
@@ -104,7 +104,7 @@ function WrappedField({
       )}
       {description && (
         <Text
-          className="nm-text-sm [color:var(--nm-textfield-helper-fg)]"
+          className="nm-text-sm nm-text-textfield-helper"
           slot="description"
         >
           {description}

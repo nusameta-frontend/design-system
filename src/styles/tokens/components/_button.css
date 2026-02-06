@@ -11,17 +11,17 @@
   /* Primary Button */
   --nm-btn-primary-bg: var(--nm-primary);
   --nm-btn-primary-fg: var(--nm-primary-foreground);
-  --nm-btn-primary-hover: oklch(from var(--nm-primary) l c h / 0.9);
+  --nm-btn-primary-hover: var(--nm-primary);
 
   /* Destructive Button */
   --nm-btn-dest-bg: var(--nm-destructive);
   --nm-btn-dest-fg: var(--nm-destructive-foreground);
-  --nm-btn-dest-hover: oklch(from var(--nm-destructive) l c h / 0.9);
+  --nm-btn-dest-hover: var(--nm-destructive);
 
   /* Secondary/Outline Button */
   --nm-btn-sec-bg: var(--nm-secondary);
   --nm-btn-sec-fg: var(--nm-secondary-foreground);
-  --nm-btn-sec-hover: oklch(from var(--nm-secondary) l c h / 0.8);
+  --nm-btn-sec-hover: var(--nm-secondary);
 
   /* Ghost/Accent Button */
   --nm-btn-ghost-hover-bg: var(--nm-accent);

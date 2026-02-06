@@ -4,7 +4,7 @@ import { Mail, Trash2, Loader2, Save } from "lucide-react"; // Contoh icon
 
 // 1. Konfigurasi Metadata
 const meta = {
-  title: "Components/Atoms/Button",
+  title: "Components/Button",
   component: Button,
   parameters: {
     layout: "centered", // Posisi komponen di tengah canvas

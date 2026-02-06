@@ -4,7 +4,7 @@ import { TextField, Input, TextArea, WrappedField } from "./Textfield";
 
 // 1. Konfigurasi Metadata
 const meta = {
-  title: "Components/Atoms/TextField",
+  title: "Components/TextField",
   component: WrappedField,
   parameters: {
     layout: "centered",

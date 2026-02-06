@@ -10,7 +10,7 @@ import { Label } from "../textfield/Field";
 import { SearchIcon, XIcon } from "lucide-react";
 
 const meta = {
-  title: "Components/Atoms/SearchField",
+  title: "Components/SearchField",
   component: JollySearchField,
   parameters: {
     layout: "centered",
@@ -60,7 +60,10 @@ export const WithPlaceholder: Story = {
     <SearchField {...args}>
       <Label>{args.label}</Label>
       <SearchFieldGroup>
-        <SearchIcon aria-hidden className="nm-size-4 nm-text-muted-foreground" />
+        <SearchIcon
+          aria-hidden
+          className="nm-size-4 nm-text-muted-foreground"
+        />
         <SearchFieldInput placeholder="Ketik untuk mencari..." />
         <SearchFieldClear>
           <XIcon aria-hidden className="nm-size-4" />
@@ -111,7 +114,10 @@ export const CustomSearchField: Story = {
     <SearchField className="nm-w-80">
       <Label>Cari Artikel</Label>
       <SearchFieldGroup>
-        <SearchIcon aria-hidden className="nm-size-4 nm-text-muted-foreground" />
+        <SearchIcon
+          aria-hidden
+          className="nm-size-4 nm-text-muted-foreground"
+        />
         <SearchFieldInput placeholder="Cari berdasarkan judul..." />
         <SearchFieldClear>
           <XIcon aria-hidden className="nm-size-4" />
@@ -126,8 +132,14 @@ export const Compact: Story = {
   render: () => (
     <SearchField>
       <SearchFieldGroup className="nm-h-8">
-        <SearchIcon aria-hidden className="nm-size-3 nm-text-muted-foreground" />
-        <SearchFieldInput placeholder="Quick search..." className="nm-text-xs" />
+        <SearchIcon
+          aria-hidden
+          className="nm-size-3 nm-text-muted-foreground"
+        />
+        <SearchFieldInput
+          placeholder="Quick search..."
+          className="nm-text-xs"
+        />
         <SearchFieldClear>
           <XIcon aria-hidden className="nm-size-3" />
         </SearchFieldClear>

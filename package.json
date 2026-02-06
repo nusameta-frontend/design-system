@@ -12,6 +12,9 @@
       "import": "./dist/index.es.js",
       "require": "./dist/index.cjs.js"
     },
+    "./reset.css": "./dist/reset.css",
+    "./dist/reset.css": "./dist/reset.css",
+    "./index.css": "./dist/index.css",
     "./dist/index.css": "./dist/index.css",
     "./style.css": "./dist/index.css"
   },

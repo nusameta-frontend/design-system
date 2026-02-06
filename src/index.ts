@@ -26,6 +26,15 @@ import {
   PopoverDialog,
 } from "./components/popover/Popover";
 import { Checkbox } from "./components/checkbox/Checkbox";
+import {
+  Table,
+  TableHeader,
+  Column,
+  TableBody,
+  Row,
+  Cell,
+  ResizableTableContainer,
+} from "./components/table/Table";
 
 export { Button };
 export { Checkbox };
@@ -46,3 +55,12 @@ export {
   JollySearchField,
 };
 export { Popover, PopoverTrigger, PopoverDialog };
+export {
+  Table,
+  TableHeader,
+  Column,
+  TableBody,
+  Row,
+  Cell,
+  ResizableTableContainer,
+};

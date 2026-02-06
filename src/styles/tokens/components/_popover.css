@@ -6,12 +6,12 @@
 
 :root {
   /* Popover */
-  --nm-popover: var(--color-white);
-  --nm-popover-foreground: var(--color-gray-900);
+  --nm-popover: var(--nm-color-white);
+  --nm-popover-foreground: var(--nm-color-gray-900);
 }
 
 /* Dark Mode Overrides */
 .dark {
-  --nm-popover: var(--color-gray-800);
-  --nm-popover-foreground: var(--color-gray-50);
+  --nm-popover: var(--nm-color-gray-800);
+  --nm-popover-foreground: var(--nm-color-gray-50);
 }

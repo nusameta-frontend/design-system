@@ -24,8 +24,8 @@
   --nm-textfield-error-fg: var(--nm-destructive);
 
   /* TextField Success State */
-  --nm-textfield-success-border: var(--color-green-500);
-  --nm-textfield-success-fg: var(--color-green-500);
+  --nm-textfield-success-border: var(--nm-color-green-500);
+  --nm-textfield-success-fg: var(--nm-color-green-500);
 
   /* TextField Label */
   --nm-textfield-label-fg: var(--nm-foreground);
@@ -34,6 +34,6 @@
   /* TextField Helper Text */
   --nm-textfield-helper-fg: var(--nm-muted-foreground);
   --nm-textfield-helper-error-fg: var(--nm-destructive);
-  --nm-textfield-helper-success-fg: var(--color-green-500);
+  --nm-textfield-helper-success-fg: var(--nm-color-green-500);
   --nm-textfield-helper-info-fg: var(--nm-ring);
 }

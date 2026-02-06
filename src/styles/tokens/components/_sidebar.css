@@ -6,14 +6,14 @@
 
 :root {
   /* Sidebar */
-  --nm-sidebar: var(--color-gray-50);
-  --nm-sidebar-foreground: var(--color-gray-900);
-  --nm-sidebar-primary: var(--color-gray-800);
-  --nm-sidebar-primary-foreground: var(--color-gray-50);
-  --nm-sidebar-accent: var(--color-gray-100);
-  --nm-sidebar-accent-foreground: var(--color-gray-800);
-  --nm-sidebar-border: var(--color-gray-200);
-  --nm-sidebar-ring: var(--color-gray-300);
+  --nm-sidebar: var(--nm-color-gray-50);
+  --nm-sidebar-foreground: var(--nm-color-gray-900);
+  --nm-sidebar-primary: var(--nm-color-gray-800);
+  --nm-sidebar-primary-foreground: var(--nm-color-gray-50);
+  --nm-sidebar-accent: var(--nm-color-gray-100);
+  --nm-sidebar-accent-foreground: var(--nm-color-gray-800);
+  --nm-sidebar-border: var(--nm-color-gray-200);
+  --nm-sidebar-ring: var(--nm-color-gray-300);
 }
 
 /* Dark Mode Overrides */

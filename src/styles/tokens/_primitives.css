@@ -11,36 +11,36 @@
 
 :root {
   /* Neutral Colors */
-  --color-white: 1 0 0;
-  --color-gray-50: 0.985 0 0;
-  --color-gray-100: 0.97 0 0;
-  --color-gray-200: 0.922 0 0;
-  --color-gray-300: 0.708 0 0;
-  --color-gray-400: 0.556 0 0;
-  --color-gray-800: 0.205 0 0;
-  --color-gray-900: 0.145 0 0;
+  --nm-color-white: 1 0 0;
+  --nm-color-gray-50: 0.985 0 0;
+  --nm-color-gray-100: 0.97 0 0;
+  --nm-color-gray-200: 0.922 0 0;
+  --nm-color-gray-300: 0.708 0 0;
+  --nm-color-gray-400: 0.556 0 0;
+  --nm-color-gray-800: 0.205 0 0;
+  --nm-color-gray-900: 0.145 0 0;
 
   /* Dark Mode Neutrals */
-  --color-gray-dark-800: 0.269 0 0;
+  --nm-color-gray-dark-800: 0.269 0 0;
 
   /* Destructive/Error Colors */
-  --color-red-500: 0.577 0.245 27.325;
-  --color-red-600: 0.704 0.191 22.216;
+  --nm-color-red-500: 0.577 0.245 27.325;
+  --nm-color-red-600: 0.704 0.191 22.216;
 
   /* Success Colors */
-  --color-green-500: 0.497 0.146 142.495;
+  --nm-color-green-500: 0.497 0.146 142.495;
 
   /* Chart Colors */
-  --color-chart-1: 0.646 0.222 41.116;
-  --color-chart-2: 0.6 0.118 184.704;
-  --color-chart-3: 0.398 0.07 227.392;
-  --color-chart-4: 0.828 0.189 84.429;
-  --color-chart-5: 0.769 0.188 70.08;
+  --nm-color-chart-1: 0.646 0.222 41.116;
+  --nm-color-chart-2: 0.6 0.118 184.704;
+  --nm-color-chart-3: 0.398 0.07 227.392;
+  --nm-color-chart-4: 0.828 0.189 84.429;
+  --nm-color-chart-5: 0.769 0.188 70.08;
 
   /* Chart Colors - Dark Mode */
-  --color-chart-dark-1: 0.488 0.243 264.376;
-  --color-chart-dark-2: 0.696 0.17 162.48;
-  --color-chart-dark-3: 0.769 0.188 70.08;
-  --color-chart-dark-4: 0.627 0.265 303.9;
-  --color-chart-dark-5: 0.645 0.246 16.439;
+  --nm-color-chart-dark-1: 0.488 0.243 264.376;
+  --nm-color-chart-dark-2: 0.696 0.17 162.48;
+  --nm-color-chart-dark-3: 0.769 0.188 70.08;
+  --nm-color-chart-dark-4: 0.627 0.265 303.9;
+  --nm-color-chart-dark-5: 0.645 0.246 16.439;
 }

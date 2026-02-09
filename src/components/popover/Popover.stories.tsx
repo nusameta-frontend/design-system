@@ -3,7 +3,7 @@ import { Button } from "../button/Button";
 import { Popover, PopoverTrigger, PopoverDialog } from "./Popover";
 
 const meta: Meta<typeof Popover> = {
-  title: "Molecules/Popover",
+  title: "Components/Popover",
   component: Popover,
   parameters: {
     layout: "centered",

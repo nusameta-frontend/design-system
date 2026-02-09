@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import {
-  JollySearchField,
+  ComposedSearchField,
   SearchField,
   SearchFieldGroup,
   SearchFieldInput,
@@ -11,7 +11,7 @@ import { SearchIcon, XIcon } from "lucide-react";
 
 const meta = {
   title: "Components/SearchField",
-  component: JollySearchField,
+  component: ComposedSearchField,
   parameters: {
     layout: "centered",
   },
@@ -38,7 +38,7 @@ const meta = {
       description: "Status apakah search field wajib diisi",
     },
   },
-} satisfies Meta<typeof JollySearchField>;
+} satisfies Meta<typeof ComposedSearchField>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

@@ -60,20 +60,20 @@ const Checkbox = ({ className, children, ...props }: AriaCheckboxProps) => (
   </AriaCheckbox>
 );
 
-interface JollyCheckboxGroupProps extends AriaCheckboxGroupProps {
+interface ComposedCheckboxGroupProps extends AriaCheckboxGroupProps {
   label?: string;
   description?: string;
   errorMessage?: string | ((validation: AriaValidationResult) => string);
 }
 
-function JollyCheckboxGroup({
+function ComposedCheckboxGroup({
   label,
   description,
   errorMessage,
   className,
   children,
   ...props
-}: JollyCheckboxGroupProps) {
+}: ComposedCheckboxGroupProps) {
   return (
     <CheckboxGroup
       className={composeRenderProps(className, (className) =>
@@ -100,5 +100,5 @@ function JollyCheckboxGroup({
   );
 }
 
-export { Checkbox, CheckboxGroup, JollyCheckboxGroup };
-export type { JollyCheckboxGroupProps };
+export { Checkbox, CheckboxGroup, ComposedCheckboxGroup };
+export type { ComposedCheckboxGroupProps };

@@ -1831,7 +1831,7 @@ __metadata:
     postcss: "npm:^8.5.6"
     postcss-preset-env: "npm:^11.1.3"
     react: "npm:^19.2.3"
-    react-aria-components: "npm:^1.15.0"
+    react-aria-components: "npm:^1.15.1"
     react-dom: "npm:^19.2.3"
     storybook: "npm:^10.2.4"
     tailwind-merge: "npm:^3.4.0"
@@ -7424,9 +7424,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-aria-components@npm:^1.15.0":
-  version: 1.15.0
-  resolution: "react-aria-components@npm:1.15.0"
+"react-aria-components@npm:^1.15.1":
+  version: 1.15.1
+  resolution: "react-aria-components@npm:1.15.1"
   dependencies:
     "@internationalized/date": "npm:^3.11.0"
     "@internationalized/string": "npm:^3.2.7"
@@ -7460,7 +7460,7 @@ __metadata:
   peerDependencies:
     react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
     react-dom: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
-  checksum: 10c0/a003d3e9a96f66817c024205e59f4638334689a3124707b08582c1383f7370f9f5a281fdf19313b4ff73ac8f1c806f5b1b1f6ca1d0bab385cf3915a8962433dc
+  checksum: 10c0/6aa61901aa67086d403d9d7b52ea8dd3ca4239bd04bbeff83e09292131e31da91bc94dee6841cb53f36e32ff614e708d22c5590e14eae6eba5712256e31658f4
   languageName: node
   linkType: hard
 

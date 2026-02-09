@@ -82,19 +82,19 @@ function SearchFieldClear({ className, ...props }: AriaButtonProps) {
   );
 }
 
-interface JollySearchFieldProps extends AriaSearchFieldProps {
+interface ComposedSearchFieldProps extends AriaSearchFieldProps {
   label?: string;
   description?: string;
   errorMessage?: string | ((validation: AriaValidationResult) => string);
 }
 
-function JollySearchField({
+function ComposedSearchField({
   label,
   description,
   className,
   errorMessage,
   ...props
-}: JollySearchFieldProps) {
+}: ComposedSearchFieldProps) {
   return (
     <SearchField
       className={composeRenderProps(className, (className) =>
@@ -131,6 +131,6 @@ export {
   SearchFieldGroup,
   SearchFieldInput,
   SearchFieldClear,
-  JollySearchField,
+  ComposedSearchField,
 };
-export type { JollySearchFieldProps };
+export type { ComposedSearchFieldProps };

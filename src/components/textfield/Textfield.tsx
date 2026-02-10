@@ -35,9 +35,9 @@ const Input = ({ className, ...props }: InputProps) => {
           /* Placeholder */
           "nm:placeholder:opacity-100 nm:placeholder:text-textfield-placeholder",
           /* Disabled State */
-          "nm:data-[disabled]:cursor-not-allowed nm:data-[disabled]:opacity-50 nm:data-[disabled]:bg-textfield-disabled-bg nm:data-[disabled]:text-textfield-disabled-fg",
+          "nm:data-disabled:cursor-not-allowed nm:data-disabled:opacity-50 nm:data-disabled:bg-textfield-disabled-bg nm:data-disabled:text-textfield-disabled-fg",
           /* Focused State */
-          "nm:data-[focused]:outline-none nm:data-[focused]:ring-2 nm:data-[focused]:ring-textfield-focus-ring nm:data-[focused]:ring-offset-2",
+          "nm:data-focused:outline-none nm:data-focused:ring-2 nm:data-focused:ring-textfield-focus-ring nm:data-focused:ring-offset-2",
           /* Resets */
           "nm:focus-visible:outline-none",
           className
@@ -53,15 +53,15 @@ const TextArea = ({ className, ...props }: AriaTextAreaProps) => {
     <AriaTextArea
       className={composeRenderProps(className, (className) =>
         cn(
-          "nm:flex nm:min-h-[80px] nm:w-full nm:rounded-md nm:border nm:px-3 nm:py-2 nm:text-sm nm:ring-offset-background nm:transition-colors",
+          "nm:flex nm:min-h-20 nm:w-full nm:rounded-md nm:border nm:px-3 nm:py-2 nm:text-sm nm:ring-offset-background nm:transition-colors",
           /* Base Styles from Tokens */
           "nm:border-textfield-border nm:text-textfield-fg nm:bg-textfield-bg",
           /* Placeholder */
           "nm:placeholder:opacity-100 nm:placeholder:text-textfield-placeholder",
           /* Focused State */
-          "nm:data-[focused]:outline-none nm:data-[focused]:ring-2 nm:data-[focused]:ring-textfield-focus-ring nm:data-[focused]:ring-offset-2",
+          "nm:data-focused:outline-none nm:data-focused:ring-2 nm:data-focused:ring-textfield-focus-ring nm:data-focused:ring-offset-2",
           /* Disabled State */
-          "nm:data-[disabled]:cursor-not-allowed nm:data-[disabled]:opacity-50 nm:data-[disabled]:bg-textfield-disabled-bg nm:data-[disabled]:text-textfield-disabled-fg",
+          "nm:data-disabled:cursor-not-allowed nm:data-disabled:opacity-50 nm:data-disabled:bg-textfield-disabled-bg nm:data-disabled:text-textfield-disabled-fg",
           /* Resets */
           "nm:focus-visible:outline-none",
           className

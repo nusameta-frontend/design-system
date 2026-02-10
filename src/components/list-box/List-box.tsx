@@ -27,7 +27,7 @@ function ListBox<T extends object>({
           className,
           "nm:group nm:overflow-auto nm:rounded-md nm:border nm:border-listbox-border nm:bg-listbox-bg nm:p-1 nm:text-listbox-fg nm:shadow-md nm:outline-none",
           /* Empty */
-          "nm:data-[empty]:p-6 nm:data-[empty]:text-center nm:data-[empty]:text-sm"
+          "nm:data-empty:p-6 nm:data-empty:text-center nm:data-empty:text-sm"
         )
       )}
       {...props}
@@ -49,13 +49,13 @@ const ListBoxItem = <T extends object>({
         cn(
           "nm:relative nm:flex nm:w-full nm:cursor-default nm:select-none nm:items-center nm:rounded-sm nm:px-2 nm:py-1.5 nm:text-sm nm:text-listbox-item-fg nm:outline-none",
           /* Disabled */
-          "nm:data-[disabled]:pointer-events-none nm:data-[disabled]:opacity-50",
-          /* Focused */
-          "nm:data-[focused]:bg-listbox-item-focused-bg nm:data-[focused]:text-listbox-item-focused-fg",
-          /* Hovered */
-          "nm:data-[hovered]:bg-listbox-item-hovered-bg nm:data-[hovered]:text-listbox-item-hovered-fg",
-          /* Selection */
-          "nm:data-[selection-mode]:pl-8",
+          "nm:data-disabled:pointer-events-none nm:data-disabled:opacity-50",
+          /* Focus */
+          "nm:data-focused:bg-listbox-item-focused-bg nm:data-focused:text-listbox-item-focused-fg",
+          /* Hover */
+          "nm:data-hovered:bg-listbox-item-hovered-bg nm:data-hovered:text-listbox-item-hovered-fg",
+          /* Selection Mode */
+          "nm:data-selection-mode:pl-8",
           className
         )
       )}

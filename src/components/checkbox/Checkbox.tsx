@@ -24,7 +24,7 @@ const Checkbox = ({ className, children, ...props }: AriaCheckboxProps) => (
       cn(
         "group/checkbox nm:flex nm:items-center nm:gap-x-2",
         /* Disabled */
-        "nm:data-[disabled]:cursor-not-allowed nm:data-[disabled]:opacity-70",
+        "nm:data-disabled:cursor-not-allowed nm:data-disabled:opacity-70",
         labelVariants,
         className
       )
@@ -37,13 +37,13 @@ const Checkbox = ({ className, children, ...props }: AriaCheckboxProps) => (
           className={cn(
             "nm:flex nm:size-4 nm:shrink-0 nm:items-center nm:justify-center nm:rounded-sm nm:border nm:border-primary nm:text-current nm:ring-offset-background",
             /* Focus Visible */
-            "nm:group-data-[focus-visible]/checkbox:outline-none nm:group-data-[focus-visible]/checkbox:ring-2 nm:group-data-[focus-visible]/checkbox:ring-ring nm:group-data-[focus-visible]/checkbox:ring-offset-2",
+            "nm:group-data-focus-visible/checkbox:outline-none nm:group-data-focus-visible/checkbox:ring-2 nm:group-data-focus-visible/checkbox:ring-ring nm:group-data-focus-visible/checkbox:ring-offset-2",
             /* Selected */
-            "nm:group-data-[indeterminate]/checkbox:bg-primary nm:group-data-[selected]/checkbox:bg-primary nm:group-data-[indeterminate]/checkbox:text-primary-foreground  nm:group-data-[selected]/checkbox:text-primary-foreground",
+            "nm:group-data-indeterminate/checkbox:bg-primary nm:group-data-selected/checkbox:bg-primary nm:group-data-indeterminate/checkbox:text-primary-foreground  nm:group-data-selected/checkbox:text-primary-foreground",
             /* Disabled */
-            "nm:group-data-[disabled]/checkbox:cursor-not-allowed nm:group-data-[disabled]/checkbox:opacity-50",
+            "nm:group-data-disabled/checkbox:cursor-not-allowed nm:group-data-disabled/checkbox:opacity-50",
             /* Invalid */
-            "nm:group-data-[invalid]/checkbox:border-destructive nm:group-data-[invalid]/checkbox:group-data-[selected]/checkbox:bg-destructive nm:group-data-[invalid]/checkbox:group-data-[selected]/checkbox:text-destructive-foreground",
+            "nm:group-data-invalid/checkbox:border-destructive nm:group-data-invalid/checkbox:group-data-selected/checkbox:bg-destructive nm:group-data-invalid/checkbox:group-data-selected/checkbox:text-destructive-foreground",
             /* Resets */
             "nm:focus:outline-none nm:focus-visible:outline-none"
           )}

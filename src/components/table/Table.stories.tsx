@@ -39,7 +39,7 @@ type Story = StoryObj<typeof Table>;
 // --- 1. Default Story ---
 export const Default: Story = {
   render: (args) => (
-    <div className="nm-w-[600px] nm-border nm-rounded-md">
+    <div className="nm:w-150 nm:border nm:rounded-md">
       <Table {...args}>
         <TableHeader>
           <Column isRowHeader>Name</Column>
@@ -86,7 +86,7 @@ export const Sortable: Story = {
     };
 
     return (
-      <div className="nm-w-[600px] nm-border nm-rounded-md">
+      <div className="nm:w-[600px] nm:border nm:rounded-md">
         <Table {...args} sortDescriptor={descriptor} onSortChange={sort}>
           <TableHeader>
             <Column id="name" isRowHeader allowsSorting>
@@ -125,8 +125,8 @@ export const Selection: Story = {
     const [selectedKeys, setSelectedKeys] = useState<Set<Key>>(new Set());
 
     return (
-      <div className="nm-w-[600px] nm-border nm-rounded-md nm-flex nm-flex-col nm-gap-2">
-        <div className="nm-p-2 nm-text-sm nm-text-muted-foreground">
+      <div className="nm:w-[600px] nm:border nm:rounded-md nm:flex nm:flex-col nm:gap-2">
+        <div className="nm:p-2 nm:text-sm nm:text-muted-foreground">
           {selectedKeys.size === 0
             ? "No rows selected"
             : `Selected IDs: ${Array.from(selectedKeys).join(", ")}`}
@@ -166,7 +166,7 @@ export const Selection: Story = {
 // --- 4. Resizable Story ---
 export const Resizable: Story = {
   render: (args) => (
-    <div className="nm-w-[600px] nm-border nm-rounded-md">
+    <div className="nm:w-[600px] nm:border nm:rounded-md">
       <ResizableTableContainer>
         <Table {...args}>
           <TableHeader>

@@ -95,8 +95,8 @@ export const Disabled: Story = {
 
 export const AllVariants: Story = {
   render: () => (
-    <div className="nm-flex nm-flex-col nm-gap-4">
-      <div className="nm-flex nm-gap-2 nm-flex-wrap">
+    <div className="nm:flex nm:flex-col nm:gap-4">
+      <div className="nm:flex nm:gap-2 nm:flex-wrap">
         <Button variant="default">Default</Button>
         <Button variant="destructive">Destructive</Button>
         <Button variant="outline">Outline</Button>
@@ -104,12 +104,12 @@ export const AllVariants: Story = {
         <Button variant="ghost">Ghost</Button>
         <Button variant="link">Link</Button>
       </div>
-      <div className="nm-flex nm-gap-2 nm-items-center">
+      <div className="nm:flex nm:gap-2 nm:items-center">
         <Button size="sm">Small</Button>
         <Button size="default">Default</Button>
         <Button size="lg">Large</Button>
       </div>
-      <div className="nm-flex nm-gap-2">
+      <div className="nm:flex nm:gap-2">
         <Button>Enabled</Button>
         <Button isDisabled>Disabled</Button>
       </div>

@@ -42,9 +42,9 @@ const SelectValue = <T extends object>({
   <AriaSelectValue
     className={composeRenderProps(className, (className) =>
       cn(
-        "nm-line-clamp-1 data-[placeholder]:nm-text-muted-foreground",
+        "nm:line-clamp-1 nm:data-[placeholder]:text-select-placeholder-fg",
         /* Description */
-        "[&>[slot=description]]:nm-hidden",
+        "nm:[&>[slot=description]]:hidden",
         className
       )
     )}
@@ -56,13 +56,13 @@ const SelectTrigger = ({ className, children, ...props }: AriaButtonProps) => (
   <AriaButton
     className={composeRenderProps(className, (className) =>
       cn(
-        "nm-flex nm-h-10 nm-w-full nm-items-center nm-justify-between nm-rounded-md nm-border nm-border-input nm-bg-background nm-px-3 nm-py-2 nm-text-sm nm-ring-offset-background",
+        "nm:flex nm:h-10 nm:w-full nm:items-center nm:justify-between nm:rounded-md nm:border nm:border-select-trigger-border nm:bg-select-trigger-bg nm:text-select-trigger-fg nm:px-3 nm:py-2 nm:text-sm nm:ring-offset-background",
         /* Disabled */
-        "data-[disabled]:nm-cursor-not-allowed data-[disabled]:nm-opacity-50",
+        "nm:data-[disabled]:cursor-not-allowed nm:data-[disabled]:opacity-50",
         /* Focused */
-        "data-[focus-visible]:nm-outline-none data-[focus-visible]:nm-ring-2 data-[focus-visible]:nm-ring-ring data-[focus-visible]:nm-ring-offset-2",
+        "nm:data-[focus-visible]:outline-none nm:data-[focus-visible]:ring-2 nm:data-[focus-visible]:ring-select-trigger-ring nm:data-[focus-visible]:ring-offset-2",
         /* Resets */
-        "focus-visible:nm-outline-none",
+        "nm:focus-visible:outline-none",
         className
       )
     )}
@@ -71,7 +71,7 @@ const SelectTrigger = ({ className, children, ...props }: AriaButtonProps) => (
     {composeRenderProps(children, (children) => (
       <>
         {children}
-        <ChevronDown aria-hidden="true" className="nm-size-4 nm-opacity-50" />
+        <ChevronDown aria-hidden="true" className="nm:size-4 nm:opacity-50" />
       </>
     ))}
   </AriaButton>
@@ -80,7 +80,7 @@ const SelectTrigger = ({ className, children, ...props }: AriaButtonProps) => (
 const SelectPopover = ({ className, ...props }: AriaPopoverProps) => (
   <Popover
     className={composeRenderProps(className, (className) =>
-      cn("nm-w-[--trigger-width]", className)
+      cn("nm:w-[--trigger-width]", className)
     )}
     {...props}
   />
@@ -93,7 +93,7 @@ const SelectListBox = <T extends object>({
   <AriaListBox
     className={composeRenderProps(className, (className) =>
       cn(
-        "nm-max-h-[inherit] nm-overflow-auto nm-p-1 nm-outline-none [clip-path:inset(0_0_0_0_round_calc(var(--radius)-2px))]",
+        "nm:max-h-[inherit] nm:overflow-auto nm:p-1 nm:outline-none [clip-path:inset(0_0_0_0_round_calc(var(--radius)-2px))]",
         className
       )
     )}
@@ -122,7 +122,7 @@ function ComposedSelect<T extends object>({
   return (
     <Select
       className={composeRenderProps(className, (className) =>
-        cn("nm-group nm-flex nm-flex-col nm-gap-2", className)
+        cn("nm:group nm:flex nm:flex-col nm:gap-2", className)
       )}
       {...props}
     >
@@ -132,7 +132,7 @@ function ComposedSelect<T extends object>({
       </SelectTrigger>
       {description && (
         <Text
-          className="nm-text-sm nm-text-muted-foreground"
+          className="nm:text-sm nm:text-muted-foreground"
           slot="description"
         >
           {description}

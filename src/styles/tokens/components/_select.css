@@ -1,0 +1,27 @@
+/**
+ * Component Tokens - Select
+ * 
+ * All select-specific design tokens.
+ */
+
+:root {
+  /* Select Trigger */
+  --nm-select-trigger-bg: var(--nm-background);
+  --nm-select-trigger-fg: var(--nm-foreground);
+  --nm-select-trigger-border: var(--nm-input);
+  --nm-select-trigger-ring: var(--nm-ring);
+
+  /* Select Placeholder */
+  --nm-select-placeholder-fg: var(--nm-muted-foreground);
+}
+
+@theme {
+  /* Select Trigger */
+  --color-select-trigger-bg: var(--nm-select-trigger-bg);
+  --color-select-trigger-fg: var(--nm-select-trigger-fg);
+  --color-select-trigger-border: var(--nm-select-trigger-border);
+  --color-select-trigger-ring: var(--nm-select-trigger-ring);
+
+  /* Select Placeholder */
+  --color-select-placeholder-fg: var(--nm-select-placeholder-fg);
+}

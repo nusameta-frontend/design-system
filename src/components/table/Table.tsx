@@ -29,7 +29,7 @@ const Table = ({ className, ...props }: TableProps) => (
   <AriaTable
     className={composeRenderProps(className, (className) =>
       cn(
-        "nm-w-full nm-caption-bottom nm-text-sm -nm-outline-offset-2 data-[focus-visible]:nm-outline-ring",
+        "nm:w-full nm:caption-bottom nm:text-sm nm:-outline-offset-2 nm:data-[focus-visible]:outline-ring",
         className
       )
     )}
@@ -43,7 +43,7 @@ const TableHeader = <T extends object>({
 }: TableHeaderProps<T>) => (
   <AriaTableHeader
     className={composeRenderProps(className, (className) =>
-      cn("[&_tr]:nm-border-b", className)
+      cn("nm:[&_tr]:border-b", className)
     )}
     {...props}
   />
@@ -57,29 +57,29 @@ const Column = ({ className, children, ...props }: ColumnProps) => (
   <AriaColumn
     className={composeRenderProps(className, (className) =>
       cn(
-        "nm-h-12 nm-text-left nm-align-middle nm-font-medium nm-text-muted-foreground -nm-outline-offset-2 data-[focus-visible]:nm-outline-ring",
+        "nm:h-12 nm:text-left nm:align-middle nm:font-medium nm:text-table-header-fg nm:-outline-offset-2 nm:data-focus-visible:outline-ring",
         className
       )
     )}
     {...props}
   >
     {composeRenderProps(children, (children, { allowsSorting }) => (
-      <div className="nm-flex nm-items-center">
+      <div className="nm:flex nm:items-center">
         <Group
           role="presentation"
           tabIndex={-1}
           className={cn(
-            "nm-flex nm-h-10 nm-flex-1 nm-items-center nm-gap-1 nm-overflow-hidden nm-rounded-md nm-px-4",
+            "nm:flex nm:h-10 nm:flex-1 nm:items-center nm:gap-1 nm:overflow-hidden nm:rounded-md nm:px-4",
             allowsSorting &&
-              "nm-p-2 data-[hovered]:nm-bg-accent data-[hovered]:nm-text-accent-foreground",
-            "focus-visible:nm-outline-none  data-[focus-visible]:-nm-outline-offset-2 data-[focus-visible]:nm-outline-ring [&:has([slot=selection])]:nm-pr-0"
+              "nm:p-2 nm:data-hovered:bg-table-column-sortable-hover-bg nm:data-hovered:text-table-column-sortable-hover-fg",
+            "nm:focus-visible:outline-none nm:data-focus-visible:-outline-offset-2 nm:data-focus-visible:outline-ring nm:[&:has([slot=selection])]:pr-0"
           )}
         >
-          <span className="nm-truncate">{children}</span>
-          {allowsSorting && <ArrowUpDown className="nm-ml-2 nm-size-4" />}
+          <span className="nm:truncate">{children}</span>
+          {allowsSorting && <ArrowUpDown className="nm:ml-2 nm:size-4" />}
         </Group>
         {props.isResizable && (
-          <ColumnResizer className="data-[focus-visible]:nm-ring-rin nm-box-content nm-h-5 nm-w-px nm-translate-x-[8px] nm-cursor-col-resize nm-rounded nm-bg-muted-foreground nm-bg-clip-content nm-px-[8px]  nm-py-1 focus-visible:nm-outline-none data-[resizing]:nm-w-[2px] data-[resizing]:nm-bg-primary data-[resizing]:nm-pl-[7px] data-[focus-visible]:nm-ring-1  data-[focus-visible]:nm-ring-ring" />
+          <ColumnResizer className="nm:box-content nm:h-5 nm:w-px nm:translate-x-[8px] nm:cursor-col-resize nm:rounded nm:bg-table-resizer-bg nm:bg-clip-content nm:px-[8px] nm:py-1 nm:focus-visible:outline-none nm:data-[resizing]:w-[2px] nm:data-[resizing]:bg-table-resizer-active-bg nm:data-[resizing]:pl-[7px] nm:data-[focus-visible]:ring-1 nm:data-[focus-visible]:ring-ring" />
         )}
       </div>
     ))}
@@ -93,7 +93,7 @@ const TableBody = <T extends object>({
   <AriaTableBody
     className={composeRenderProps(className, (className) =>
       cn(
-        "-nm-outline-offset-2 data-[empty]:nm-h-24 data-[empty]:nm-text-center data-[focus-visible]:nm-outline-ring [&_tr:last-child]:nm-border-0",
+        "nm:-outline-offset-2 nm:data-[empty]:h-24 nm:data-[empty]:text-center nm:data-[focus-visible]:outline-ring nm:[&_tr:last-child]:border-0",
         className
       )
     )}
@@ -103,12 +103,9 @@ const TableBody = <T extends object>({
 
 const Row = <T extends object>({ className, ...props }: RowProps<T>) => (
   <AriaRow
-    className={composeRenderProps(className, (className, renderProps) =>
+    className={composeRenderProps(className, (className) =>
       cn(
-        "nm-border-b -nm-outline-offset-2 nm-transition-colors data-[hovered]:nm-bg-muted/50 data-[focus-visible]:nm-outline-ring",
-        renderProps.isSelected
-          ? "nm-bg-table-row-selected-highlight/10 data-[hovered]:nm-bg-table-row-selected-highlight-hover/15"
-          : "data-[selected]:nm-bg-muted",
+        "nm:border-b nm:-outline-offset-2 nm:transition-colors nm:data-[hovered]:bg-table-row-hover-bg nm:data-[selected]:bg-table-row-selected-bg nm:data-[focus-visible]:outline-ring",
         className
       )
     )}
@@ -120,7 +117,7 @@ const Cell = ({ className, ...props }: CellProps) => (
   <AriaCell
     className={composeRenderProps(className, (className) =>
       cn(
-        "nm-p-4 nm-align-middle -nm-outline-offset-2 data-[focus-visible]:nm-outline-ring [&:has([role=checkbox])]:nm-pr-0",
+        "nm:p-4 nm:align-middle nm:-outline-offset-2 nm:data-[focus-visible]:outline-ring nm:[&:has([role=checkbox])]:pr-0",
         className
       )
     )}

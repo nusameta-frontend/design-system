@@ -22,7 +22,7 @@ type Story = StoryObj<typeof ListBox>;
 
 export const Default: Story = {
   render: () => (
-    <div className="nm-w-[280px]">
+    <div className="nm:w-[280px]">
       <ListBox aria-label="Fruits">
         <ListBoxItem id="apple">Apple</ListBoxItem>
         <ListBoxItem id="banana">Banana</ListBoxItem>
@@ -36,7 +36,7 @@ export const Default: Story = {
 
 export const WithSections: Story = {
   render: () => (
-    <div className="nm-w-[280px]">
+    <div className="nm:w-[280px]">
       <ListBox aria-label="Foods">
         <ListBoxSection>
           <ListBoxHeader>Fruits</ListBoxHeader>
@@ -61,7 +61,7 @@ export const SingleSelection: Story = {
     const [selected, setSelected] = useState<Selection>(new Set(["apple"]));
 
     return (
-      <div className="nm-w-[280px] nm-flex nm-flex-col nm-gap-4">
+      <div className="nm:w-[280px] nm:flex nm:flex-col nm:gap-4">
         <ListBox
           aria-label="Fruits"
           selectionMode="single"
@@ -74,7 +74,7 @@ export const SingleSelection: Story = {
           <ListBoxItem id="strawberry">Strawberry</ListBoxItem>
           <ListBoxItem id="grape">Grape</ListBoxItem>
         </ListBox>
-        <div className="nm-text-sm nm-text-muted-foreground">
+        <div className="nm:text-sm nm:text-muted-foreground">
           Selected: {Array.from(selected).join(", ")}
         </div>
       </div>
@@ -90,7 +90,7 @@ export const MultipleSelection: Story = {
     );
 
     return (
-      <div className="nm-w-[280px] nm-flex nm-flex-col nm-gap-4">
+      <div className="nm:w-[280px] nm:flex nm:flex-col nm:gap-4">
         <ListBox
           aria-label="Fruits"
           selectionMode="multiple"
@@ -103,7 +103,7 @@ export const MultipleSelection: Story = {
           <ListBoxItem id="strawberry">Strawberry</ListBoxItem>
           <ListBoxItem id="grape">Grape</ListBoxItem>
         </ListBox>
-        <div className="nm-text-sm nm-text-muted-foreground">
+        <div className="nm:text-sm nm:text-muted-foreground">
           Selected: {Array.from(selected).join(", ")}
         </div>
       </div>
@@ -113,7 +113,7 @@ export const MultipleSelection: Story = {
 
 export const DisabledItems: Story = {
   render: () => (
-    <div className="nm-w-[280px]">
+    <div className="nm:w-[280px]">
       <ListBox
         aria-label="Fruits"
         selectionMode="single"
@@ -131,7 +131,7 @@ export const DisabledItems: Story = {
 
 export const Empty: Story = {
   render: () => (
-    <div className="nm-w-[280px]">
+    <div className="nm:w-[280px]">
       <ListBox aria-label="Empty list" renderEmptyState={() => "No items"}>
         {[]}
       </ListBox>
@@ -149,7 +149,7 @@ export const Dynamic: Story = {
     ];
 
     return (
-      <div className="nm-w-[280px]">
+      <div className="nm:w-[280px]">
         <ListBox aria-label="Foods" items={items} selectionMode="single">
           {(item) => <ListBoxItem id={item.id}>{item.name}</ListBoxItem>}
         </ListBox>

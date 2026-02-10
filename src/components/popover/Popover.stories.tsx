@@ -20,8 +20,8 @@ export const Default: Story = {
       <Button>Open Popover</Button>
       <Popover>
         <PopoverDialog>
-          <div className="nm-text-sm nm-font-medium">Popover Content</div>
-          <p className="nm-text-xs nm-text-muted-foreground nm-mt-2">
+          <div className="nm:text-sm nm:font-medium">Popover Content</div>
+          <p className="nm:text-xs nm:text-muted-foreground nm:mt-2">
             This is a simple popover component
           </p>
         </PopoverDialog>
@@ -36,9 +36,9 @@ export const WithTitle: Story = {
       <Button>Settings</Button>
       <Popover>
         <PopoverDialog>
-          <div className="nm-space-y-2">
-            <h3 className="nm-font-semibold">Settings</h3>
-            <p className="nm-text-sm nm-text-muted-foreground">
+          <div className="nm:space-y-2">
+            <h3 className="nm:font-semibold">Settings</h3>
+            <p className="nm:text-sm nm:text-muted-foreground">
               Configure your preferences here
             </p>
           </div>
@@ -54,14 +54,14 @@ export const WithActions: Story = {
       <Button>More Options</Button>
       <Popover>
         <PopoverDialog>
-          <div className="nm-space-y-2">
-            <button className="nm-w-full nm-text-left nm-px-2 nm-py-1 nm-text-sm nm-rounded hover:nm-bg-muted">
+          <div className="nm:space-y-2">
+            <button className="nm:w-full nm:text-left nm:px-2 nm:py-1 nm:text-sm nm:rounded nm:hover:bg-muted">
               Edit
             </button>
-            <button className="nm-w-full nm-text-left nm-px-2 nm-py-1 nm-text-sm nm-rounded hover:nm-bg-muted">
+            <button className="nm:w-full nm:text-left nm:px-2 nm:py-1 nm:text-sm nm:rounded nm:hover:bg-muted">
               Delete
             </button>
-            <button className="nm-w-full nm-text-left nm-px-2 nm-py-1 nm-text-sm nm-rounded hover:nm-bg-muted">
+            <button className="nm:w-full nm:text-left nm:px-2 nm:py-1 nm:text-sm nm:rounded nm:hover:bg-muted">
               Share
             </button>
           </div>
@@ -73,12 +73,12 @@ export const WithActions: Story = {
 
 export const TopPlacement: Story = {
   render: () => (
-    <div className="nm-pt-32">
+    <div className="nm:pt-32">
       <PopoverTrigger>
         <Button>Top Popover</Button>
         <Popover placement="top">
           <PopoverDialog>
-            <div className="nm-text-sm">Popover positioned on top</div>
+            <div className="nm:text-sm">Popover positioned on top</div>
           </PopoverDialog>
         </Popover>
       </PopoverTrigger>
@@ -92,7 +92,7 @@ export const BottomPlacement: Story = {
       <Button>Bottom Popover</Button>
       <Popover placement="bottom">
         <PopoverDialog>
-          <div className="nm-text-sm">Popover positioned on bottom</div>
+          <div className="nm:text-sm">Popover positioned on bottom</div>
         </PopoverDialog>
       </Popover>
     </PopoverTrigger>
@@ -101,12 +101,12 @@ export const BottomPlacement: Story = {
 
 export const LeftPlacement: Story = {
   render: () => (
-    <div className="nm-pl-32">
+    <div className="nm:pl-32">
       <PopoverTrigger>
         <Button>Left Popover</Button>
         <Popover placement="left">
           <PopoverDialog>
-            <div className="nm-text-sm">Popover positioned on left</div>
+            <div className="nm:text-sm">Popover positioned on left</div>
           </PopoverDialog>
         </Popover>
       </PopoverTrigger>
@@ -116,12 +116,12 @@ export const LeftPlacement: Story = {
 
 export const RightPlacement: Story = {
   render: () => (
-    <div className="nm-pr-32">
+    <div className="nm:pr-32">
       <PopoverTrigger>
         <Button>Right Popover</Button>
         <Popover placement="right">
           <PopoverDialog>
-            <div className="nm-text-sm">Popover positioned on right</div>
+            <div className="nm:text-sm">Popover positioned on right</div>
           </PopoverDialog>
         </Popover>
       </PopoverTrigger>
@@ -135,23 +135,23 @@ export const WithForm: Story = {
       <Button>Form</Button>
       <Popover>
         <PopoverDialog>
-          <div className="nm-space-y-3 nm-min-w-[250px]">
-            <h3 className="nm-font-semibold">Quick Add</h3>
+          <div className="nm:space-y-3 nm:min-w-[250px]">
+            <h3 className="nm:font-semibold">Quick Add</h3>
             <input
               type="text"
               placeholder="Enter name"
-              className="nm-w-full nm-px-2 nm-py-1 nm-text-sm nm-border nm-rounded"
+              className="nm:w-full nm:px-2 nm:py-1 nm:text-sm nm:border nm:rounded"
             />
             <input
               type="email"
               placeholder="Enter email"
-              className="nm-w-full nm-px-2 nm-py-1 nm-text-sm nm-border nm-rounded"
+              className="nm:w-full nm:px-2 nm:py-1 nm:text-sm nm:border nm:rounded"
             />
-            <div className="nm-flex nm-gap-2">
-              <button className="nm-flex-1 nm-px-2 nm-py-1 nm-text-sm nm-bg-primary nm-text-primary-foreground nm-rounded">
+            <div className="nm:flex nm:gap-2">
+              <button className="nm:flex-1 nm:px-2 nm:py-1 nm:text-sm nm:bg-primary nm:text-primary-foreground nm:rounded">
                 Submit
               </button>
-              <button className="nm-flex-1 nm-px-2 nm-py-1 nm-text-sm nm-border nm-rounded">
+              <button className="nm:flex-1 nm:px-2 nm:py-1 nm:text-sm nm:border nm:rounded">
                 Cancel
               </button>
             </div>
@@ -168,7 +168,7 @@ export const CustomOffset: Story = {
       <Button>Large Offset</Button>
       <Popover offset={16}>
         <PopoverDialog>
-          <div className="nm-text-sm">Popover with larger offset</div>
+          <div className="nm:text-sm">Popover with larger offset</div>
         </PopoverDialog>
       </Popover>
     </PopoverTrigger>

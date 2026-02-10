@@ -14,12 +14,12 @@ import {
 import { cn } from "@/lib/utils";
 
 const labelVariants = cva([
-  "nm-text-sm nm-font-medium nm-leading-none",
-  "nm-text-textfield-label",
+  "nm:text-sm nm:font-medium nm:leading-none",
+  "nm:text-textfield-label-fg",
   /* Disabled */
-  "data-[disabled]:nm-cursor-not-allowed data-[disabled]:nm-opacity-70",
+  "nm:data-[disabled]:cursor-not-allowed nm:data-[disabled]:opacity-70",
   /* Invalid */
-  "group-data-[invalid]:nm-text-textfield-label-error",
+  "group-nm:data-[invalid]:text-textfield-label-error-fg",
 ]);
 
 const Label = ({ className, ...props }: AriaLabelProps) => (
@@ -29,10 +29,7 @@ const Label = ({ className, ...props }: AriaLabelProps) => (
 function FormDescription({ className, ...props }: AriaTextProps) {
   return (
     <AriaText
-      className={cn(
-        "nm-text-sm nm-text-textfield-helper",
-        className
-      )}
+      className={cn("nm:text-sm nm:text-textfield-helper", className)}
       {...props}
       slot="description"
     />
@@ -43,7 +40,7 @@ function FieldError({ className, ...props }: AriaFieldErrorProps) {
   return (
     <AriaFieldError
       className={cn(
-        "nm-text-sm nm-font-medium nm-text-textfield-helper-error",
+        "nm:text-sm nm:font-medium nm:text-textfield-helper-error-fg",
         className
       )}
       {...props}
@@ -55,13 +52,13 @@ const fieldGroupVariants = cva("", {
   variants: {
     variant: {
       default: [
-        "nm-relative nm-flex nm-h-10 nm-w-full nm-items-center nm-overflow-hidden nm-rounded-md nm-border nm-px-3 nm-py-2 nm-text-sm nm-ring-offset-background",
+        "nm:relative nm:flex nm:h-10 nm:w-full nm:items-center nm:overflow-hidden nm:rounded-md nm:border nm:px-3 nm:py-2 nm:text-sm nm:ring-offset-background",
         /* Base Styles from Tokens */
-        "nm-border-textfield-border nm-bg-textfield",
+        "nm:border-textfield-border nm:bg-textfield",
         /* Focus Within */
-        "data-[focus-within]:nm-outline-none data-[focus-within]:nm-ring-2 [data-focus-within]:[--nm-textfield-focus-ring:var(--nm-textfield-ring)] data-[focus-within]:nm-ring-offset-2",
+        "nm:data-[focus-within]:outline-none nm:data-[focus-within]:ring-2 [data-focus-within]:[--nm-textfield-focus-ring:var(--nm-textfield-ring)] nm:data-[focus-within]:ring-offset-2",
         /* Disabled */
-        "data-[disabled]:nm-opacity-50",
+        "nm:data-[disabled]:opacity-50",
       ],
       ghost: "",
     },

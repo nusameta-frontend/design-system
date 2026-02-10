@@ -54,7 +54,7 @@ export const WithoutLabel: Story = {
 
 export const AllStates: Story = {
   render: () => (
-    <div className="nm-flex nm-flex-col nm-gap-4">
+    <div className="nm:flex nm:flex-col nm:gap-4">
       <Checkbox>Unchecked</Checkbox>
       <Checkbox defaultSelected>Checked</Checkbox>
       <Checkbox isIndeterminate>Indeterminate</Checkbox>

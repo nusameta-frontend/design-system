@@ -25,9 +25,9 @@ function ListBox<T extends object>({
       className={composeRenderProps(className, (className) =>
         cn(
           className,
-          "nm-group nm-overflow-auto nm-rounded-md nm-border nm-bg-popover nm-p-1 nm-text-popover-foreground nm-shadow-md nm-outline-none",
+          "nm:group nm:overflow-auto nm:rounded-md nm:border nm:border-listbox-border nm:bg-listbox-bg nm:p-1 nm:text-listbox-fg nm:shadow-md nm:outline-none",
           /* Empty */
-          "data-[empty]:nm-p-6 data-[empty]:nm-text-center data-[empty]:nm-text-sm"
+          "nm:data-[empty]:p-6 nm:data-[empty]:text-center nm:data-[empty]:text-sm"
         )
       )}
       {...props}
@@ -47,15 +47,15 @@ const ListBoxItem = <T extends object>({
       }
       className={composeRenderProps(className, (className) =>
         cn(
-          "nm-relative nm-flex nm-w-full nm-cursor-default nm-select-none nm-items-center nm-rounded-sm nm-px-2 nm-py-1.5 nm-text-sm nm-outline-none",
+          "nm:relative nm:flex nm:w-full nm:cursor-default nm:select-none nm:items-center nm:rounded-sm nm:px-2 nm:py-1.5 nm:text-sm nm:text-listbox-item-fg nm:outline-none",
           /* Disabled */
-          "data-[disabled]:nm-pointer-events-none data-[disabled]:nm-opacity-50",
+          "nm:data-[disabled]:pointer-events-none nm:data-[disabled]:opacity-50",
           /* Focused */
-          "data-[focused]:nm-bg-accent data-[focused]:nm-text-accent-foreground",
+          "nm:data-[focused]:bg-listbox-item-focused-bg nm:data-[focused]:text-listbox-item-focused-fg",
           /* Hovered */
-          "data-[hovered]:nm-bg-accent data-[hovered]:nm-text-accent-foreground",
+          "nm:data-[hovered]:bg-listbox-item-hovered-bg nm:data-[hovered]:text-listbox-item-hovered-fg",
           /* Selection */
-          "data-[selection-mode]:nm-pl-8",
+          "nm:data-[selection-mode]:pl-8",
           className
         )
       )}
@@ -64,8 +64,8 @@ const ListBoxItem = <T extends object>({
       {composeRenderProps(children, (children, renderProps) => (
         <>
           {renderProps.isSelected && (
-            <span className="nm-absolute nm-left-2 nm-flex nm-size-4 nm-items-center nm-justify-center">
-              <Check className="nm-size-4" />
+            <span className="nm:absolute nm:left-2 nm:flex nm:size-4 nm:items-center nm:justify-center">
+              <Check className="nm:size-4" />
             </span>
           )}
           {children}
@@ -82,7 +82,7 @@ function ListBoxHeader({
   return (
     <AriaHeader
       className={cn(
-        "nm-py-1.5 nm-pl-8 nm-pr-2 nm-text-sm nm-font-semibold",
+        "nm:py-1.5 nm:pl-8 nm:pr-2 nm:text-sm nm:font-semibold",
         className
       )}
       {...props}

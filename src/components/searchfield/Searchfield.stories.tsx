@@ -62,11 +62,11 @@ export const WithPlaceholder: Story = {
       <SearchFieldGroup>
         <SearchIcon
           aria-hidden
-          className="nm-size-4 nm-text-muted-foreground"
+          className="nm:size-4 nm:text-muted-foreground"
         />
         <SearchFieldInput placeholder="Ketik untuk mencari..." />
         <SearchFieldClear>
-          <XIcon aria-hidden className="nm-size-4" />
+          <XIcon aria-hidden className="nm:size-4" />
         </SearchFieldClear>
       </SearchFieldGroup>
     </SearchField>
@@ -111,16 +111,16 @@ export const WithHelperText: Story = {
 // 7. Custom SearchField
 export const CustomSearchField: Story = {
   render: () => (
-    <SearchField className="nm-w-80">
+    <SearchField className="nm:w-80">
       <Label>Cari Artikel</Label>
       <SearchFieldGroup>
         <SearchIcon
           aria-hidden
-          className="nm-size-4 nm-text-muted-foreground"
+          className="nm:size-4 nm:text-muted-foreground"
         />
         <SearchFieldInput placeholder="Cari berdasarkan judul..." />
         <SearchFieldClear>
-          <XIcon aria-hidden className="nm-size-4" />
+          <XIcon aria-hidden className="nm:size-4" />
         </SearchFieldClear>
       </SearchFieldGroup>
     </SearchField>
@@ -131,17 +131,17 @@ export const CustomSearchField: Story = {
 export const Compact: Story = {
   render: () => (
     <SearchField>
-      <SearchFieldGroup className="nm-h-8">
+      <SearchFieldGroup className="nm:h-8">
         <SearchIcon
           aria-hidden
-          className="nm-size-3 nm-text-muted-foreground"
+          className="nm:size-3 nm:text-muted-foreground"
         />
         <SearchFieldInput
           placeholder="Quick search..."
-          className="nm-text-xs"
+          className="nm:text-xs"
         />
         <SearchFieldClear>
-          <XIcon aria-hidden className="nm-size-3" />
+          <XIcon aria-hidden className="nm:size-3" />
         </SearchFieldClear>
       </SearchFieldGroup>
     </SearchField>

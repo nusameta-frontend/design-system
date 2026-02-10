@@ -15,3 +15,9 @@
   --nm-card: var(--nm-color-gray-800);
   --nm-card-foreground: var(--nm-color-gray-50);
 }
+
+@theme {
+  /* Card */
+  --color-card: var(--nm-card);
+  --color-card-foreground: var(--nm-card-foreground);
+}

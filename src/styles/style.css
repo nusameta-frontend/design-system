@@ -1,4 +1,179 @@
+/* @layer theme, base, components, utilities;
+
+@import "tailwindcss/theme.css" layer(theme) prefix(nm);
+@import "tailwindcss/utilities.css" layer(utilities) prefix(nm); */
+@import "tailwindcss" prefix(nm);
 @import "@/styles/tokens.css";
 
-@tailwind components;
-@tailwind utilities;
+@theme {
+  /* Prefix */
+  --prefix: nm;
+
+  /* Container */
+  --container-center: true;
+  --container-padding: 2rem;
+  --container-screens-2xl: 1400px;
+
+  /* Font Family */
+  --font-family-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family-heading: "Inter", sans-serif;
+
+  /* Base Semantic Colors - untuk Tailwind utilities */
+  --color-border: oklch(var(--nm-border) / <alpha-value>);
+  --color-input: oklch(var(--nm-input) / <alpha-value>);
+  --color-ring: oklch(var(--nm-ring) / <alpha-value>);
+  --color-background: oklch(var(--nm-background) / <alpha-value>);
+  --color-foreground: oklch(var(--nm-foreground) / <alpha-value>);
+
+  --color-primary: oklch(var(--nm-primary) / <alpha-value>);
+  --color-primary-foreground: oklch(
+    var(--nm-primary-foreground) / <alpha-value>
+  );
+
+  --color-secondary: oklch(var(--nm-secondary) / <alpha-value>);
+  --color-secondary-foreground: oklch(
+    var(--nm-secondary-foreground) / <alpha-value>
+  );
+
+  --color-destructive: oklch(var(--nm-destructive) / <alpha-value>);
+  --color-destructive-foreground: oklch(
+    var(--nm-destructive-foreground) / <alpha-value>
+  );
+
+  --color-muted: oklch(var(--nm-muted) / <alpha-value>);
+  --color-muted-foreground: oklch(var(--nm-muted-foreground) / <alpha-value>);
+
+  --color-accent: oklch(var(--nm-accent) / <alpha-value>);
+  --color-accent-foreground: oklch(var(--nm-accent-foreground) / <alpha-value>);
+
+  /* Border Radius */
+  --radius-lg: var(--nm-radius);
+  --radius-md: calc(var(--nm-radius) - 2px);
+  --radius-sm: calc(var(--nm-radius) - 4px);
+
+  /* Animations */
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+}
+
+@keyframes accordion-down {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--nm-radix-accordion-content-height);
+  }
+}
+
+@keyframes accordion-up {
+  from {
+    height: var(--nm-radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}
+
+@keyframes in {
+  from {
+    opacity: var(--nm-tw-enter-opacity, 1);
+    transform: translate3d(
+        var(--nm-tw-enter-translate-x, 0),
+        var(--nm-tw-enter-translate-y, 0),
+        0
+      )
+      scale3d(
+        var(--nm-tw-enter-scale, 1),
+        var(--nm-tw-enter-scale, 1),
+        var(--nm-tw-enter-scale, 1)
+      )
+      rotate(var(--nm-tw-enter-rotate, 0));
+  }
+}
+
+@keyframes out {
+  to {
+    opacity: var(--nm-tw-exit-opacity, 1);
+    transform: translate3d(
+        var(--nm-tw-exit-translate-x, 0),
+        var(--nm-tw-exit-translate-y, 0),
+        0
+      )
+      scale3d(
+        var(--nm-tw-exit-scale, 1),
+        var(--nm-tw-exit-scale, 1),
+        var(--nm-tw-exit-scale, 1)
+      )
+      rotate(var(--nm-tw-exit-rotate, 0));
+  }
+}
+
+/* Animation utilities for Tailwind v4 */
+@utility animate-in {
+  animation-name: in;
+  animation-duration: 150ms;
+  --nm-tw-enter-opacity: initial;
+  --nm-tw-enter-scale: initial;
+  --nm-tw-enter-rotate: initial;
+  --nm-tw-enter-translate-x: initial;
+  --nm-tw-enter-translate-y: initial;
+}
+
+@utility animate-out {
+  animation-name: out;
+  animation-duration: 150ms;
+  --nm-tw-exit-opacity: initial;
+  --nm-tw-exit-scale: initial;
+  --nm-tw-exit-rotate: initial;
+  --nm-tw-exit-translate-x: initial;
+  --nm-tw-exit-translate-y: initial;
+}
+
+@utility fade-in-0 {
+  --nm-tw-enter-opacity: 0;
+}
+
+@utility fade-out-0 {
+  --nm-tw-exit-opacity: 0;
+}
+
+@utility zoom-in-95 {
+  --nm-tw-enter-scale: 0.95;
+}
+
+@utility zoom-out-95 {
+  --nm-tw-exit-scale: 0.95;
+}
+
+@utility slide-in-from-top-2 {
+  --nm-tw-enter-translate-y: -0.5rem;
+}
+
+@utility slide-in-from-bottom-2 {
+  --nm-tw-enter-translate-y: 0.5rem;
+}
+
+@utility slide-in-from-left-2 {
+  --nm-tw-enter-translate-x: -0.5rem;
+}
+
+@utility slide-in-from-right-2 {
+  --nm-tw-enter-translate-x: 0.5rem;
+}
+
+@utility slide-out-to-top-2 {
+  --nm-tw-exit-translate-y: -0.5rem;
+}
+
+@utility slide-out-to-bottom-2 {
+  --nm-tw-exit-translate-y: 0.5rem;
+}
+
+@utility slide-out-to-left-2 {
+  --nm-tw-exit-translate-x: -0.5rem;
+}
+
+@utility slide-out-to-right-2 {
+  --nm-tw-exit-translate-x: 0.5rem;
+}

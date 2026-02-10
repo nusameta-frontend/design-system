@@ -27,19 +27,19 @@ const Input = ({ className, ...props }: InputProps) => {
     <AriaInput
       className={composeRenderProps(className, (className) =>
         cn(
-          "nm-flex nm-h-10 nm-w-full nm-rounded-md nm-border nm-px-3 nm-py-2 nm-text-sm nm-ring-offset-background nm-transition-colors",
+          "nm:flex nm:h-10 nm:w-full nm:rounded-md nm:border nm:px-3 nm:py-2 nm:text-sm nm:ring-offset-background nm:transition-colors",
           /* Base Styles from Tokens */
-          "nm-border-textfield-border nm-text-textfield-foreground nm-bg-textfield",
+          "nm:border-textfield-border nm:text-textfield-fg nm:bg-textfield-bg",
           /* File Input Reset */
-          "file:nm-border-0 file:nm-bg-transparent file:nm-text-sm file:nm-font-medium",
+          "nm:file:border-0 nm:file:bg-transparent nm:file:text-sm nm:file:font-medium",
           /* Placeholder */
-          "placeholder:nm-opacity-100 placeholder:nm-text-textfield-placeholder",
+          "nm:placeholder:opacity-100 nm:placeholder:text-textfield-placeholder",
           /* Disabled State */
-          "data-[disabled]:nm-cursor-not-allowed data-[disabled]:nm-opacity-50 data-[disabled]:nm-bg-textfield-disabled data-[disabled]:nm-text-textfield-disabled-foreground",
+          "nm:data-[disabled]:cursor-not-allowed nm:data-[disabled]:opacity-50 nm:data-[disabled]:bg-textfield-disabled-bg nm:data-[disabled]:text-textfield-disabled-fg",
           /* Focused State */
-          "data-[focused]:nm-outline-none data-[focused]:nm-ring-2 [data-focused]:[--nm-textfield-focus-ring:var(--nm-textfield-ring)] data-[focused]:nm-ring-offset-2",
+          "nm:data-[focused]:outline-none nm:data-[focused]:ring-2 nm:data-[focused]:ring-textfield-focus-ring nm:data-[focused]:ring-offset-2",
           /* Resets */
-          "focus-visible:nm-outline-none",
+          "nm:focus-visible:outline-none",
           className
         )
       )}
@@ -53,17 +53,17 @@ const TextArea = ({ className, ...props }: AriaTextAreaProps) => {
     <AriaTextArea
       className={composeRenderProps(className, (className) =>
         cn(
-          "nm-flex nm-min-h-[80px] nm-w-full nm-rounded-md nm-border nm-px-3 nm-py-2 nm-text-sm nm-ring-offset-background nm-transition-colors",
+          "nm:flex nm:min-h-[80px] nm:w-full nm:rounded-md nm:border nm:px-3 nm:py-2 nm:text-sm nm:ring-offset-background nm:transition-colors",
           /* Base Styles from Tokens */
-          "nm-border-textfield-border nm-text-textfield-foreground nm-bg-textfield",
+          "nm:border-textfield-border nm:text-textfield-fg nm:bg-textfield-bg",
           /* Placeholder */
-          "placeholder:nm-opacity-100 placeholder:nm-text-textfield-placeholder",
+          "nm:placeholder:opacity-100 nm:placeholder:text-textfield-placeholder",
           /* Focused State */
-          "data-[focused]:nm-outline-none data-[focused]:nm-ring-2 [data-focused]:[--nm-textfield-focus-ring:var(--nm-textfield-ring)] data-[focused]:nm-ring-offset-2",
+          "nm:data-[focused]:outline-none nm:data-[focused]:ring-2 nm:data-[focused]:ring-textfield-focus-ring nm:data-[focused]:ring-offset-2",
           /* Disabled State */
-          "data-[disabled]:nm-cursor-not-allowed data-[disabled]:nm-opacity-50 data-[disabled]:nm-bg-textfield-disabled data-[disabled]:nm-text-textfield-disabled-foreground",
+          "nm:data-[disabled]:cursor-not-allowed nm:data-[disabled]:opacity-50 nm:data-[disabled]:bg-textfield-disabled-bg nm:data-[disabled]:text-textfield-disabled-fg",
           /* Resets */
-          "focus-visible:nm-outline-none",
+          "nm:focus-visible:outline-none",
           className
         )
       )}
@@ -92,7 +92,7 @@ function WrappedField({
   return (
     <TextField
       className={composeRenderProps(className, (className) =>
-        cn("nm-font-sans nm-group nm-flex nm-flex-col nm-gap-2", className)
+        cn("nm:font-sans nm:group nm:flex nm:flex-col nm:gap-2", className)
       )}
       {...props}
     >
@@ -104,7 +104,7 @@ function WrappedField({
       )}
       {description && (
         <Text
-          className="nm-text-sm nm-text-textfield-helper"
+          className="nm:text-sm nm:text-textfield-helper-fg"
           slot="description"
         >
           {description}

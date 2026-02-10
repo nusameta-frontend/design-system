@@ -38,7 +38,3 @@
   --nm-input: var(--nm-color-gray-200);
   --nm-ring: var(--nm-color-gray-300);
 }
-
-/* Dark Mode Overrides */
-.dark {
-}

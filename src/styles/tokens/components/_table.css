@@ -5,25 +5,16 @@
  */
 
 :root {
-  /* Table Base */
-  --nm-table-bg: var(--nm-background);
-  --nm-table-fg: var(--nm-foreground);
-
   /* Table Header */
   --nm-table-header-fg: var(--nm-muted-foreground);
-  --nm-table-header-bg: transparent;
-  --nm-table-header-border: var(--nm-border);
+
+  /* Table Column Sortable Hover */
+  --nm-table-column-sortable-hover-bg: var(--nm-accent);
+  --nm-table-column-sortable-hover-fg: var(--nm-accent-foreground);
 
   /* Table Row */
-  --nm-table-row-border: var(--nm-border);
-  --nm-table-row-hover-bg: var(--nm-muted);
+  --nm-table-row-hover-bg: color-mix(in srgb, var(--nm-muted) 50%, transparent);
   --nm-table-row-selected-bg: var(--nm-muted);
-  --nm-table-row-selected-highlight-bg: var(--nm-primary);
-  --nm-table-row-selected-highlight-hover-bg: var(--nm-primary);
-
-  /* Table Cell */
-  --nm-table-cell-fg: var(--nm-foreground);
-  --nm-table-cell-padding: 1rem;
 
   /* Table Column Resizer */
   --nm-table-resizer-bg: var(--nm-muted-foreground);
@@ -31,4 +22,28 @@
 
   /* Table Focus Ring */
   --nm-table-focus-ring: var(--nm-ring);
+}
+
+@theme {
+  /* Table Header */
+  --color-table-header-fg: var(--nm-table-header-fg);
+
+  /* Table Column Sortable Hover */
+  --color-table-column-sortable-hover-bg: var(
+    --nm-table-column-sortable-hover-bg
+  );
+  --color-table-column-sortable-hover-fg: var(
+    --nm-table-column-sortable-hover-fg
+  );
+
+  /* Table Row */
+  --color-table-row-hover-bg: var(--nm-table-row-hover-bg);
+  --color-table-row-selected-bg: var(--nm-table-row-selected-bg);
+
+  /* Table Column Resizer */
+  --color-table-resizer-bg: var(--nm-table-resizer-bg);
+  --color-table-resizer-active-bg: var(--nm-table-resizer-active-bg);
+
+  /* Table Focus Ring */
+  --color-table-focus-ring: var(--nm-table-focus-ring);
 }

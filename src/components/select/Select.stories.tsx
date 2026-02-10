@@ -33,7 +33,7 @@ const fruits = [
 
 export const Default: Story = {
   render: () => (
-    <div className="nm-w-[280px]">
+    <div className="nm:w-[280px]">
       <Select placeholder="Select a fruit">
         <Label>Favorite Fruit</Label>
         <SelectTrigger>
@@ -55,7 +55,7 @@ export const Default: Story = {
 
 export const WithDefaultValue: Story = {
   render: () => (
-    <div className="nm-w-[280px]">
+    <div className="nm:w-[280px]">
       <Select defaultSelectedKey="banana" placeholder="Select a fruit">
         <Label>Favorite Fruit</Label>
         <SelectTrigger>
@@ -77,7 +77,7 @@ export const WithDefaultValue: Story = {
 
 export const Disabled: Story = {
   render: () => (
-    <div className="nm-w-[280px]">
+    <div className="nm:w-[280px]">
       <Select isDisabled placeholder="Select a fruit">
         <Label>Favorite Fruit</Label>
         <SelectTrigger>
@@ -96,7 +96,7 @@ export const Disabled: Story = {
 
 export const WithDisabledItems: Story = {
   render: () => (
-    <div className="nm-w-[280px]">
+    <div className="nm:w-[280px]">
       <Select placeholder="Select a fruit" disabledKeys={["orange"]}>
         <Label>Favorite Fruit</Label>
         <SelectTrigger>
@@ -122,7 +122,7 @@ export const Controlled: Story = {
     const [selected, setSelected] = useState<string>("apple");
 
     return (
-      <div className="nm-w-[280px] nm-flex nm-flex-col nm-gap-4">
+      <div className="nm:w-[280px] nm:flex nm:flex-col nm:gap-4">
         <Select
           selectedKey={selected}
           onSelectionChange={(key) => setSelected(key as string)}
@@ -142,7 +142,7 @@ export const Controlled: Story = {
             </SelectListBox>
           </SelectPopover>
         </Select>
-        <div className="nm-text-sm nm-text-muted-foreground">
+        <div className="nm:text-sm nm:text-muted-foreground">
           Selected: {selected}
         </div>
       </div>
@@ -152,7 +152,7 @@ export const Controlled: Story = {
 
 export const ComposedSelectExample: Story = {
   render: () => (
-    <div className="nm-w-[280px]">
+    <div className="nm:w-[280px]">
       <ComposedSelect
         label="Favorite Fruit"
         description="Choose your favorite fruit"
@@ -167,7 +167,7 @@ export const ComposedSelectExample: Story = {
 
 export const WithValidation: Story = {
   render: () => (
-    <div className="nm-w-[280px]">
+    <div className="nm:w-[280px]">
       <ComposedSelect
         label="Favorite Fruit"
         placeholder="Select a fruit"

@@ -1,0 +1,29 @@
+/**
+ * Component Tokens - Searchfield
+ * 
+ * All searchfield-specific design tokens.
+ */
+
+:root {
+  /* Searchfield Base */
+  --nm-searchfield-bg: var(--nm-background);
+  --nm-searchfield-fg: var(--nm-foreground);
+  --nm-searchfield-border: var(--nm-input);
+  --nm-searchfield-ring: var(--nm-ring);
+  --nm-searchfield-placeholder: var(--nm-muted-foreground);
+
+  /* Searchfield Icon */
+  --nm-searchfield-icon-fg: var(--nm-muted-foreground);
+}
+
+@theme {
+  /* Searchfield Base */
+  --color-searchfield-bg: var(--nm-searchfield-bg);
+  --color-searchfield-fg: var(--nm-searchfield-fg);
+  --color-searchfield-border: var(--nm-searchfield-border);
+  --color-searchfield-ring: var(--nm-searchfield-ring);
+  --color-searchfield-placeholder: var(--nm-searchfield-placeholder);
+
+  /* Searchfield Icon */
+  --color-searchfield-icon-fg: var(--nm-searchfield-icon-fg);
+}

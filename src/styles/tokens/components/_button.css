@@ -23,7 +23,42 @@
   --nm-btn-sec-fg: var(--nm-secondary-foreground);
   --nm-btn-sec-hover: var(--nm-secondary);
 
+  /* Outline Button */
+  --nm-btn-outline-border: var(--nm-input);
+  --nm-btn-outline-bg: var(--nm-background);
+
   /* Ghost/Accent Button */
   --nm-btn-ghost-hover-bg: var(--nm-accent);
   --nm-btn-ghost-hover-fg: var(--nm-accent-foreground);
+
+  /* Button Ring */
+  --nm-btn-ring: var(--nm-ring);
+}
+
+@theme {
+  /* Primary Button */
+  --color-btn-primary-bg: var(--nm-btn-primary-bg);
+  --color-btn-primary-fg: var(--nm-btn-primary-fg);
+  --color-btn-primary-hover: var(--nm-btn-primary-hover);
+
+  /* Destructive Button */
+  --color-btn-dest-bg: var(--nm-btn-dest-bg);
+  --color-btn-dest-fg: var(--nm-btn-dest-fg);
+  --color-btn-dest-hover: var(--nm-btn-dest-hover);
+
+  /* Secondary/Outline Button */
+  --color-btn-sec-bg: var(--nm-btn-sec-bg);
+  --color-btn-sec-fg: var(--nm-btn-sec-fg);
+  --color-btn-sec-hover: var(--nm-btn-sec-hover);
+
+  /* Outline Button */
+  --color-btn-outline-border: var(--nm-btn-outline-border);
+  --color-btn-outline-bg: var(--nm-btn-outline-bg);
+
+  /* Ghost/Accent Button */
+  --color-btn-ghost-hover-bg: var(--nm-btn-ghost-hover-bg);
+  --color-btn-ghost-hover-fg: var(--nm-btn-ghost-hover-fg);
+
+  /* Button Ring */
+  --color-btn-ring: var(--nm-btn-ring);
 }

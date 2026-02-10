@@ -27,3 +27,15 @@
   --nm-sidebar-border: var(--color-overlay-10);
   --nm-sidebar-ring: var(--color-gray-400);
 }
+
+@theme {
+  /* Sidebar */
+  --color-sidebar: var(--nm-sidebar);
+  --color-sidebar-foreground: var(--nm-sidebar-foreground);
+  --color-sidebar-primary: var(--nm-sidebar-primary);
+  --color-sidebar-primary-foreground: var(--nm-sidebar-primary-foreground);
+  --color-sidebar-accent: var(--nm-sidebar-accent);
+  --color-sidebar-accent-foreground: var(--nm-sidebar-accent-foreground);
+  --color-sidebar-border: var(--nm-sidebar-border);
+  --color-sidebar-ring: var(--nm-sidebar-ring);
+}

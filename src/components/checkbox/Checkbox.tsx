@@ -22,9 +22,9 @@ const Checkbox = ({ className, children, ...props }: AriaCheckboxProps) => (
   <AriaCheckbox
     className={composeRenderProps(className, (className) =>
       cn(
-        "group/checkbox nm-flex nm-items-center nm-gap-x-2",
+        "group/checkbox nm:flex nm:items-center nm:gap-x-2",
         /* Disabled */
-        "data-[disabled]:nm-cursor-not-allowed data-[disabled]:nm-opacity-70",
+        "nm:data-[disabled]:cursor-not-allowed nm:data-[disabled]:opacity-70",
         labelVariants,
         className
       )
@@ -35,23 +35,23 @@ const Checkbox = ({ className, children, ...props }: AriaCheckboxProps) => (
       <>
         <div
           className={cn(
-            "nm-flex nm-size-4 nm-shrink-0 nm-items-center nm-justify-center nm-rounded-sm nm-border nm-border-primary nm-text-current nm-ring-offset-background",
+            "nm:flex nm:size-4 nm:shrink-0 nm:items-center nm:justify-center nm:rounded-sm nm:border nm:border-primary nm:text-current nm:ring-offset-background",
             /* Focus Visible */
-            "group-data-[focus-visible]/checkbox:nm-outline-none group-data-[focus-visible]/checkbox:nm-ring-2 group-data-[focus-visible]/checkbox:nm-ring-ring group-data-[focus-visible]/checkbox:nm-ring-offset-2",
+            "nm:group-data-[focus-visible]/checkbox:outline-none nm:group-data-[focus-visible]/checkbox:ring-2 nm:group-data-[focus-visible]/checkbox:ring-ring nm:group-data-[focus-visible]/checkbox:ring-offset-2",
             /* Selected */
-            "group-data-[indeterminate]/checkbox:nm-bg-primary group-data-[selected]/checkbox:nm-bg-primary group-data-[indeterminate]/checkbox:nm-text-primary-foreground  group-data-[selected]/checkbox:nm-text-primary-foreground",
+            "nm:group-data-[indeterminate]/checkbox:bg-primary nm:group-data-[selected]/checkbox:bg-primary nm:group-data-[indeterminate]/checkbox:text-primary-foreground  nm:group-data-[selected]/checkbox:text-primary-foreground",
             /* Disabled */
-            "group-data-[disabled]/checkbox:nm-cursor-not-allowed group-data-[disabled]/checkbox:nm-opacity-50",
+            "nm:group-data-[disabled]/checkbox:cursor-not-allowed nm:group-data-[disabled]/checkbox:opacity-50",
             /* Invalid */
-            "group-data-[invalid]/checkbox:nm-border-destructive group-data-[invalid]/checkbox:group-data-[selected]/checkbox:nm-bg-destructive group-data-[invalid]/checkbox:group-data-[selected]/checkbox:nm-text-destructive-foreground",
+            "nm:group-data-[invalid]/checkbox:border-destructive nm:group-data-[invalid]/checkbox:group-data-[selected]/checkbox:bg-destructive nm:group-data-[invalid]/checkbox:group-data-[selected]/checkbox:text-destructive-foreground",
             /* Resets */
-            "focus:nm-outline-none focus-visible:nm-outline-none"
+            "nm:focus:outline-none nm:focus-visible:outline-none"
           )}
         >
           {renderProps.isIndeterminate ? (
-            <Minus className="nm-size-4" />
+            <Minus className="nm:size-4" />
           ) : renderProps.isSelected ? (
-            <Check className="nm-size-4" />
+            <Check className="nm:size-4" />
           ) : null}
         </div>
         {children}
@@ -77,7 +77,7 @@ function ComposedCheckboxGroup({
   return (
     <CheckboxGroup
       className={composeRenderProps(className, (className) =>
-        cn("group nm-flex nm-flex-col nm-gap-2", className)
+        cn("group nm:flex nm:flex-col nm:gap-2", className)
       )}
       {...props}
     >
@@ -87,7 +87,7 @@ function ComposedCheckboxGroup({
           {children}
           {description && (
             <Text
-              className="nm-text-sm nm-text-muted-foreground"
+              className="nm:text-sm nm:text-muted-foreground"
               slot="description"
             >
               {description}

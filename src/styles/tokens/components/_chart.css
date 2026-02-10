@@ -21,3 +21,12 @@
   --nm-chart-4: var(--nm-color-chart-dark-4);
   --nm-chart-5: var(--nm-color-chart-dark-5);
 }
+
+@theme {
+  /* Charts */
+  --color-chart-1: var(--nm-chart-1);
+  --color-chart-2: var(--nm-chart-2);
+  --color-chart-3: var(--nm-chart-3);
+  --color-chart-4: var(--nm-chart-4);
+  --color-chart-5: var(--nm-chart-5);
+}

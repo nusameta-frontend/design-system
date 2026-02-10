@@ -37,3 +37,37 @@
   --nm-textfield-helper-success-fg: var(--nm-color-green-500);
   --nm-textfield-helper-info-fg: var(--nm-ring);
 }
+
+@theme {
+  /* TextField Base */
+  --color-textfield-bg: var(--nm-textfield-bg);
+  --color-textfield-fg: var(--nm-textfield-fg);
+  --color-textfield-border: var(--nm-textfield-border);
+  --color-textfield-ring: var(--nm-textfield-ring);
+  --color-textfield-placeholder: var(--nm-textfield-placeholder);
+
+  /* TextField Focus State */
+  --color-textfield-focus-ring: var(--nm-textfield-focus-ring);
+
+  /* TextField Disabled State */
+  --color-textfield-disabled-bg: var(--nm-textfield-disabled-bg);
+  --color-textfield-disabled-fg: var(--nm-textfield-disabled-fg);
+
+  /* TextField Error State */
+  --color-textfield-error-border: var(--nm-textfield-error-border);
+  --color-textfield-error-fg: var(--nm-textfield-error-fg);
+
+  /* TextField Success State */
+  --color-textfield-success-border: var(--nm-textfield-success-border);
+  --color-textfield-success-fg: var(--nm-textfield-success-fg);
+
+  /* TextField Label */
+  --color-textfield-label-fg: var(--nm-textfield-label-fg);
+  --color-textfield-label-error-fg: var(--nm-textfield-label-error-fg);
+
+  /* TextField Helper Text */
+  --color-textfield-helper-fg: var(--nm-textfield-helper-fg);
+  --color-textfield-helper-error-fg: var(--nm-textfield-helper-error-fg);
+  --color-textfield-helper-success-fg: var(--nm-textfield-helper-success-fg);
+  --color-textfield-helper-info-fg: var(--nm-textfield-helper-info-fg);
+}

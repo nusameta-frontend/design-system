@@ -35,7 +35,7 @@ function SearchFieldInput({ className, ...props }: AriaInputProps) {
     <AriaInput
       className={composeRenderProps(className, (className) =>
         cn(
-          "nm-min-w-0 nm-flex-1 nm-bg-background nm-px-2 nm-py-1.5 nm-outline nm-outline-0 placeholder:nm-text-muted-foreground [&::-webkit-search-cancel-button]:nm-hidden",
+          "nm:min-w-0 nm:flex-1 nm:bg-searchfield-bg nm:text-searchfield-fg nm:px-2 nm:py-1.5 nm:outline nm:outline-0 nm:placeholder:text-searchfield-placeholder nm:[&::-webkit-search-cancel-button]:hidden",
           className
         )
       )}
@@ -49,11 +49,11 @@ function SearchFieldGroup({ className, ...props }: AriaGroupProps) {
     <AriaGroup
       className={composeRenderProps(className, (className) =>
         cn(
-          "nm-flex nm-h-10 nm-w-full nm-items-center nm-overflow-hidden nm-rounded-md nm-border nm-border-input nm-bg-background nm-px-3 nm-py-2 nm-text-sm nm-ring-offset-background",
+          "nm:flex nm:h-10 nm:w-full nm:items-center nm:overflow-hidden nm:rounded-md nm:border nm:border-searchfield-border nm:bg-searchfield-bg nm:text-searchfield-fg nm:px-3 nm:py-2 nm:text-sm nm:ring-offset-background",
           /* Focus Within */
-          "data-[focus-within]:nm-outline-none data-[focus-within]:nm-ring-2 data-[focus-within]:nm-ring-ring data-[focus-within]:nm-ring-offset-2",
+          "nm:data-[focus-within]:outline-none nm:data-[focus-within]:ring-2 nm:data-[focus-within]:ring-searchfield-ring nm:data-[focus-within]:ring-offset-2",
           /* Disabled */
-          "data-[disabled]:nm-opacity-50",
+          "nm:data-[disabled]:opacity-50",
           className
         )
       )}
@@ -67,13 +67,13 @@ function SearchFieldClear({ className, ...props }: AriaButtonProps) {
     <AriaButton
       className={composeRenderProps(className, (className) =>
         cn(
-          "nm-mr-1 nm-rounded-sm nm-opacity-70 nm-ring-offset-background nm-transition-opacity",
+          "nm:mr-1 nm:rounded-sm nm:opacity-70 nm:ring-offset-background nm:transition-opacity",
           /* Hover */
-          "data-[hovered]:nm-opacity-100",
+          "nm:data-[hovered]:opacity-100",
           /* Disabled */
-          "data-[disabled]:nm-pointer-events-none",
+          "nm:data-[disabled]:pointer-events-none",
           /* Empty */
-          "group-data-[empty]:nm-invisible",
+          "group-nm:data-[empty]:invisible",
           className
         )
       )}
@@ -98,7 +98,7 @@ function ComposedSearchField({
   return (
     <SearchField
       className={composeRenderProps(className, (className) =>
-        cn("group nm-flex nm-flex-col nm-gap-2", className)
+        cn("group nm:flex nm:flex-col nm:gap-2", className)
       )}
       {...props}
     >
@@ -106,16 +106,16 @@ function ComposedSearchField({
       <FieldGroup>
         <SearchIcon
           aria-hidden
-          className="nm-size-4 nm-text-muted-foreground"
+          className="nm:size-4 nm:text-searchfield-icon-fg"
         />
         <SearchFieldInput placeholder="Search..." />
         <SearchFieldClear>
-          <XIcon aria-hidden className="nm-size-4" />
+          <XIcon aria-hidden className="nm:size-4" />
         </SearchFieldClear>
       </FieldGroup>
       {description && (
         <Text
-          className="nm-text-sm nm-text-muted-foreground"
+          className="nm:text-sm nm:text-muted-foreground"
           slot="description"
         >
           {description}

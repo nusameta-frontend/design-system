@@ -3,11 +3,13 @@ import react from "@vitejs/plugin-react";
 import dts from "vite-plugin-dts";
 import banner from "vite-plugin-banner";
 import path from "path";
+import tailwindcss from "@tailwindcss/vite";
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     react(),
+    tailwindcss(),
     dts({
       insertTypesEntry: true,
       include: ["src"],

@@ -1,4 +1,6 @@
 import type { StorybookConfig } from "@storybook/react-vite";
+import tailwindcss from "@tailwindcss/vite";
+import { mergeConfig } from "vite";
 
 const config: StorybookConfig = {
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
@@ -14,9 +16,12 @@ const config: StorybookConfig = {
     options: {},
   },
 
-  // Konfigurasi tambahan untuk memastikan Vite berjalan mulus
   async viteFinal(config) {
-    return config;
+    return mergeConfig(config, {
+      plugins: [
+        tailwindcss(), // 👈 Inject plugin Tailwind v4 ke build process Storybook
+      ],
+    });
   },
 };
 

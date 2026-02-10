@@ -135,7 +135,7 @@ export const WithForm: Story = {
       <Button>Form</Button>
       <Popover>
         <PopoverDialog>
-          <div className="nm:space-y-3 nm:min-w-[250px]">
+          <div className="nm:space-y-3 nm:min-w-62.5">
             <h3 className="nm:font-semibold">Quick Add</h3>
             <input
               type="text"

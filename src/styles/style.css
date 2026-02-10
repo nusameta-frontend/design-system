@@ -1,6 +1,6 @@
 /* @layer theme, base, components, utilities;
 
-@import "tailwindcss/theme.css" layer(theme) prefix(nm);
+/* @import "tailwindcss/theme.css" layer(theme) prefix(nm);
 @import "tailwindcss/utilities.css" layer(utilities) prefix(nm); */
 @import "tailwindcss" prefix(nm);
 @import "@/styles/tokens.css";

@@ -1,0 +1,10 @@
+{
+  "framework": null,
+  "buildCommand": "yarn build-storybook",
+  "outputDirectory": "storybook-static",
+  "installCommand": "yarn install",
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/.*", "dest": "/index.html" }
+  ]
+}

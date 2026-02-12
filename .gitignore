@@ -20,3 +20,5 @@ node_modules
 storybook-static
 
 dist
+.vercel
+.env*.local

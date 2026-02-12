@@ -192,7 +192,7 @@
   /* Typography */
   --font-btn: var(--nm-btn-font-family);
   --text-btn: var(--nm-btn-font-size);
-  --font-weight-btn-default: var(--nm-btn-font-weight);
+  --font-weight-btn-weight: var(--nm-btn-font-weight);
   --leading-btn: var(--nm-btn-line-height);
 
   /* Spacing */
@@ -203,13 +203,35 @@
   /* Sizing */
   --size-btn-height: var(--nm-btn-height);
   --size-btn-sm-height: var(--nm-btn-sm-height);
+  --size-btn-md-height: var(--nm-btn-md-height);
   --size-btn-lg-height: var(--nm-btn-lg-height);
   --size-btn-icon: var(--nm-btn-icon-size);
 
   /* Border Radius */
   --radius-btn: var(--nm-btn-border-radius);
   --radius-btn-sm: var(--nm-btn-sm-border-radius);
+  --radius-btn-md: var(--nm-btn-md-border-radius);
   --radius-btn-lg: var(--nm-btn-lg-border-radius);
+
+  /* Spacing - Small */
+  --spacing-btn-sm-x: var(--nm-btn-sm-padding-x);
+  --spacing-btn-sm-y: var(--nm-btn-sm-padding-y);
+
+  /* Spacing - Medium */
+  --spacing-btn-md-x: var(--nm-btn-md-padding-x);
+  --spacing-btn-md-y: var(--nm-btn-md-padding-y);
+
+  /* Spacing - Large */
+  --spacing-btn-lg-x: var(--nm-btn-lg-padding-x);
+  --spacing-btn-lg-y: var(--nm-btn-lg-padding-y);
+
+  /* Spacing - Icon */
+  --spacing-btn-icon: var(--nm-btn-icon-padding);
+
+  /* Font Size */
+  --text-btn-sm: var(--nm-btn-sm-font-size);
+  --text-btn-md: var(--nm-btn-md-font-size);
+  --text-btn-lg: var(--nm-btn-lg-font-size);
 
   /* ========================================
    * Primary Variant - Tailwind Theme

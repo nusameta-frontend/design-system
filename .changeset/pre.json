@@ -4,5 +4,10 @@
   "initialVersions": {
     "@nusameta/design-system": "0.0.5"
   },
-  "changesets": []
+  "changesets": [
+    "fast-canyons-tan",
+    "rare-stars-hug",
+    "slick-areas-ask",
+    "smooth-files-fold"
+  ]
 }

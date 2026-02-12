@@ -1,0 +1,49 @@
+/**
+ * Component Tokens - Table
+ * 
+ * All table-specific design tokens.
+ */
+
+:root {
+  /* Table Header */
+  --nm-table-header-fg: var(--nm-muted-foreground);
+
+  /* Table Column Sortable Hover */
+  --nm-table-column-sortable-hover-bg: var(--nm-accent);
+  --nm-table-column-sortable-hover-fg: var(--nm-accent-foreground);
+
+  /* Table Row */
+  --nm-table-row-hover-bg: color-mix(in srgb, var(--nm-muted) 50%, transparent);
+  --nm-table-row-selected-bg: var(--nm-muted);
+
+  /* Table Column Resizer */
+  --nm-table-resizer-bg: var(--nm-muted-foreground);
+  --nm-table-resizer-active-bg: var(--nm-primary);
+
+  /* Table Focus Ring */
+  --nm-table-focus-ring: var(--nm-ring);
+}
+
+@theme {
+  /* Table Header */
+  --color-table-header-fg: var(--nm-table-header-fg);
+
+  /* Table Column Sortable Hover */
+  --color-table-column-sortable-hover-bg: var(
+    --nm-table-column-sortable-hover-bg
+  );
+  --color-table-column-sortable-hover-fg: var(
+    --nm-table-column-sortable-hover-fg
+  );
+
+  /* Table Row */
+  --color-table-row-hover-bg: var(--nm-table-row-hover-bg);
+  --color-table-row-selected-bg: var(--nm-table-row-selected-bg);
+
+  /* Table Column Resizer */
+  --color-table-resizer-bg: var(--nm-table-resizer-bg);
+  --color-table-resizer-active-bg: var(--nm-table-resizer-active-bg);
+
+  /* Table Focus Ring */
+  --color-table-focus-ring: var(--nm-table-focus-ring);
+}

@@ -1,0 +1,43 @@
+/**
+ * Design Tokens - Primitive Colors
+ * 
+ * This file contains all raw color values using OKLCH color space.
+ * These are non-semantic and should not be used directly in components.
+ * Use semantic tokens from _semantic.css instead.
+ */
+
+:root {
+  /* Neutral Colors */
+  --nm-color-white: oklch(1 0 0);
+  --nm-color-gray-50: oklch(0.985 0 0);
+  --nm-color-gray-100: oklch(0.97 0 0);
+  --nm-color-gray-200: oklch(0.922 0 0);
+  --nm-color-gray-300: oklch(0.708 0 0);
+  --nm-color-gray-400: oklch(0.556 0 0);
+  --nm-color-gray-800: oklch(0.205 0 0);
+  --nm-color-gray-900: oklch(0.145 0 0);
+
+  /* Dark Mode Neutrals */
+  --nm-color-gray-dark-800: oklch(0.269 0 0);
+
+  /* Destructive/Error Colors */
+  --nm-color-red-500: oklch(0.577 0.245 27.325);
+  --nm-color-red-600: oklch(0.704 0.191 22.216);
+
+  /* Success Colors */
+  --nm-color-green-500: oklch(0.497 0.146 142.495);
+
+  /* Chart Colors */
+  --nm-color-chart-1: oklch(0.646 0.222 41.116);
+  --nm-color-chart-2: oklch(0.6 0.118 184.704);
+  --nm-color-chart-3: oklch(0.398 0.07 227.392);
+  --nm-color-chart-4: oklch(0.828 0.189 84.429);
+  --nm-color-chart-5: oklch(0.769 0.188 70.08);
+
+  /* Chart Colors - Dark Mode */
+  --nm-color-chart-dark-1: oklch(0.488 0.243 264.376);
+  --nm-color-chart-dark-2: oklch(0.696 0.17 162.48);
+  --nm-color-chart-dark-3: oklch(0.769 0.188 70.08);
+  --nm-color-chart-dark-4: oklch(0.627 0.265 303.9);
+  --nm-color-chart-dark-5: oklch(0.645 0.246 16.439);
+}

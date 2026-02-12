@@ -1,0 +1,245 @@
+/**
+ * Component Tokens - TextField
+ * 
+ * Comprehensive textfield design tokens for complete theme customization.
+ * Supports input, textarea, labels, and all states.
+ */
+
+:root {
+  /* ========================================
+   * Base Properties
+   * ======================================== */
+
+  /* Typography */
+  --nm-textfield-font-family: var(--nm-font-sans);
+  --nm-textfield-font-size: 0.875rem; /* 14px */
+  --nm-textfield-font-weight: 400;
+  --nm-textfield-line-height: 1.25rem; /* 20px */
+
+  /* Spacing & Sizing */
+  --nm-textfield-padding-x: 0.75rem; /* 12px */
+  --nm-textfield-padding-y: 0.5rem; /* 8px */
+  --nm-textfield-height: 2.5rem; /* 40px */
+  --nm-textfield-min-height: 2.5rem; /* 40px */
+  --nm-textfield-textarea-min-height: 5rem; /* 80px */
+
+  /* Border & Radius */
+  --nm-textfield-border-width: 1px;
+  --nm-textfield-border-radius: 0.375rem; /* 6px */
+
+  /* Effects */
+  --nm-textfield-transition: color 150ms ease, background-color 150ms ease,
+    border-color 150ms ease, box-shadow 150ms ease;
+  --nm-textfield-shadow: none;
+
+  /* Focus Ring */
+  --nm-textfield-ring-width: 2px;
+  --nm-textfield-ring-offset: 2px;
+
+  /* ========================================
+   * Colors - Base State
+   * ======================================== */
+
+  --nm-textfield-bg: var(--nm-background);
+  --nm-textfield-fg: var(--nm-foreground);
+  --nm-textfield-border: var(--nm-input);
+  --nm-textfield-placeholder: var(--nm-muted-foreground);
+
+  /* ========================================
+   * Colors - Focus State
+   * ======================================== */
+
+  --nm-textfield-focus-bg: var(--nm-background);
+  --nm-textfield-focus-fg: var(--nm-foreground);
+  --nm-textfield-focus-border: var(--nm-ring);
+  --nm-textfield-focus-ring: var(--nm-ring);
+
+  /* ========================================
+   * Colors - Disabled State
+   * ======================================== */
+
+  --nm-textfield-disabled-bg: var(--nm-muted);
+  --nm-textfield-disabled-fg: var(--nm-muted-foreground);
+  --nm-textfield-disabled-border: var(--nm-input);
+  --nm-textfield-disabled-opacity: 0.5;
+  --nm-textfield-disabled-cursor: not-allowed;
+
+  /* ========================================
+   * Colors - Error State
+   * ======================================== */
+
+  --nm-textfield-error-bg: var(--nm-background);
+  --nm-textfield-error-fg: var(--nm-foreground);
+  --nm-textfield-error-border: var(--nm-destructive);
+  --nm-textfield-error-ring: var(--nm-destructive);
+
+  /* ========================================
+   * Colors - Success State
+   * ======================================== */
+
+  --nm-textfield-success-bg: var(--nm-background);
+  --nm-textfield-success-fg: var(--nm-foreground);
+  --nm-textfield-success-border: var(--nm-color-green-500);
+  --nm-textfield-success-ring: var(--nm-color-green-500);
+
+  /* ========================================
+   * Label Properties
+   * ======================================== */
+
+  --nm-textfield-label-font-size: 0.875rem; /* 14px */
+  --nm-textfield-label-font-weight: 500;
+  --nm-textfield-label-line-height: 1.25rem; /* 20px */
+  --nm-textfield-label-fg: var(--nm-foreground);
+  --nm-textfield-label-error-fg: var(--nm-destructive);
+  --nm-textfield-label-disabled-fg: var(--nm-muted-foreground);
+
+  /* ========================================
+   * Helper Text Properties
+   * ======================================== */
+
+  --nm-textfield-helper-font-size: 0.875rem; /* 14px */
+  --nm-textfield-helper-font-weight: 400;
+  --nm-textfield-helper-line-height: 1.25rem; /* 20px */
+  --nm-textfield-helper-fg: var(--nm-muted-foreground);
+  --nm-textfield-helper-error-fg: var(--nm-destructive);
+  --nm-textfield-helper-success-fg: var(--nm-color-green-500);
+  --nm-textfield-helper-info-fg: var(--nm-ring);
+
+  /* ========================================
+   * File Input Properties
+   * ======================================== */
+
+  --nm-textfield-file-font-size: 0.875rem; /* 14px */
+  --nm-textfield-file-font-weight: 500;
+
+  /* ========================================
+   * Container Properties
+   * ======================================== */
+
+  --nm-textfield-container-gap: 0.5rem; /* 8px */
+  
+  /* ========================================
+   * Field Group Properties
+   * ======================================== */
+  
+  --nm-textfield-group-height: 2.5rem; /* 40px */
+  --nm-textfield-group-padding-x: 0.75rem; /* 12px */
+  --nm-textfield-group-padding-y: 0.5rem; /* 8px */
+  --nm-textfield-group-border-radius: 0.375rem; /* 6px */
+  --nm-textfield-group-disabled-opacity: 0.5;
+}
+
+@theme {
+  /* ========================================
+   * Base Properties - Tailwind Theme
+   * ======================================== */
+
+  /* Typography */
+  --font-textfield: var(--nm-textfield-font-family);
+  --text-textfield: var(--nm-textfield-font-size);
+  --font-weight-textfield-weight: var(--nm-textfield-font-weight);
+  --leading-textfield: var(--nm-textfield-line-height);
+
+  /* Spacing */
+  --spacing-textfield-x: var(--nm-textfield-padding-x);
+  --spacing-textfield-y: var(--nm-textfield-padding-y);
+  --spacing-textfield-gap: var(--nm-textfield-container-gap);
+
+  /* Sizing */
+  --size-textfield-height: var(--nm-textfield-height);
+  --size-textfield-min-height: var(--nm-textfield-min-height);
+  --size-textfield-textarea-min-height: var(--nm-textfield-textarea-min-height);
+
+  /* Border Radius */
+  --radius-textfield: var(--nm-textfield-border-radius);
+
+  /* Border Width */
+  --border-textfield-width: var(--nm-textfield-border-width);
+
+  /* Ring */
+  --ring-textfield-width: var(--nm-textfield-ring-width);
+  --ring-textfield-offset: var(--nm-textfield-ring-offset);
+
+  /* ========================================
+   * Colors - Base State
+   * ======================================== */
+
+  --color-textfield-bg: var(--nm-textfield-bg);
+  --color-textfield-fg: var(--nm-textfield-fg);
+  --color-textfield-border: var(--nm-textfield-border);
+  --color-textfield-placeholder: var(--nm-textfield-placeholder);
+
+  /* ========================================
+   * Colors - Focus State
+   * ======================================== */
+
+  --color-textfield-focus-bg: var(--nm-textfield-focus-bg);
+  --color-textfield-focus-fg: var(--nm-textfield-focus-fg);
+  --color-textfield-focus-border: var(--nm-textfield-focus-border);
+  --color-textfield-focus-ring: var(--nm-textfield-focus-ring);
+
+  /* ========================================
+   * Colors - Disabled State
+   * ======================================== */
+
+  --color-textfield-disabled-bg: var(--nm-textfield-disabled-bg);
+  --color-textfield-disabled-fg: var(--nm-textfield-disabled-fg);
+  --color-textfield-disabled-border: var(--nm-textfield-disabled-border);
+
+  /* ========================================
+   * Colors - Error State
+   * ======================================== */
+
+  --color-textfield-error-bg: var(--nm-textfield-error-bg);
+  --color-textfield-error-fg: var(--nm-textfield-error-fg);
+  --color-textfield-error-border: var(--nm-textfield-error-border);
+  --color-textfield-error-ring: var(--nm-textfield-error-ring);
+
+  /* ========================================
+   * Colors - Success State
+   * ======================================== */
+
+  --color-textfield-success-bg: var(--nm-textfield-success-bg);
+  --color-textfield-success-fg: var(--nm-textfield-success-fg);
+  --color-textfield-success-border: var(--nm-textfield-success-border);
+  --color-textfield-success-ring: var(--nm-textfield-success-ring);
+
+  /* ========================================
+   * Label - Tailwind Theme
+   * ======================================== */
+
+  --text-textfield-label: var(--nm-textfield-label-font-size);
+  --font-weight-textfield-label: var(--nm-textfield-label-font-weight);
+  --leading-textfield-label: var(--nm-textfield-label-line-height);
+  --color-textfield-label-fg: var(--nm-textfield-label-fg);
+  --color-textfield-label-error-fg: var(--nm-textfield-label-error-fg);
+  --color-textfield-label-disabled-fg: var(--nm-textfield-label-disabled-fg);
+
+  /* ========================================
+   * Helper Text - Tailwind Theme
+   * ======================================== */
+
+  --text-textfield-helper: var(--nm-textfield-helper-font-size);
+  --font-weight-textfield-helper: var(--nm-textfield-helper-font-weight);
+  --leading-textfield-helper: var(--nm-textfield-helper-line-height);
+  --color-textfield-helper-fg: var(--nm-textfield-helper-fg);
+  --color-textfield-helper-error-fg: var(--nm-textfield-helper-error-fg);
+  --color-textfield-helper-success-fg: var(--nm-textfield-helper-success-fg);
+  --color-textfield-helper-info-fg: var(--nm-textfield-helper-info-fg);
+
+  /* ========================================
+   * File Input - Tailwind Theme
+   * ======================================== */
+
+  --text-textfield-file: var(--nm-textfield-file-font-size);
+  --font-weight-textfield-file: var(--nm-textfield-file-font-weight);
+  
+  /* ========================================
+   * Field Group - Tailwind Theme
+   * ======================================== */
+  
+  --size-textfield-group-height: var(--nm-textfield-group-height);
+  --spacing-textfield-group-x: var(--nm-textfield-group-padding-x);
+  --spacing-textfield-group-y: var(--nm-textfield-group-padding-y);
+  --radius-textfield-group: var(--nm-textfield-group-border-radius);
+}

@@ -1,0 +1,33 @@
+/**
+ * Component Tokens - ListBox
+ * 
+ * All listbox-specific design tokens.
+ */
+
+:root {
+  /* ListBox Base */
+  --nm-listbox-bg: var(--nm-popover);
+  --nm-listbox-fg: var(--nm-popover-foreground);
+  --nm-listbox-border: var(--nm-border);
+
+  /* ListBox Item */
+  --nm-listbox-item-fg: var(--nm-foreground);
+  --nm-listbox-item-focused-bg: var(--nm-accent);
+  --nm-listbox-item-focused-fg: var(--nm-accent-foreground);
+  --nm-listbox-item-hovered-bg: var(--nm-accent);
+  --nm-listbox-item-hovered-fg: var(--nm-accent-foreground);
+}
+
+@theme {
+  /* ListBox Base */
+  --color-listbox-bg: var(--nm-listbox-bg);
+  --color-listbox-fg: var(--nm-listbox-fg);
+  --color-listbox-border: var(--nm-listbox-border);
+
+  /* ListBox Item */
+  --color-listbox-item-fg: var(--nm-listbox-item-fg);
+  --color-listbox-item-focused-bg: var(--nm-listbox-item-focused-bg);
+  --color-listbox-item-focused-fg: var(--nm-listbox-item-focused-fg);
+  --color-listbox-item-hovered-bg: var(--nm-listbox-item-hovered-bg);
+  --color-listbox-item-hovered-fg: var(--nm-listbox-item-hovered-fg);
+}

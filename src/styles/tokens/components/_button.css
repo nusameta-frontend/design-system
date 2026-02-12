@@ -1,0 +1,298 @@
+/**
+ * Component Tokens - Button
+ * 
+ * Comprehensive button design tokens for complete theme customization.
+ * Supports all button variants, states, sizes, and visual properties.
+ */
+
+:root {
+  /* ========================================
+   * Base Button Properties
+   * ======================================== */
+
+  /* Typography */
+  --nm-btn-font-family: var(--nm-font-sans);
+  --nm-btn-font-size: 0.875rem; /* 14px */
+  --nm-btn-font-weight: 500;
+  --nm-btn-line-height: 1.25rem; /* 20px */
+
+  /* Spacing & Sizing */
+  --nm-btn-padding-x: 1rem; /* 16px */
+  --nm-btn-padding-y: 0.5rem; /* 8px */
+  --nm-btn-height: 2.5rem; /* 40px */
+  --nm-btn-min-width: auto;
+  --nm-btn-gap: 0.5rem; /* 8px - space between icon and text */
+
+  /* Border & Radius */
+  --nm-btn-border-width: 1px;
+  --nm-btn-border-radius: 0.375rem; /* 6px */
+  --nm-btn-border-color: transparent;
+
+  /* Effects */
+  --nm-btn-transition: color 150ms ease, background-color 150ms ease,
+    border-color 150ms ease, opacity 150ms ease, transform 150ms ease;
+  --nm-btn-shadow: none;
+  --nm-btn-shadow-hover: none;
+
+  /* Focus Ring */
+  --nm-btn-ring-width: 2px;
+  --nm-btn-ring-offset: 2px;
+  --nm-btn-ring-color: var(--nm-ring);
+
+  /* Disabled State */
+  --nm-btn-disabled-opacity: 0.5;
+  --nm-btn-disabled-cursor: not-allowed;
+
+  /* ========================================
+   * Size Variants
+   * ======================================== */
+
+  /* Small */
+  --nm-btn-sm-height: 2.25rem; /* 36px */
+  --nm-btn-sm-padding-x: 0.75rem; /* 12px */
+  --nm-btn-sm-padding-y: 0.25rem; /* 4px */
+  --nm-btn-sm-font-size: 0.875rem; /* 14px */
+  --nm-btn-sm-border-radius: 0.375rem; /* 6px */
+
+  /* Medium */
+  --nm-btn-md-height: 2.5rem; /* 40px */
+  --nm-btn-md-padding-x: 1rem; /* 16px */
+  --nm-btn-md-padding-y: 0.5rem; /* 8px */
+  --nm-btn-md-font-size: 0.875rem; /* 14px */
+  --nm-btn-md-border-radius: 0.375rem; /* 6px */
+
+  /* Large */
+  --nm-btn-lg-height: 2.75rem; /* 44px */
+  --nm-btn-lg-padding-x: 2rem; /* 32px */
+  --nm-btn-lg-padding-y: 0.5rem; /* 8px */
+  --nm-btn-lg-font-size: 0.875rem; /* 14px */
+  --nm-btn-lg-border-radius: 0.375rem; /* 6px */
+
+  /* Icon Only */
+  --nm-btn-icon-size: 2.5rem; /* 40px */
+  --nm-btn-icon-padding: 0.5rem; /* 8px */
+
+  /* ========================================
+   * Primary Variant
+   * ======================================== */
+
+  --nm-btn-primary-bg: var(--nm-primary);
+  --nm-btn-primary-fg: var(--nm-primary-foreground);
+  --nm-btn-primary-border: transparent;
+
+  /* Primary Hover */
+  --nm-btn-primary-hover-bg: var(--nm-primary);
+  --nm-btn-primary-hover-fg: var(--nm-primary-foreground);
+  --nm-btn-primary-hover-border: transparent;
+  --nm-btn-primary-hover-opacity: 0.9;
+
+  /* Primary Active */
+  --nm-btn-primary-active-bg: var(--nm-primary);
+  --nm-btn-primary-active-fg: var(--nm-primary-foreground);
+  --nm-btn-primary-active-scale: 0.98;
+
+  /* ========================================
+   * Destructive Variant
+   * ======================================== */
+
+  --nm-btn-destructive-bg: var(--nm-destructive);
+  --nm-btn-destructive-fg: var(--nm-destructive-foreground);
+  --nm-btn-destructive-border: transparent;
+
+  /* Destructive Hover */
+  --nm-btn-destructive-hover-bg: var(--nm-destructive);
+  --nm-btn-destructive-hover-fg: var(--nm-destructive-foreground);
+  --nm-btn-destructive-hover-border: transparent;
+  --nm-btn-destructive-hover-opacity: 0.9;
+
+  /* Destructive Active */
+  --nm-btn-destructive-active-bg: var(--nm-destructive);
+  --nm-btn-destructive-active-fg: var(--nm-destructive-foreground);
+  --nm-btn-destructive-active-scale: 0.98;
+
+  /* ========================================
+   * Secondary Variant
+   * ======================================== */
+
+  --nm-btn-secondary-bg: var(--nm-secondary);
+  --nm-btn-secondary-fg: var(--nm-secondary-foreground);
+  --nm-btn-secondary-border: transparent;
+
+  /* Secondary Hover */
+  --nm-btn-secondary-hover-bg: var(--nm-secondary);
+  --nm-btn-secondary-hover-fg: var(--nm-secondary-foreground);
+  --nm-btn-secondary-hover-border: transparent;
+  --nm-btn-secondary-hover-opacity: 0.8;
+
+  /* Secondary Active */
+  --nm-btn-secondary-active-bg: var(--nm-secondary);
+  --nm-btn-secondary-active-fg: var(--nm-secondary-foreground);
+  --nm-btn-secondary-active-scale: 0.98;
+
+  /* ========================================
+   * Outline Variant
+   * ======================================== */
+
+  --nm-btn-outline-bg: var(--nm-background);
+  --nm-btn-outline-fg: var(--nm-foreground);
+  --nm-btn-outline-border: var(--nm-input);
+
+  /* Outline Hover */
+  --nm-btn-outline-hover-bg: var(--nm-accent);
+  --nm-btn-outline-hover-fg: var(--nm-accent-foreground);
+  --nm-btn-outline-hover-border: var(--nm-input);
+
+  /* Outline Active */
+  --nm-btn-outline-active-bg: var(--nm-accent);
+  --nm-btn-outline-active-fg: var(--nm-accent-foreground);
+  --nm-btn-outline-active-scale: 0.98;
+
+  /* ========================================
+   * Ghost Variant
+   * ======================================== */
+
+  --nm-btn-ghost-bg: transparent;
+  --nm-btn-ghost-fg: var(--nm-foreground);
+  --nm-btn-ghost-border: transparent;
+
+  /* Ghost Hover */
+  --nm-btn-ghost-hover-bg: var(--nm-accent);
+  --nm-btn-ghost-hover-fg: var(--nm-accent-foreground);
+  --nm-btn-ghost-hover-border: transparent;
+
+  /* Ghost Active */
+  --nm-btn-ghost-active-bg: var(--nm-accent);
+  --nm-btn-ghost-active-fg: var(--nm-accent-foreground);
+  --nm-btn-ghost-active-scale: 0.98;
+
+  /* ========================================
+   * Link Variant
+   * ======================================== */
+
+  --nm-btn-link-bg: transparent;
+  --nm-btn-link-fg: var(--nm-foreground);
+  --nm-btn-link-border: transparent;
+  --nm-btn-link-underline-offset: 4px;
+
+  /* Link Hover */
+  --nm-btn-link-hover-bg: transparent;
+  --nm-btn-link-hover-fg: var(--nm-foreground);
+  --nm-btn-link-hover-decoration: underline;
+
+  /* Link Active */
+  --nm-btn-link-active-fg: var(--nm-foreground);
+  --nm-btn-link-active-opacity: 0.8;
+}
+
+@theme {
+  /* ========================================
+   * Base Properties - Tailwind Theme
+   * ======================================== */
+
+  /* Typography */
+  --font-btn: var(--nm-btn-font-family);
+  --text-btn: var(--nm-btn-font-size);
+  --font-weight-btn-weight: var(--nm-btn-font-weight);
+  --leading-btn: var(--nm-btn-line-height);
+
+  /* Spacing */
+  --spacing-btn-x: var(--nm-btn-padding-x);
+  --spacing-btn-y: var(--nm-btn-padding-y);
+  --spacing-btn-gap: var(--nm-btn-gap);
+
+  /* Sizing */
+  --size-btn-height: var(--nm-btn-height);
+  --size-btn-sm-height: var(--nm-btn-sm-height);
+  --size-btn-md-height: var(--nm-btn-md-height);
+  --size-btn-lg-height: var(--nm-btn-lg-height);
+  --size-btn-icon: var(--nm-btn-icon-size);
+
+  /* Border Radius */
+  --radius-btn: var(--nm-btn-border-radius);
+  --radius-btn-sm: var(--nm-btn-sm-border-radius);
+  --radius-btn-md: var(--nm-btn-md-border-radius);
+  --radius-btn-lg: var(--nm-btn-lg-border-radius);
+
+  /* Spacing - Small */
+  --spacing-btn-sm-x: var(--nm-btn-sm-padding-x);
+  --spacing-btn-sm-y: var(--nm-btn-sm-padding-y);
+
+  /* Spacing - Medium */
+  --spacing-btn-md-x: var(--nm-btn-md-padding-x);
+  --spacing-btn-md-y: var(--nm-btn-md-padding-y);
+
+  /* Spacing - Large */
+  --spacing-btn-lg-x: var(--nm-btn-lg-padding-x);
+  --spacing-btn-lg-y: var(--nm-btn-lg-padding-y);
+
+  /* Spacing - Icon */
+  --spacing-btn-icon: var(--nm-btn-icon-padding);
+
+  /* Font Size */
+  --text-btn-sm: var(--nm-btn-sm-font-size);
+  --text-btn-md: var(--nm-btn-md-font-size);
+  --text-btn-lg: var(--nm-btn-lg-font-size);
+
+  /* ========================================
+   * Primary Variant - Tailwind Theme
+   * ======================================== */
+
+  --color-btn-primary-bg: var(--nm-btn-primary-bg);
+  --color-btn-primary-fg: var(--nm-btn-primary-fg);
+  --color-btn-primary-border: var(--nm-btn-primary-border);
+  --color-btn-primary-hover-bg: var(--nm-btn-primary-hover-bg);
+  --color-btn-primary-hover-fg: var(--nm-btn-primary-hover-fg);
+
+  /* ========================================
+   * Destructive Variant - Tailwind Theme
+   * ======================================== */
+
+  --color-btn-dest-bg: var(--nm-btn-destructive-bg);
+  --color-btn-dest-fg: var(--nm-btn-destructive-fg);
+  --color-btn-dest-border: var(--nm-btn-destructive-border);
+  --color-btn-dest-hover: var(--nm-btn-destructive-hover-bg);
+  --color-btn-dest-hover-fg: var(--nm-btn-destructive-hover-fg);
+
+  /* ========================================
+   * Secondary Variant - Tailwind Theme
+   * ======================================== */
+
+  --color-btn-sec-bg: var(--nm-btn-secondary-bg);
+  --color-btn-sec-fg: var(--nm-btn-secondary-fg);
+  --color-btn-sec-border: var(--nm-btn-secondary-border);
+  --color-btn-sec-hover: var(--nm-btn-secondary-hover-bg);
+  --color-btn-sec-hover-fg: var(--nm-btn-secondary-hover-fg);
+
+  /* ========================================
+   * Outline Variant - Tailwind Theme
+   * ======================================== */
+
+  --color-btn-outline-bg: var(--nm-btn-outline-bg);
+  --color-btn-outline-fg: var(--nm-btn-outline-fg);
+  --color-btn-outline-border: var(--nm-btn-outline-border);
+  --color-btn-outline-hover-bg: var(--nm-btn-outline-hover-bg);
+  --color-btn-outline-hover-fg: var(--nm-btn-outline-hover-fg);
+
+  /* ========================================
+   * Ghost Variant - Tailwind Theme
+   * ======================================== */
+
+  --color-btn-ghost-bg: var(--nm-btn-ghost-bg);
+  --color-btn-ghost-fg: var(--nm-btn-ghost-fg);
+  --color-btn-ghost-hover-bg: var(--nm-btn-ghost-hover-bg);
+  --color-btn-ghost-hover-fg: var(--nm-btn-ghost-hover-fg);
+
+  /* ========================================
+   * Link Variant - Tailwind Theme
+   * ======================================== */
+
+  --color-btn-link-fg: var(--nm-btn-link-fg);
+
+  /* ========================================
+   * Focus Ring - Tailwind Theme
+   * ======================================== */
+
+  --color-btn-ring: var(--nm-btn-ring-color);
+  --ring-btn-width: var(--nm-btn-ring-width);
+  --ring-btn-offset: var(--nm-btn-ring-offset);
+}

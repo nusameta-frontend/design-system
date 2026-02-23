@@ -17,7 +17,16 @@ const Popover = ({ className, offset = 4, ...props }: AriaPopoverProps) => (
     offset={offset}
     className={composeRenderProps(className, (className) =>
       cn(
-        "nm:z-50 nm:rounded-md nm:border nm:bg-popover nm:text-popover-foreground nm:shadow-md nm:outline-none",
+        /* Layout & Display */
+        "nm:outline-none",
+        /* Z-Index - Using Design Token */
+        "nm:z-popover",
+        /* Border & Radius - Using Design Tokens */
+        "nm:rounded-popover nm:border nm:border-popover-border",
+        /* Colors - Using Design Tokens */
+        "nm:bg-popover-bg nm:text-popover-fg",
+        /* Shadow - Using Design Token */
+        "nm:shadow-popover",
         /* Entering */
         "nm:data-entering:animate-in nm:data-entering:fade-in-0 nm:data-entering:zoom-in-95",
         /* Exiting */
@@ -33,7 +42,24 @@ const Popover = ({ className, offset = 4, ...props }: AriaPopoverProps) => (
 
 function PopoverDialog({ className, ...props }: AriaDialogProps) {
   return (
-    <AriaDialog className={cn("nm:p-4 nm:outline-0", className)} {...props} />
+    <AriaDialog
+      className={cn(
+        /* Layout & Display */
+        "nm:outline-0",
+        /* Spacing - Using Design Tokens */
+        "nm:p-popover-dialog nm:gap-popover-dialog-gap",
+        /* Sizing - Using Design Tokens */
+        "nm:min-w-popover-dialog-min-width nm:max-w-popover-dialog-max-width nm:min-h-popover-dialog-min-height nm:max-h-popover-dialog-max-height",
+        /* Colors - Using Design Tokens */
+        "nm:bg-popover-dialog-bg nm:text-popover-dialog-fg",
+        /* Border - Using Design Tokens */
+        "nm:rounded-popover-dialog nm:border-popover-dialog-border",
+        /* Shadow - Using Design Token */
+        "nm:shadow-popover-dialog",
+        className
+      )}
+      {...props}
+    />
   );
 }
 

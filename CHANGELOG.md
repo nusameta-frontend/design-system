@@ -1,5 +1,11 @@
 # design-system
 
+## 1.0.0-beta.1
+
+### Patch Changes
+
+- 9160b90: add design token to table and popover
+
 ## 1.0.0-beta.0
 
 ### Major Changes

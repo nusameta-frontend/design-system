@@ -11,11 +11,11 @@ import { cn } from "@/lib/utils";
 const buttonVariants = cva(
   [
     // Base Styles
-    "nm:font-btn nm:font-btn-weight nm:inline-flex nm:items-center nm:justify-center nm:whitespace-nowrap nm:rounded-btn nm:text-btn nm:ring-offset-background nm:transition-colors",
+    "nm:font-btn nm:text-btn nm:inline-flex nm:items-center nm:justify-center nm:whitespace-nowrap nm:ring-offset-background nm:transition-colors",
     /* Disabled State  */
-    "nm:data-disabled:pointer-events-none nm:data-disabled:opacity-50",
+    "nm:data-disabled:pointer-events-none nm:data-disabled:bg-btn-bg-disabled nm:data-disabled:text-btn-fg-disabled",
     /* Focus Visible State */
-    "nm:data-focus-visible:outline-none nm:data-focus-visible:ring-2 nm:data-focus-visible:ring-btn-ring nm:data-focus-visible:ring-offset-2",
+    "nm:data-focus-visible:outline-none nm:data-focus-visible:ring-2 nm:data-focus-visible:ring-ring nm:data-focus-visible:ring-offset-2",
     /* Resets */
     "nm:focus-visible:outline-none",
     /* Cursor pointer is good for buttons */
@@ -25,23 +25,21 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "nm:bg-btn-primary-bg nm:text-btn-primary-fg nm:data-hovered:bg-btn-primary-hover-bg nm:data-hovered:text-btn-primary-hover-fg",
-        destructive:
-          "nm:bg-btn-dest-bg nm:text-btn-dest-fg nm:data-hovered:bg-btn-dest-hover nm:data-hovered:text-btn-dest-hover-fg",
+          "nm:bg-btn-primary-bg nm:text-btn-primary-fg nm:data-hovered:opacity-90",
         outline:
-          "nm:border nm:border-btn-outline-border nm:bg-btn-outline-bg nm:text-btn-outline-fg nm:data-hovered:bg-btn-outline-hover-bg nm:data-hovered:text-btn-outline-hover-fg",
+          "nm:border nm:border-btn-outline-border nm:bg-btn-outline-bg nm:text-btn-outline-fg nm:data-hovered:bg-accent nm:data-hovered:text-accent-foreground",
         secondary:
-          "nm:bg-btn-sec-bg nm:text-btn-sec-fg nm:data-hovered:bg-btn-sec-hover nm:data-hovered:text-btn-sec-hover-fg",
+          "nm:bg-btn-secondary-bg nm:text-btn-secondary-fg nm:data-hovered:bg-btn-secondary-bg-hover nm:data-hovered:text-btn-secondary-fg-hover",
         ghost:
-          "nm:data-hovered:bg-btn-ghost-hover-bg nm:data-hovered:text-btn-ghost-hover-fg",
-        link: "nm:text-btn-link-fg nm:underline-offset-4 nm:data-hovered:underline",
+          "nm:data-hovered:bg-accent nm:data-hovered:text-accent-foreground",
+        link: "nm:text-primary nm:underline-offset-4 nm:data-hovered:underline",
       },
       size: {
-        default: "nm:h-btn-height nm:px-btn-x nm:py-btn-y",
-        sm: "nm:h-btn-sm-height nm:rounded-btn-sm nm:px-btn-sm-x nm:py-btn-sm-y nm:text-btn-sm",
-        md: "nm:h-btn-md-height nm:rounded-btn-md nm:px-btn-md-x nm:py-btn-md-y nm:text-btn-md",
-        lg: "nm:h-btn-lg-height nm:rounded-btn-lg nm:px-btn-lg-x nm:py-btn-lg-y nm:text-btn-lg",
-        icon: "nm:h-btn-icon nm:w-btn-icon nm:p-btn-icon",
+        default: "nm:h-10 nm:px-4 nm:py-2 nm:rounded-md",
+        sm: "nm:h-9 nm:rounded-btn-sm nm:px-btn-sm-x nm:py-btn-sm-y",
+        md: "nm:h-10 nm:rounded-btn-md nm:px-btn-md-x nm:py-btn-md-y",
+        lg: "nm:h-11 nm:px-8 nm:py-2 nm:rounded-lg",
+        icon: "nm:h-10 nm:w-10",
       },
     },
     defaultVariants: {

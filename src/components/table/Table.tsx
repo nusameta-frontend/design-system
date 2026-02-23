@@ -29,7 +29,12 @@ const Table = ({ className, ...props }: TableProps) => (
   <AriaTable
     className={composeRenderProps(className, (className) =>
       cn(
-        "nm:w-full nm:caption-bottom nm:text-sm nm:-outline-offset-2 nm:data-focus-visible:outline-ring",
+        /* Layout */
+        "nm:w-full nm:caption-bottom",
+        /* Typography - Using Design Tokens */
+        "nm:text-table nm:leading-table",
+        /* Focus Ring - Using Design Token */
+        "nm:-outline-offset-2 nm:data-focus-visible:outline-table-focus-ring",
         className
       )
     )}
@@ -43,7 +48,11 @@ const TableHeader = <T extends object>({
 }: TableHeaderProps<T>) => (
   <AriaTableHeader
     className={composeRenderProps(className, (className) =>
-      cn("nm:[&_tr]:border-b", className)
+      cn(
+        /* Border - Using Design Token */
+        "nm:[&_tr]:border-b nm:[&_tr]:border-b-table-header-width nm:[&_tr]:border-table-header-border",
+        className
+      )
     )}
     {...props}
   />
@@ -57,7 +66,14 @@ const Column = ({ className, children, ...props }: ColumnProps) => (
   <AriaColumn
     className={composeRenderProps(className, (className) =>
       cn(
-        "nm:h-12 nm:text-left nm:align-middle nm:font-medium nm:text-table-header-fg nm:-outline-offset-2 nm:data-focus-visible:outline-ring",
+        /* Sizing - Using Design Token */
+        "nm:h-table-header-height",
+        /* Spacing - Using Design Tokens */
+        "nm:px-table-column-x nm:py-table-column-y",
+        /* Typography - Using Design Tokens */
+        "nm:text-left nm:align-middle nm:font-table-header nm:text-table-header-fg",
+        /* Focus Ring - Using Design Token */
+        "nm:-outline-offset-2 nm:data-focus-visible:outline-table-focus-ring",
         className
       )
     )}
@@ -69,17 +85,24 @@ const Column = ({ className, children, ...props }: ColumnProps) => (
           role="presentation"
           tabIndex={-1}
           className={cn(
-            "nm:flex nm:h-10 nm:flex-1 nm:items-center nm:gap-1 nm:overflow-hidden nm:rounded-md nm:px-4",
+            /* Layout */
+            "nm:flex nm:flex-1 nm:items-center nm:overflow-hidden",
+            /* Sizing & Spacing - Using Design Tokens */
+            "nm:h-table-column-group-height nm:gap-table-column-group-gap nm:rounded-table-column-group nm:px-table-column-group-x",
+            /* Sortable Hover State */
             allowsSorting &&
-              "nm:p-2 nm:data-hovered:bg-table-column-sortable-hover-bg nm:data-hovered:text-table-column-sortable-hover-fg",
-            "nm:focus-visible:outline-none nm:data-focus-visible:-outline-offset-2 nm:data-focus-visible:outline-ring nm:[&:has([slot=selection])]:pr-0"
+              "nm:p-table-column-group-y nm:data-hovered:bg-table-column-sortable-hover-bg nm:data-hovered:text-table-column-sortable-hover-fg",
+            /* Focus Ring */
+            "nm:focus-visible:outline-none nm:data-focus-visible:-outline-offset-2 nm:data-focus-visible:outline-table-focus-ring nm:[&:has([slot=selection])]:pr-0"
           )}
         >
           <span className="nm:truncate">{children}</span>
-          {allowsSorting && <ArrowUpDown className="nm:ml-2 nm:size-4" />}
+          {allowsSorting && (
+            <ArrowUpDown className="nm:ml-table-column-icon-ml nm:size-table-column-icon" />
+          )}
         </Group>
         {props.isResizable && (
-          <ColumnResizer className="nm:box-content nm:h-5 nm:w-px nm:translate-x-2 nm:cursor-col-resize nm:rounded nm:bg-table-resizer-bg nm:bg-clip-content nm:px-2 nm:py-1 nm:focus-visible:outline-none nm:data-resizing:w-0.5 nm:data-resizing:bg-table-resizer-active-bg nm:data-resizing:pl-1.75 nm:data-focus-visible:ring-1 nm:data-focus-visible:ring-ring" />
+          <ColumnResizer className="nm:box-content nm:h-table-resizer-height nm:w-table-resizer-width nm:translate-x-table-resizer-translate-x nm:cursor-col-resize nm:rounded-table-resizer nm:bg-table-resizer-bg nm:bg-clip-content nm:px-table-resizer-x nm:py-table-resizer-y nm:focus-visible:outline-none nm:data-resizing:w-0.5 nm:data-resizing:bg-table-resizer-active-bg nm:data-resizing:pl-[--nm-table-resizer-active-padding-left] nm:data-focus-visible:ring-table-resizer-width nm:data-focus-visible:ring-ring" />
         )}
       </div>
     ))}
@@ -93,7 +116,12 @@ const TableBody = <T extends object>({
   <AriaTableBody
     className={composeRenderProps(className, (className) =>
       cn(
-        "nm:-outline-offset-2 nm:data-empty:h-24 nm:data-empty:text-center nm:data-focus-visible:outline-ring nm:[&_tr:last-child]:border-0",
+        /* Focus Ring - Using Design Token */
+        "nm:-outline-offset-2 nm:data-focus-visible:outline-table-focus-ring",
+        /* Empty State - Using Design Token */
+        "nm:data-empty:h-table-body-empty-height nm:data-empty:text-center",
+        /* Last Row Border */
+        "nm:[&_tr:last-child]:border-0",
         className
       )
     )}
@@ -105,7 +133,14 @@ const Row = <T extends object>({ className, ...props }: RowProps<T>) => (
   <AriaRow
     className={composeRenderProps(className, (className) =>
       cn(
-        "nm:border-b nm:-outline-offset-2 nm:transition-colors nm:data-hovered:bg-table-row-hover-bg nm:data-selected:bg-table-row-selected-bg nm:data-focus-visible:outline-ring",
+        /* Border - Using Design Token */
+        "nm:border-b nm:border-b-table-row-border-color ",
+        /* Transition */
+        "nm:transition-colors",
+        /* States - Using Design Tokens */
+        "nm:data-hovered:bg-table-row-hover-bg nm:data-selected:bg-table-row-selected-bg",
+        /* Focus Ring - Using Design Token */
+        "nm:-outline-offset-2 nm:data-focus-visible:outline-table-focus-ring",
         className
       )
     )}
@@ -117,7 +152,14 @@ const Cell = ({ className, ...props }: CellProps) => (
   <AriaCell
     className={composeRenderProps(className, (className) =>
       cn(
-        "nm:p-4 nm:align-middle nm:-outline-offset-2 nm:data-focus-visible:outline-ring nm:[&:has([role=checkbox])]:pr-0",
+        /* Spacing - Using Design Token */
+        "nm:px-table-cell-x nm:py-table-cell-y",
+        /* Alignment */
+        "nm:align-middle",
+        /* Focus Ring - Using Design Token */
+        "nm:-outline-offset-2 nm:data-focus-visible:outline-table-focus-ring",
+        /* Checkbox Cell */
+        "nm:[&:has([role=checkbox])]:pr-0",
         className
       )
     )}

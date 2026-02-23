@@ -1,34 +1,154 @@
 /**
  * Component Tokens - Table
  * 
- * All table-specific design tokens.
+ * Comprehensive table design tokens for complete theme customization.
+ * Supports table container, header, body, rows, cells, and all states.
  */
 
 :root {
-  /* Table Header */
-  --nm-table-header-fg: var(--nm-muted-foreground);
+  /* ========================================
+   * Table Container Properties
+   * ======================================== */
 
-  /* Table Column Sortable Hover */
+  /* Typography */
+  --nm-table-font-size: 0.875rem; /* 14px */
+  --nm-table-line-height: 1.25rem; /* 20px */
+
+  /* Border */
+  --nm-table-border-color: var(--nm-border);
+  --nm-table-border-width: 1px;
+
+  /* Focus Ring */
+  --nm-table-focus-ring: var(--nm-ring);
+  --nm-table-focus-ring-offset: -2px;
+
+  /* ========================================
+   * Table Header Properties
+   * ======================================== */
+
+  --nm-table-header-height: 3rem; /* 48px */
+  --nm-table-header-fg: var(--nm-muted-foreground);
+  --nm-table-header-font-weight: 500;
+  --nm-table-header-border-bottom: var(--nm-table-border-color);
+  --nm-table-header-border-width: 1px;
+
+  /* ========================================
+   * Table Column Properties
+   * ======================================== */
+
+  /* Column Padding (for th elements) */
+  --nm-table-column-padding-x: 1rem; /* 16px - Horizontal padding for each column */
+  --nm-table-column-padding-y: 0.75rem; /* 12px - Vertical padding for each column */
+
+  /* Column Group (Sortable Area) */
+  --nm-table-column-group-height: 2.5rem; /* 40px */
+  --nm-table-column-group-padding-x: 1rem; /* 16px */
+  --nm-table-column-group-padding-y: 0.5rem; /* 8px */
+  --nm-table-column-group-gap: 0.25rem; /* 4px */
+  --nm-table-column-group-border-radius: 0.375rem; /* 6px */
+
+  /* Column Padding */
+  --nm-table-column-padding-left: 0; /* for checkbox columns */
+
+  /* Column Icon */
+  --nm-table-column-icon-size: 1rem; /* 16px */
+  --nm-table-column-icon-margin-left: 0.5rem; /* 8px */
+
+  /* Column Sortable Hover */
   --nm-table-column-sortable-hover-bg: var(--nm-accent);
   --nm-table-column-sortable-hover-fg: var(--nm-accent-foreground);
 
-  /* Table Row */
+  /* ========================================
+   * Table Row Properties
+   * ======================================== */
+
+  --nm-table-row-border-color: var(--nm-table-border-color);
+  --nm-table-row-border-width: 1px;
+  --nm-table-row-transition: colors 150ms ease;
+
+  /* Row Hover */
   --nm-table-row-hover-bg: color-mix(in srgb, var(--nm-muted) 50%, transparent);
+
+  /* Row Selected */
   --nm-table-row-selected-bg: var(--nm-muted);
 
-  /* Table Column Resizer */
-  --nm-table-resizer-bg: var(--nm-muted-foreground);
-  --nm-table-resizer-active-bg: var(--nm-primary);
+  /* ========================================
+   * Table Cell Properties
+   * ======================================== */
 
-  /* Table Focus Ring */
-  --nm-table-focus-ring: var(--nm-ring);
+  --nm-table-cell-padding: 1rem; /* 16px */
+  --nm-table-cell-padding-x: 1rem; /* 16px */
+  --nm-table-cell-padding-y: 1rem; /* 16px */
+
+  /* ========================================
+   * Table Body Properties
+   * ======================================== */
+
+  --nm-table-body-empty-height: 6rem; /* 96px */
+
+  /* ========================================
+   * Column Resizer Properties
+   * ======================================== */
+
+  --nm-table-resizer-width: 1px;
+  --nm-table-resizer-height: 1.25rem; /* 20px */
+  --nm-table-resizer-bg: var(--nm-muted-foreground);
+  --nm-table-resizer-border-radius: 0.125rem; /* 2px */
+  --nm-table-resizer-padding-x: 0.5rem; /* 8px */
+  --nm-table-resizer-translate-x: 0.5rem; /* 8px */
+
+  /* Resizer Active State */
+  --nm-table-resizer-active-width: 2px;
+  --nm-table-resizer-active-bg: var(--nm-primary);
+  --nm-table-resizer-active-padding-left: 0.4375rem; /* 7px = 1.75 * 0.25rem */
+
+  /* Resizer Focus Ring */
+  --nm-table-resizer-focus-ring-width: 1px;
+
+  --nm-table-resizer-active-padding-left: 0.4375rem; /* 7px = 1.75 * 0.25rem */
 }
 
 @theme {
-  /* Table Header */
-  --color-table-header-fg: var(--nm-table-header-fg);
+  /* ========================================
+   * Table Container - Tailwind Theme
+   * ======================================== */
 
-  /* Table Column Sortable Hover */
+  /* Typography */
+  --text-table: var(--nm-table-font-size);
+  --leading-table: var(--nm-table-line-height);
+
+  /* Border */
+  --color-table-border: var(--nm-table-border-color);
+  --border-table-width: var(--nm-table-border-width);
+
+  /* Focus Ring */
+  --color-table-focus-ring: var(--nm-table-focus-ring);
+
+  /* ========================================
+   * Table Header - Tailwind Theme
+   * ======================================== */
+
+  --size-table-header-height: var(--nm-table-header-height);
+  --color-table-header-fg: var(--nm-table-header-fg);
+  --font-weight-table-header: var(--nm-table-header-font-weight);
+  --color-table-header-border: var(--nm-table-header-border-bottom);
+  --border-table-header-width: var(--nm-table-header-border-width);
+
+  /* ========================================
+   * Table Column - Tailwind Theme
+   * ======================================== */
+
+  --spacing-table-column-x: var(--nm-table-column-padding-x);
+  --spacing-table-column-y: var(--nm-table-column-padding-y);
+  --size-table-column-group-height: var(--nm-table-column-group-height);
+  --spacing-table-column-group-x: var(--nm-table-column-group-padding-x);
+  --spacing-table-column-group-y: var(--nm-table-column-group-padding-y);
+  --spacing-table-column-group-gap: var(--nm-table-column-group-gap);
+  --radius-table-column-group: var(--nm-table-column-group-border-radius);
+  --size-table-column-icon: var(--nm-table-column-icon-size);
+  --spacing-table-column-icon-ml: var(--nm-table-column-icon-margin-left);
+
+  /* Column Sortable Hover */
   --color-table-column-sortable-hover-bg: var(
     --nm-table-column-sortable-hover-bg
   );
@@ -36,14 +156,40 @@
     --nm-table-column-sortable-hover-fg
   );
 
-  /* Table Row */
+  /* ========================================
+   * Table Row - Tailwind Theme
+   *border-table-row-width: var(--nm-table-row-border-width);
+  -- ======================================== */
+
+  --color-table-row-border-color: var(--nm-table-row-border-color);
   --color-table-row-hover-bg: var(--nm-table-row-hover-bg);
   --color-table-row-selected-bg: var(--nm-table-row-selected-bg);
 
-  /* Table Column Resizer */
-  --color-table-resizer-bg: var(--nm-table-resizer-bg);
-  --color-table-resizer-active-bg: var(--nm-table-resizer-active-bg);
+  /* ========================================
+   * Table Cell - Tailwind Theme
+   * ======================================== */
 
-  /* Table Focus Ring */
-  --color-table-focus-ring: var(--nm-table-focus-ring);
+  --spacing-table-cell: var(--nm-table-cell-padding);
+  --spacing-table-cell-x: var(--nm-table-cell-padding-x);
+  --spacing-table-cell-y: var(--nm-table-cell-padding-y);
+
+  /* ========================================
+   * Table Body - Tailwind Theme
+   * ======================================== */
+
+  --size-table-body-empty-height: var(--nm-table-body-empty-height);
+
+  /* ========================================
+   * Column Resizer - Tailwind Theme
+   * ======================================== */
+
+  --size-table-resizer-width: var(--nm-table-resizer-width);
+  --size-table-resizer-height: var(--nm-table-resizer-height);
+  --spacing-table-resizer-translate-x: var(--nm-table-resizer-translate-x);
+  --color-table-resizer-active-bg: var(--nm-table-resizer-active-bg);
+  --ring-table-resizer-width: var(--nm-table-resizer-focus-ring-width);
+  --radius-table-resizer: var(--nm-table-resizer-border-radius);
+  --spacing-table-resizer-x: var(--nm-table-resizer-padding-x);
+  --spacing-table-resizer-y: var(--nm-table-resizer-padding-y);
+  --color-table-resizer-active-bg: var(--nm-table-resizer-active-bg);
 }

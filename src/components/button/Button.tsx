@@ -12,13 +12,13 @@ const buttonVariants = cva(
   [
     // Base Styles
     "nm:font-btn nm:text-btn nm:inline-flex nm:items-center nm:justify-center nm:whitespace-nowrap nm:ring-offset-background nm:transition-colors",
-    /* Disabled State  */
+    // Disabled State
     "nm:data-disabled:pointer-events-none nm:data-disabled:bg-btn-bg-disabled nm:data-disabled:text-btn-fg-disabled",
-    /* Focus Visible State */
+    // Focus Visible State
     "nm:data-focus-visible:outline-none nm:data-focus-visible:ring-2 nm:data-focus-visible:ring-ring nm:data-focus-visible:ring-offset-2",
-    /* Resets */
+    // Resets
     "nm:focus-visible:outline-none",
-    /* Cursor pointer is good for buttons */
+    // Cursor pointer
     "nm:cursor-pointer",
   ],
   {

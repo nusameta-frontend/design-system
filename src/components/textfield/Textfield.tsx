@@ -29,24 +29,24 @@ const Input = ({ className, ...props }: InputProps) => {
         cn(
           /* Layout & Display */
           "nm:flex nm:w-full",
-          /* Sizing - Using Utility Classes */
-          "nm:h-textfield-height nm:px-textfield-x nm:py-textfield-y",
-          /* Typography - Using Utility Classes */
-          "nm:font-textfield nm:text-textfield nm:font-textfield-weight nm:leading-textfield",
-          /* Border & Radius - Using Utility Classes */
-          "nm:rounded-textfield nm:border",
+          /* Sizing */
+          "nm:h-11 nm:px-3 nm:py-3",
+          /* Typography */
+          "nm:text-base nm:font-normal nm:leading-normal",
+          /* Border & Radius */
+          "nm:rounded nm:border",
           /* Colors - Base State */
-          "nm:border-textfield-border nm:text-textfield-fg nm:bg-textfield-bg",
+          "nm:border-neutral-300 nm:text-foreground nm:bg-white",
           /* Effects */
           "nm:ring-offset-background nm:transition-colors",
-          /* File Input Reset - Using Utility Classes */
-          "nm:file:border-0 nm:file:bg-transparent nm:file:text-textfield-file nm:file:font-textfield-file",
+          /* File Input Reset */
+          "nm:file:border-0 nm:file:bg-transparent nm:file:text-sm nm:file:font-medium",
           /* Placeholder */
-          "nm:placeholder:opacity-100 nm:placeholder:text-textfield-placeholder",
+          "nm:placeholder:opacity-100 nm:placeholder:text-muted-foreground",
           /* Disabled State */
-          "nm:data-disabled:cursor-not-allowed nm:data-disabled:opacity-50 nm:data-disabled:bg-textfield-disabled-bg nm:data-disabled:text-textfield-disabled-fg nm:data-disabled:border-textfield-disabled-border",
+          "nm:data-disabled:cursor-not-allowed nm:data-disabled:opacity-50 nm:data-disabled:bg-muted nm:data-disabled:text-muted-foreground nm:data-disabled:border-neutral-200",
           /* Focused State */
-          "nm:data-focused:outline-none nm:data-focused:ring-2 nm:data-focused:ring-textfield-focus-ring nm:data-focused:ring-offset-2 nm:data-focused:bg-textfield-focus-bg nm:data-focused:text-textfield-focus-fg nm:data-focused:border-textfield-focus-border",
+          "nm:data-focused:outline-none nm:data-focused:ring-2 nm:data-focused:ring-blue-500 nm:data-focused:ring-offset-2 nm:data-focused:bg-white nm:data-focused:text-foreground nm:data-focused:border-blue-500",
           /* Resets */
           "nm:focus-visible:outline-none",
           className
@@ -64,22 +64,22 @@ const TextArea = ({ className, ...props }: AriaTextAreaProps) => {
         cn(
           /* Layout & Display */
           "nm:flex nm:w-full",
-          /* Sizing - Using Utility Classes */
-          "nm:min-h-textfield-textarea-min-height nm:px-textfield-x nm:py-textfield-y",
-          /* Typography - Using Utility Classes */
-          "nm:font-textfield nm:text-textfield nm:font-textfield-weight nm:leading-textfield",
-          /* Border & Radius - Using Utility Classes */
-          "nm:rounded-textfield nm:border",
+          /* Sizing */
+          "nm:min-h-20 nm:px-3 nm:py-3",
+          /* Typography */
+          "nm:text-base nm:font-normal nm:leading-normal",
+          /* Border & Radius */
+          "nm:rounded nm:border",
           /* Colors - Base State */
-          "nm:border-textfield-border nm:text-textfield-fg nm:bg-textfield-bg",
+          "nm:border-neutral-300 nm:text-foreground nm:bg-white",
           /* Effects */
           "nm:ring-offset-background nm:transition-colors",
           /* Placeholder */
-          "nm:placeholder:opacity-100 nm:placeholder:text-textfield-placeholder",
+          "nm:placeholder:opacity-100 nm:placeholder:text-muted-foreground",
           /* Focused State */
-          "nm:data-focused:outline-none nm:data-focused:ring-2 nm:data-focused:ring-textfield-focus-ring nm:data-focused:ring-offset-2 nm:data-focused:bg-textfield-focus-bg nm:data-focused:text-textfield-focus-fg nm:data-focused:border-textfield-focus-border",
+          "nm:data-focused:outline-none nm:data-focused:ring-2 nm:data-focused:ring-blue-500 nm:data-focused:ring-offset-2 nm:data-focused:bg-white nm:data-focused:text-foreground nm:data-focused:border-blue-500",
           /* Disabled State */
-          "nm:data-disabled:cursor-not-allowed nm:data-disabled:opacity-50 nm:data-disabled:bg-textfield-disabled-bg nm:data-disabled:text-textfield-disabled-fg nm:data-disabled:border-textfield-disabled-border",
+          "nm:data-disabled:cursor-not-allowed nm:data-disabled:opacity-50 nm:data-disabled:bg-muted nm:data-disabled:text-muted-foreground nm:data-disabled:border-neutral-200",
           /* Resets */
           "nm:focus-visible:outline-none",
           className
@@ -110,10 +110,7 @@ function WrappedField({
   return (
     <TextField
       className={composeRenderProps(className, (className) =>
-        cn(
-          "nm:font-sans nm:group nm:flex nm:flex-col nm:gap-textfield-gap",
-          className
-        )
+        cn("nm:font-sans nm:group nm:flex nm:flex-col nm:gap-2", className)
       )}
       {...props}
     >
@@ -125,7 +122,7 @@ function WrappedField({
       )}
       {description && (
         <Text
-          className="nm:text-textfield-helper nm:font-textfield-helper nm:leading-textfield-helper nm:text-textfield-helper-fg"
+          className="nm:text-sm nm:font-normal nm:leading-normal nm:text-muted-foreground"
           slot="description"
         >
           {description}

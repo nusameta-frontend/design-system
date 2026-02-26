@@ -26,6 +26,8 @@ const buttonVariants = cva(
       variant: {
         default:
           "nm:bg-btn-primary-bg nm:text-btn-primary-fg nm:data-hovered:opacity-90",
+        destructive:
+          " nm:bg-btn-destructive-bg nm:text-btn-destructive-fg nm:border nm:border-btn-destructive-border nm:data-hovered:bg-btn-destructive-bg-hover nm:data-hovered:text-btn-destructive-fg-hover nm:data-hovered:opacity-btn-destructive-hover nm:data-pressed:scale-btn-destructive-active",
         outline:
           "nm:border nm:border-btn-outline-border nm:bg-btn-outline-bg nm:text-btn-outline-fg nm:data-hovered:bg-accent nm:data-hovered:text-accent-foreground",
         secondary:

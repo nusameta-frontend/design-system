@@ -46,6 +46,22 @@
   --nm-btn-secondary-bg-hover: var(--nm-secondary);
   --nm-btn-secondary-fg-hover: var(--nm-secondary-foreground);
 
+  /* Destructive Variant */
+  --nm-btn-destructive-bg: var(--nm-destructive);
+  --nm-btn-destructive-fg: var(--nm-destructive-foreground);
+  --nm-btn-destructive-border-color: transparent;
+
+  /* Destructive Hover State */
+  --nm-btn-destructive-bg-hover: var(--nm-destructive);
+  --nm-btn-destructive-fg-hover: var(--nm-destructive-foreground);
+  --nm-btn-destructive-border-color-hover: transparent;
+  --nm-btn-destructive-opacity-hover: 0.9;
+
+  /* Destructive Active State */
+  --nm-btn-destructive-bg-active: var(--nm-destructive);
+  --nm-btn-destructive-fg-active: var(--nm-destructive-foreground);
+  --nm-btn-destructive-scale-active: 0.98;
+
   /* Disabled State*/
   --nm-btn-bg-disabled: var(--nm-secondary);
   --nm-btn-fg-disabled: var(--nm-secondary-foreground);
@@ -66,6 +82,25 @@
   --font-weight-btn: var(--nm-btn-font-weight);
   --text-btn: var(--nm-btn-font-size);
 
+  /* Destructive Variant */
+  --color-btn-destructive-bg: var(--nm-btn-destructive-bg);
+  --color-btn-destructive-fg: var(--nm-btn-destructive-fg);
+  --color-btn-destructive-border: var(--nm-btn-destructive-border-color);
+
+  /* Destructive Hover State */
+  --color-btn-destructive-bg-hover: var(--nm-btn-destructive-bg-hover);
+  --color-btn-destructive-fg-hover: var(--nm-btn-destructive-fg-hover);
+  --color-btn-destructive-border-hover: var(
+    --nm-btn-destructive-border-color-hover
+  );
+  --opacity-btn-destructive-hover: var(--nm-btn-destructive-opacity-hover);
+
+  /* Destructive Active State */
+  --color-btn-destructive-bg-active: var(--nm-btn-destructive-bg-active);
+  --color-btn-destructive-fg-active: var(--nm-btn-destructive-fg-active);
+  --scale-btn-destructive-active: var(--nm-btn-destructive-scale-active);
+
+  /* D
   /* Primary Variant */
   --color-btn-primary-bg: var(--nm-btn-primary-bg);
   --color-btn-primary-fg: var(--nm-btn-primary-fg);

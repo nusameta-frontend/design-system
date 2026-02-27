@@ -1,5 +1,11 @@
 # design-system
 
+## 1.0.0-beta.2
+
+### Patch Changes
+
+- e4384a4: fix design token naming
+
 ## 1.0.0-beta.1
 
 ### Patch Changes

@@ -1,22 +1,19 @@
 /**
  * Component Tokens - Popover
  * 
- * Comprehensive popover design tokens for complete theme customization.
- * Supports popover container, dialog content, and all states.
+ * Design tokens for popover container and dialog content.
+ * Only includes tokens actually used in the component.
  */
 
 :root {
-  /* ========================================
-   * Popover Container Properties
-   * ======================================== */
+  /* == Popover Container == */
 
   /* Colors */
   --nm-popover-bg: var(--nm-color-white);
   --nm-popover-fg: var(--nm-color-gray-900);
   --nm-popover-border: var(--nm-border);
 
-  /* Border & Radius */
-  --nm-popover-border-width: 1px;
+  /* Border Radius */
   --nm-popover-border-radius: 0.375rem; /* 6px */
 
   /* Shadow */
@@ -26,17 +23,10 @@
   /* Z-Index */
   --nm-popover-z-index: 50;
 
-  /* Offset */
-  --nm-popover-offset: 4px;
-
-  /* ========================================
-   * Popover Dialog (Content) Properties
-   * ======================================== */
+  /* ==Popover Dialog (Content)== */
 
   /* Spacing */
   --nm-popover-dialog-padding: 1rem; /* 16px */
-  --nm-popover-dialog-padding-x: 1rem; /* 16px */
-  --nm-popover-dialog-padding-y: 1rem; /* 16px */
   --nm-popover-dialog-gap: 0.5rem; /* 8px - gap between elements */
 
   /* Colors */
@@ -44,7 +34,6 @@
   --nm-popover-dialog-fg: inherit;
 
   /* Border */
-  --nm-popover-dialog-border-width: 0;
   --nm-popover-dialog-border-color: transparent;
   --nm-popover-dialog-border-radius: 0;
 
@@ -56,31 +45,6 @@
   --nm-popover-dialog-max-width: none;
   --nm-popover-dialog-min-height: auto;
   --nm-popover-dialog-max-height: none;
-
-  /* ========================================
-   * Animation Properties
-   * ======================================== */
-
-  --nm-popover-animation-duration: 200ms;
-  --nm-popover-animation-timing: ease-out;
-
-  /* Enter Animation */
-  --nm-popover-enter-scale: 0.95;
-
-  /* Dialog colors remain transparent/inherit by default */
-  --nm-popover-dialog-bg: transparent;
-  --nm-popover-dialog-fg: inherit;
-  --nm-popover-enter-opacity: 0;
-  --nm-popover-enter-slide: 0.5rem; /* 8px */
-
-  /* Exit Animation */
-  --nm-popover-exit-scale: 0.95;
-  --nm-popover-exit-opacity: 0;
-  --nm-popover-exit-slide: 0.5rem; /* 8px */
-
-  /* Legacy Support */
-  --nm-popover: var(--nm-popover-bg);
-  --nm-popover-foreground: var(--nm-popover-fg);
 }
 
 /* Dark Mode Overrides */
@@ -90,16 +54,10 @@
   --nm-popover-border: var(--nm-color-gray-700);
   --nm-popover-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.3),
     0 4px 6px -4px rgb(0 0 0 / 0.3);
-
-  /* Legacy Support */
-  --nm-popover: var(--nm-popover-bg);
-  --nm-popover-foreground: var(--nm-popover-fg);
 }
 
 @theme {
-  /* ========================================
-   * Popover Container - Tailwind Theme
-   * ======================================== */
+  /* ==Popover Container == */
 
   /* Colors */
   --color-popover-bg: var(--nm-popover-bg);
@@ -143,10 +101,31 @@
   --spacing-popover-dialog-x: var(--nm-popover-dialog-padding-x);
   --spacing-popover-dialog-y: var(--nm-popover-dialog-padding-y);
 
-  /* ========================================
-   * Legacy Support - Tailwind Theme
-   * ======================================== */
+  /* ==Legacy Support - Tailwind Theme== */
 
   --color-popover: var(--nm-popover-bg);
   --color-popover-foreground: var(--nm-popover-fg);
+
+  /* ==Popover Dialog (Content)== */
+
+  /* Spacing */
+  --spacing-popover-dialog: var(--nm-popover-dialog-padding);
+  --spacing-popover-dialog-gap: var(--nm-popover-dialog-gap);
+
+  /* Colors */
+  --color-popover-dialog-bg: var(--nm-popover-dialog-bg);
+  --color-popover-dialog-fg: var(--nm-popover-dialog-fg);
+
+  /* Border */
+  --color-popover-dialog-border: var(--nm-popover-dialog-border-color);
+  --radius-popover-dialog: var(--nm-popover-dialog-border-radius);
+
+  /* Shadow */
+  --shadow-popover-dialog: var(--nm-popover-dialog-shadow);
+
+  /* Sizing */
+  --size-popover-dialog-min-width: var(--nm-popover-dialog-min-width);
+  --size-popover-dialog-max-width: var(--nm-popover-dialog-max-width);
+  --size-popover-dialog-min-height: var(--nm-popover-dialog-min-height);
+  --size-popover-dialog-max-height: var(--nm-popover-dialog-max-height);
 }

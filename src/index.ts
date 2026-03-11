@@ -58,6 +58,17 @@ import {
   ListBoxSection,
   ListBoxCollection,
 } from "./components/list-box/List-box";
+import {
+  Dialog,
+  DialogOverlay,
+  DialogTrigger,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogFooter,
+  DialogTitle,
+  DialogContentProps,
+} from "./components/dialog/Dialog";
 
 export { Button };
 export { Checkbox, CheckboxGroup, ComposedCheckboxGroup };
@@ -106,3 +117,14 @@ export {
   ListBoxSection,
   ListBoxCollection,
 };
+export {
+  Dialog,
+  DialogOverlay,
+  DialogTrigger,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogFooter,
+  DialogTitle,
+};
+export type { DialogContentProps };

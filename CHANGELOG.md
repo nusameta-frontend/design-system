@@ -1,5 +1,11 @@
 # design-system
 
+## 1.0.0-beta.3
+
+### Minor Changes
+
+- a1197bd: add modal component
+
 ## 1.0.0-beta.2
 
 ### Patch Changes

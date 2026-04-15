@@ -5,6 +5,7 @@
     "@nusameta/design-system": "0.0.5"
   },
   "changesets": [
+    "cozy-suns-wait",
     "fast-canyons-tan",
     "forty-brooms-fetch",
     "rare-stars-hug",

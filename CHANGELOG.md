@@ -1,5 +1,11 @@
 # design-system
 
+## 1.0.0-beta.4
+
+### Minor Changes
+
+- 8f8ae56: add new menu component and fix input styling
+
 ## 1.0.0-beta.3
 
 ### Minor Changes

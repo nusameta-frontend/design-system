@@ -60,7 +60,7 @@ const fieldGroupVariants = cva("", {
         /* Layout */
         "nm:relative nm:flex nm:w-full nm:items-center nm:overflow-hidden",
         /* Sizing - Using Design Tokens */
-        "nm:h-textfield-group-height nm:px-textfield-group-x nm:py-textfield-group-y",
+        "nm:h-textfield-group-height nm:px-textfield-group-x",
         /* Typography - Using Design Tokens */
         "nm:text-textfield",
         /* Border & Radius - Using Design Tokens */

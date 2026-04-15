@@ -69,6 +69,21 @@ import {
   DialogTitle,
   DialogContentProps,
 } from "./components/dialog/Dialog";
+import {
+  MenuTrigger,
+  Menu,
+  MenuPopover,
+  MenuItem,
+  MenuHeader,
+  MenuSeparator,
+  MenuKeyboard,
+  MenuSection,
+  MenuSubTrigger,
+  MenuCollection,
+  MenuWrapper,
+  MenuHeaderProps,
+  MenuWrapperProps,
+} from "./components/menu/Menu";
 
 export { Button };
 export { Checkbox, CheckboxGroup, ComposedCheckboxGroup };
@@ -128,3 +143,17 @@ export {
   DialogTitle,
 };
 export type { DialogContentProps };
+export {
+  MenuTrigger,
+  Menu,
+  MenuPopover,
+  MenuItem,
+  MenuHeader,
+  MenuSeparator,
+  MenuKeyboard,
+  MenuSection,
+  MenuSubTrigger,
+  MenuCollection,
+  MenuWrapper,
+};
+export type { MenuHeaderProps, MenuWrapperProps };

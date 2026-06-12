@@ -32,7 +32,7 @@ export default defineConfig({
       fileName: (format) => (format === "es" ? "index.es.js" : "index.cjs"),
       formats: ["es", "cjs"],
     },
-    rollupOptions: {
+    rolldownOptions: {
       external: ["react", "react-dom", "react/jsx-runtime"],
       output: {
         banner: '"use client";',
@@ -51,6 +51,5 @@ export default defineConfig({
     },
     sourcemap: true,
     cssCodeSplit: true,
-    minify: "esbuild",
   },
 });

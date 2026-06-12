@@ -65,20 +65,25 @@ Moved build-time tools out of runtime `dependencies` → `devDependencies`:
 
 ## Added
 
-- **ESLint 9 + typescript-eslint + eslint-plugin-react-hooks** (flat `eslint.config.js`) — the `lint` script
-  existed but eslint was never installed or configured.
+- **ESLint 10 + typescript-eslint 8.61 + eslint-plugin-react-hooks 7** (flat `eslint.config.js`) — the
+  `lint` script existed but eslint was never installed or configured. (ESLint 10 rather than the planned 9:
+  it was `latest` at execution time and typescript-eslint supports it.) The initial run found 10 errors,
+  all fixed: 6 unused imports, 2 `useState`-inside-story-render violations in Menu.stories.tsx (extracted
+  into named demo components), 1 untyped sort handler in Table.stories.tsx.
 
 ## Verification results
 
-(filled in as phases completed)
-
-- [ ] `yarn build` — all dist artifacts emitted, `"use client"` banner present
-- [ ] dist diff vs pre-upgrade baseline reviewed
-- [ ] `yarn tsc --noEmit` under TS 6.0.3 — zero errors
-- [ ] `yarn build-storybook` — green
-- [ ] Vitest story tests (browser mode, playwright provider) — green
-- [ ] CJS smoke test: `require()` returns full export surface
-- [ ] `yarn lint` — green
+- [x] `yarn build` — all dist artifacts emitted, `"use client"` banner present in both bundles
+- [x] dist diff vs pre-upgrade baseline reviewed — CSS custom properties identical, 289 unique `nm:`
+      selectors before and after, remaining diffs are minifier formatting (Oxc/Lightning CSS); ES bundle
+      shrank 555 → 486 kB, build time 4.7s → 2.7s
+- [x] `yarn tsc --noEmit` under TS 6.0.3 — zero errors, no deprecation warnings
+- [x] `yarn build-storybook` — green under vite 8; dev server smoke-tested (HTTP 200)
+- [x] CJS smoke test — `require('./dist/index.cjs')` returns all 63 exports (was 0 before the fix);
+      ESM `import()` also 63
+- [x] `yarn lint` — green
+- [ ] Vitest story tests — **not applicable**: the repo has no test files; `vitest run` exits with
+      "No test files found" (pre-existing state — addon-vitest provides in-Storybook story testing only)
 
 ## Follow-ups (out of scope, tracked here)
 

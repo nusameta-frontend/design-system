@@ -17,7 +17,7 @@ import { Button } from "../button/Button";
 import {
   Cloud,
   CreditCard,
-  Github,
+  GitBranch,
   Keyboard,
   LifeBuoy,
   LogOut,
@@ -101,7 +101,7 @@ export const WithIcons: Story = {
           </MenuItem>
           <MenuSeparator />
           <MenuItem>
-            <Github className="size-4" />
+            <GitBranch className="size-4" />
             GitHub
           </MenuItem>
           <MenuItem>

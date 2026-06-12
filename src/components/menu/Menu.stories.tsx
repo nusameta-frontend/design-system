@@ -217,62 +217,66 @@ export const WithSubmenu: Story = {
   ),
 };
 
-export const WithSelectionSingle: Story = {
-  render: () => {
-    const [selected, setSelected] = useState<"light" | "dark" | "system">(
-      "light"
-    );
+const SingleSelectionDemo = () => {
+  const [selected, setSelected] = useState<"light" | "dark" | "system">(
+    "light"
+  );
 
-    return (
-      <MenuTrigger>
-        <Button variant="outline">Theme: {selected}</Button>
-        <MenuPopover>
-          <Menu
-            selectionMode="single"
-            selectedKeys={[selected]}
-            onSelectionChange={(keys) => {
-              const key = Array.from(keys)[0] as typeof selected;
-              setSelected(key);
-            }}
-          >
-            <MenuItem id="light">Light</MenuItem>
-            <MenuItem id="dark">Dark</MenuItem>
-            <MenuItem id="system">System</MenuItem>
-          </Menu>
-        </MenuPopover>
-      </MenuTrigger>
-    );
-  },
+  return (
+    <MenuTrigger>
+      <Button variant="outline">Theme: {selected}</Button>
+      <MenuPopover>
+        <Menu
+          selectionMode="single"
+          selectedKeys={[selected]}
+          onSelectionChange={(keys) => {
+            const key = Array.from(keys)[0] as typeof selected;
+            setSelected(key);
+          }}
+        >
+          <MenuItem id="light">Light</MenuItem>
+          <MenuItem id="dark">Dark</MenuItem>
+          <MenuItem id="system">System</MenuItem>
+        </Menu>
+      </MenuPopover>
+    </MenuTrigger>
+  );
+};
+
+export const WithSelectionSingle: Story = {
+  render: () => <SingleSelectionDemo />,
+};
+
+const MultipleSelectionDemo = () => {
+  const [selected, setSelected] = useState<Set<string>>(
+    new Set(["sidebar", "toolbar"])
+  );
+
+  return (
+    <MenuTrigger>
+      <Button variant="outline">View ({selected.size} selected)</Button>
+      <MenuPopover>
+        <Menu
+          selectionMode="multiple"
+          selectedKeys={selected}
+          onSelectionChange={(keys) =>
+            setSelected(new Set(keys as Set<string>))
+          }
+        >
+          <MenuHeader>Show/Hide Panels</MenuHeader>
+          <MenuItem id="sidebar">Sidebar</MenuItem>
+          <MenuItem id="toolbar">Toolbar</MenuItem>
+          <MenuItem id="statusbar">Status Bar</MenuItem>
+          <MenuItem id="minimap">Minimap</MenuItem>
+          <MenuItem id="breadcrumb">Breadcrumb</MenuItem>
+        </Menu>
+      </MenuPopover>
+    </MenuTrigger>
+  );
 };
 
 export const WithSelectionMultiple: Story = {
-  render: () => {
-    const [selected, setSelected] = useState<Set<string>>(
-      new Set(["sidebar", "toolbar"])
-    );
-
-    return (
-      <MenuTrigger>
-        <Button variant="outline">View ({selected.size} selected)</Button>
-        <MenuPopover>
-          <Menu
-            selectionMode="multiple"
-            selectedKeys={selected}
-            onSelectionChange={(keys) =>
-              setSelected(new Set(keys as Set<string>))
-            }
-          >
-            <MenuHeader>Show/Hide Panels</MenuHeader>
-            <MenuItem id="sidebar">Sidebar</MenuItem>
-            <MenuItem id="toolbar">Toolbar</MenuItem>
-            <MenuItem id="statusbar">Status Bar</MenuItem>
-            <MenuItem id="minimap">Minimap</MenuItem>
-            <MenuItem id="breadcrumb">Breadcrumb</MenuItem>
-          </Menu>
-        </MenuPopover>
-      </MenuTrigger>
-    );
-  },
+  render: () => <MultipleSelectionDemo />,
 };
 
 export const WithDisabledItems: Story = {

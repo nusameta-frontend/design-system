@@ -33,7 +33,7 @@ vitest 4.0.18 all cap their vite peer at ^7. Storybook addons pin `storybook ^10
 | playwright | 1.58.1 | 1.60.0 | Chromium 148; run `yarn playwright install` after upgrading |
 | tailwindcss, @tailwindcss/postcss, @tailwindcss/vite | 4.1.18 | 4.3.0 | Deprecated `start-*`/`end-*`/`shadow-inner`: zero usages in src/ |
 | tailwind-merge | 3.4.0 | 3.6.0 | 3.6.0 adds TW 4.3 class-group support — must move with tailwindcss; `extendTailwindMerge({prefix:"nm:"})` unchanged |
-| react-aria-components | 1.17.0 | 1.18.0 | No breakage; see follow-ups for new upstream deprecation |
+| react-aria-components | 1.17.0 | 1.18.0 | 1.18 `@deprecated`s the all-in-one `Checkbox` (→ `CheckboxField` + `CheckboxButton`); our `Checkbox` wrapper migrated to the split, drop-in (no public API change). `CheckboxGroup`/`ComposedCheckboxGroup` unaffected |
 | react, react-dom | 19.2.4 | 19.2.7 | 19.2.6 had a Server Actions FormData regression — went straight to .7 |
 | @types/react | 19.2.10 | 19.2.17 | Routine |
 | postcss | 8.5.6 | 8.5.15 | Security fixes (XSS via unescaped `</style>`; arbitrary file read) |
@@ -85,13 +85,22 @@ Moved build-time tools out of runtime `dependencies` → `devDependencies`:
 - [ ] Vitest story tests — **not applicable**: the repo has no test files; `vitest run` exits with
       "No test files found" (pre-existing state — addon-vitest provides in-Storybook story testing only)
 
+## Resolved in this PR
+
+- **react-aria-components 1.18 `Checkbox` deprecation** — RAC 1.18 `@deprecated`s the all-in-one `Checkbox`
+  in favor of `CheckboxField` + `CheckboxButton`. `src/components/checkbox/Checkbox.tsx` was migrated to the
+  split: `CheckboxField` (root, carries state) wraps `CheckboxButton` (the `group/checkbox` clickable label
+  holding the indicator). Drop-in — `Checkbox`/`CheckboxGroup`/`ComposedCheckboxGroup` exports, props, and
+  rendered output are unchanged; stories untouched. (`Radio`/`Switch` have no wrappers in this repo, so there
+  was nothing to migrate there.)
+
 ## Follow-ups (out of scope, tracked here)
 
-1. **react-aria-components 1.18 deprecates `Checkbox`/`Radio`/`Switch`** in favor of `CheckboxField`/
-   `RadioField`/`SwitchField`. `src/components/checkbox/Checkbox.tsx` keeps working but should migrate —
-   CheckboxField natively supports the `<Text slot="description">`/`FieldError` pattern currently hand-built.
-2. **TS 7 (Go-native) horizon**: everything deprecated in TS 6.0 hard-errors in 7.0. This upgrade already
+1. **TS 7 (Go-native) horizon**: everything deprecated in TS 6.0 hard-errors in 7.0. This upgrade already
    removed the only offender (`baseUrl`).
-3. Consider re-evaluating whether bundling react-aria-components into dist (current behavior — only react,
+2. Consider re-evaluating whether bundling react-aria-components into dist (current behavior — only react,
    react-dom, react/jsx-runtime are externalized) is intentional; externalizing would shrink the bundle and
    deduplicate RAC contexts in consumer apps that also use RAC directly.
+3. **`CheckboxField` native help text**: `CheckboxField` natively supports per-checkbox
+   `<Text slot="description">` / `FieldError`. The drop-in `Checkbox` doesn't wire this up yet — available as
+   a future enhancement.

@@ -14,6 +14,7 @@ import {
   MenuWrapper,
 } from "./Menu";
 import { Button } from "../button/Button";
+import { Pressable } from "react-aria-components";
 import {
   Cloud,
   CreditCard,
@@ -384,9 +385,15 @@ export const ContextMenu: Story = {
         Right-click anywhere in this area
       </p>
       <MenuTrigger trigger="longPress">
-        <div className="nm:min-h-50 nm:flex nm:items-center nm:justify-center nm:bg-muted/50 nm:rounded-md nm:cursor-context-menu">
-          <p className="nm:text-muted-foreground">Context Menu Area</p>
-        </div>
+        <Pressable>
+          <div
+            role="button"
+            tabIndex={0}
+            className="nm:min-h-50 nm:flex nm:items-center nm:justify-center nm:bg-muted/50 nm:rounded-md nm:cursor-context-menu"
+          >
+            <p className="nm:text-muted-foreground">Context Menu Area</p>
+          </div>
+        </Pressable>
         <MenuPopover>
           <Menu>
             <MenuItem>

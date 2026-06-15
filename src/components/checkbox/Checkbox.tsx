@@ -19,14 +19,23 @@ import { FieldError, Label } from "../textfield/Field";
 
 const CheckboxGroup = AriaCheckboxGroup;
 
+interface CheckboxProps extends AriaCheckboxFieldProps {
+  description?: string;
+  errorMessage?: string | ((validation: AriaValidationResult) => string);
+}
+
 const Checkbox = ({
   className,
   children,
+  description,
+  errorMessage,
   ...props
-}: AriaCheckboxFieldProps) => (
+}: CheckboxProps) => (
   <AriaCheckboxField
     className={composeRenderProps(className, (className) =>
       cn(
+        /* Layout — stacks the control above optional description/error */
+        "nm:flex nm:flex-col nm:gap-1",
         /* Disabled */
         "nm:data-disabled:cursor-not-allowed nm:data-disabled:opacity-70",
         className
@@ -62,6 +71,12 @@ const Checkbox = ({
         </>
       ))}
     </AriaCheckboxButton>
+    {description && (
+      <Text className="nm:text-sm nm:text-muted-foreground" slot="description">
+        {description}
+      </Text>
+    )}
+    <FieldError>{errorMessage}</FieldError>
   </AriaCheckboxField>
 );
 
@@ -106,4 +121,4 @@ function ComposedCheckboxGroup({
 }
 
 export { Checkbox, CheckboxGroup, ComposedCheckboxGroup };
-export type { ComposedCheckboxGroupProps };
+export type { CheckboxProps, ComposedCheckboxGroupProps };

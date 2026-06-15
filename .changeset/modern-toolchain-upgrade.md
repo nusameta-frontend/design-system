@@ -12,7 +12,9 @@ Toolchain and dependency refresh, plus a CJS packaging fix:
 - Upgraded react-aria-components to 1.18, tailwind-merge to 3.6, and rebuilt with Vite 8
   (Rolldown/Oxc), TypeScript 6, and Tailwind CSS 4.3.
 - Migrated the `Checkbox` wrapper off the now-deprecated react-aria-components `Checkbox` primitive
-  to the `CheckboxField` + `CheckboxButton` split. Internal only — exports, props, and rendered
-  output are unchanged.
+  to the `CheckboxField` + `CheckboxButton` split (drop-in; existing usage unchanged), and added
+  optional `description` and `errorMessage` props for per-checkbox help text and validation.
+- Switched `ListBoxSection` / `MenuSection` / `SelectSection` to react-aria-components' non-deprecated
+  per-collection section components (no API change).
 - Removed unused runtime dependencies (postcss-preset-env) and moved build-time tooling out of
   `dependencies`.

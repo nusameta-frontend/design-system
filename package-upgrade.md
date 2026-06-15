@@ -79,8 +79,10 @@ Moved build-time tools out of runtime `dependencies` → `devDependencies`:
       shrank 555 → 486 kB, build time 4.7s → 2.7s
 - [x] `yarn tsc --noEmit` under TS 6.0.3 — zero errors, no deprecation warnings
 - [x] `yarn build-storybook` — green under vite 8; dev server smoke-tested (HTTP 200)
-- [x] CJS smoke test — `require('./dist/index.cjs')` returns all 63 exports (was 0 before the fix);
-      ESM `import()` also 63
+- [x] CJS smoke test — `require('./dist/index.cjs')` returns all 63 exports (was 0 before the fix). The
+      ESM bundle (`dist/index.es.js`) is bundler-targeted (its `import`/`module` entry); raw-Node `import()`
+      is not supported because Rolldown emits a CJS-interop `require` shim for the externalized `react`
+      (https://rolldown.rs/in-depth/bundling-cjs) — bundlers resolve the external, so consumers are unaffected
 - [x] `yarn lint` — green
 - [x] Vitest story tests — **wired up**: added `vitest.config.ts` using `@storybook/addon-vitest`'s
       `storybookTest` plugin + the Vitest 4 Playwright browser provider (headless Chromium). `yarn test`
@@ -89,20 +91,22 @@ Moved build-time tools out of runtime `dependencies` → `devDependencies`:
 
 ## Resolved in this PR
 
-- **react-aria-components 1.18 `Checkbox` deprecation** — RAC 1.18 `@deprecated`s the all-in-one `Checkbox`
-  in favor of `CheckboxField` + `CheckboxButton`. `src/components/checkbox/Checkbox.tsx` was migrated to the
-  split: `CheckboxField` (root, carries state) wraps `CheckboxButton` (the `group/checkbox` clickable label
-  holding the indicator). Drop-in — `Checkbox`/`CheckboxGroup`/`ComposedCheckboxGroup` exports, props, and
-  rendered output are unchanged; stories untouched. (`Radio`/`Switch` have no wrappers in this repo, so there
-  was nothing to migrate there.)
+- **react-aria-components 1.18 `Checkbox` deprecation** — migrated the `Checkbox` wrapper to the
+  `CheckboxField` + `CheckboxButton` split (drop-in), and added optional `description` / `errorMessage`
+  props for per-checkbox help text + validation (with `WithDescription` / `WithError` stories).
+- **react-aria-components 1.18 `Section` deprecation** — `ListBoxSection` / `SelectSection` now use RAC's
+  `ListBoxSection`, and `MenuSection` uses RAC's `MenuSection` (previously both aliased the deprecated
+  generic `Section`). No public API change.
+- **Story-test a11y / runtime warnings** — fixed the `PressResponder` warning (the `ContextMenu` story now
+  wraps its long-press target in `<Pressable>`) and the missing-`aria-label` warning (the label-less
+  checkbox story). `yarn test` now runs with **zero warnings**.
+- **ESM raw-Node load** — documented (see CJS/ESM smoke note above). The raw-Node `require`-interop throw is
+  inherent Rolldown behavior for externalized CJS deps, not a consumer-facing issue (bundlers resolve the
+  external). Tried the `externalLiveBindings` / `polyfillRequire` output flags and a source-import refactor —
+  none remove the interop, so this is documented rather than worked around.
 
 ## Follow-ups (out of scope, tracked here)
 
-1. **TS 7 (Go-native) horizon**: everything deprecated in TS 6.0 hard-errors in 7.0. This upgrade already
-   removed the only offender (`baseUrl`).
-2. Consider re-evaluating whether bundling react-aria-components into dist (current behavior — only react,
+1. Consider re-evaluating whether bundling react-aria-components into dist (current behavior — only react,
    react-dom, react/jsx-runtime are externalized) is intentional; externalizing would shrink the bundle and
    deduplicate RAC contexts in consumer apps that also use RAC directly.
-3. **`CheckboxField` native help text**: `CheckboxField` natively supports per-checkbox
-   `<Text slot="description">` / `FieldError`. The drop-in `Checkbox` doesn't wire this up yet — available as
-   a future enhancement.

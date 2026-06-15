@@ -27,6 +27,8 @@
     "build": "yarn run vite build",
     "preview": "yarn run vite preview",
     "build-storybook": "storybook build",
+    "test": "vitest run",
+    "test:watch": "vitest",
     "lint": "eslint .",
     "release": "yarn run build && changeset publish"
   },

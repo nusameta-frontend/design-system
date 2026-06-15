@@ -82,8 +82,10 @@ Moved build-time tools out of runtime `dependencies` → `devDependencies`:
 - [x] CJS smoke test — `require('./dist/index.cjs')` returns all 63 exports (was 0 before the fix);
       ESM `import()` also 63
 - [x] `yarn lint` — green
-- [ ] Vitest story tests — **not applicable**: the repo has no test files; `vitest run` exits with
-      "No test files found" (pre-existing state — addon-vitest provides in-Storybook story testing only)
+- [x] Vitest story tests — **wired up**: added `vitest.config.ts` using `@storybook/addon-vitest`'s
+      `storybookTest` plugin + the Vitest 4 Playwright browser provider (headless Chromium). `yarn test`
+      now runs every story as a test — **9 files, 75 tests pass**. (Previously unrunnable: no test files
+      and no vitest config, so `vitest run` exited "No test files found".)
 
 ## Resolved in this PR
 

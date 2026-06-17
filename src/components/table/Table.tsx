@@ -12,7 +12,6 @@ import {
   ColumnResizer,
   composeRenderProps,
   Group,
-  ResizableTableContainerProps,
   RowProps,
   TableBodyProps,
   TableHeaderProps,
@@ -20,8 +19,6 @@ import {
 } from "react-aria-components";
 
 import { cn } from "@/lib/utils";
-
-import { buttonVariants } from "../button/Button";
 
 const ResizableTableContainer = AriaResizableTableContainer;
 

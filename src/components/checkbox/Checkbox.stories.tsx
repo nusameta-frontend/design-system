@@ -49,7 +49,24 @@ export const Indeterminate: Story = {
 };
 
 export const WithoutLabel: Story = {
-  args: {},
+  args: {
+    "aria-label": "Accept terms and conditions",
+  },
+};
+
+export const WithDescription: Story = {
+  args: {
+    children: "Accept terms and conditions",
+    description: "You agree to our Terms of Service and Privacy Policy.",
+  },
+};
+
+export const WithError: Story = {
+  args: {
+    children: "Accept terms and conditions",
+    isInvalid: true,
+    errorMessage: "You must accept before continuing.",
+  },
 };
 
 export const AllStates: Story = {

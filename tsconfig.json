@@ -14,7 +14,7 @@
     "declarationDir": "dist",
     "emitDeclarationOnly": true,
     "outDir": "dist",
-    "baseUrl": ".",
+    "rootDir": "./src",
     "paths": {
       "@/*": ["./src/*"]
     }

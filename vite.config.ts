@@ -1,7 +1,6 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import dts from "vite-plugin-dts";
-import banner from "vite-plugin-banner";
 import path from "path";
 import tailwindcss from "@tailwindcss/vite";
 
@@ -28,10 +27,12 @@ export default defineConfig({
         style: path.resolve(__dirname, "src/styles/style.css"),
       },
       name: "NusametaDesignSystem",
-      fileName: (format) => `index.${format === "es" ? "es" : "cjs"}.js`,
+      // .cjs extension is required: "type": "module" makes Node parse a .js
+      // file as ESM, which silently breaks require() of the CJS bundle
+      fileName: (format) => (format === "es" ? "index.es.js" : "index.cjs"),
       formats: ["es", "cjs"],
     },
-    rollupOptions: {
+    rolldownOptions: {
       external: ["react", "react-dom", "react/jsx-runtime"],
       output: {
         banner: '"use client";',
@@ -41,14 +42,14 @@ export default defineConfig({
           "react/jsx-runtime": "jsxRuntime",
         },
         assetFileNames: (assetInfo) => {
-          if (assetInfo.name === "style.css") return "index.css";
-          if (assetInfo.name === "reset.css") return "reset.css";
-          return assetInfo.name || "assets/[name]-[hash][extname]";
+          const name = assetInfo.names?.[0] ?? assetInfo.name;
+          if (name === "style.css") return "index.css";
+          if (name === "reset.css") return "reset.css";
+          return name || "assets/[name]-[hash][extname]";
         },
       },
     },
     sourcemap: true,
     cssCodeSplit: true,
-    minify: "esbuild",
   },
 });

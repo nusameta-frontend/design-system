@@ -14,10 +14,11 @@ import {
   MenuWrapper,
 } from "./Menu";
 import { Button } from "../button/Button";
+import { Pressable } from "react-aria-components";
 import {
   Cloud,
   CreditCard,
-  Github,
+  GitBranch,
   Keyboard,
   LifeBuoy,
   LogOut,
@@ -101,7 +102,7 @@ export const WithIcons: Story = {
           </MenuItem>
           <MenuSeparator />
           <MenuItem>
-            <Github className="size-4" />
+            <GitBranch className="size-4" />
             GitHub
           </MenuItem>
           <MenuItem>
@@ -217,62 +218,66 @@ export const WithSubmenu: Story = {
   ),
 };
 
-export const WithSelectionSingle: Story = {
-  render: () => {
-    const [selected, setSelected] = useState<"light" | "dark" | "system">(
-      "light"
-    );
+const SingleSelectionDemo = () => {
+  const [selected, setSelected] = useState<"light" | "dark" | "system">(
+    "light"
+  );
 
-    return (
-      <MenuTrigger>
-        <Button variant="outline">Theme: {selected}</Button>
-        <MenuPopover>
-          <Menu
-            selectionMode="single"
-            selectedKeys={[selected]}
-            onSelectionChange={(keys) => {
-              const key = Array.from(keys)[0] as typeof selected;
-              setSelected(key);
-            }}
-          >
-            <MenuItem id="light">Light</MenuItem>
-            <MenuItem id="dark">Dark</MenuItem>
-            <MenuItem id="system">System</MenuItem>
-          </Menu>
-        </MenuPopover>
-      </MenuTrigger>
-    );
-  },
+  return (
+    <MenuTrigger>
+      <Button variant="outline">Theme: {selected}</Button>
+      <MenuPopover>
+        <Menu
+          selectionMode="single"
+          selectedKeys={[selected]}
+          onSelectionChange={(keys) => {
+            const key = Array.from(keys)[0] as typeof selected;
+            setSelected(key);
+          }}
+        >
+          <MenuItem id="light">Light</MenuItem>
+          <MenuItem id="dark">Dark</MenuItem>
+          <MenuItem id="system">System</MenuItem>
+        </Menu>
+      </MenuPopover>
+    </MenuTrigger>
+  );
+};
+
+export const WithSelectionSingle: Story = {
+  render: () => <SingleSelectionDemo />,
+};
+
+const MultipleSelectionDemo = () => {
+  const [selected, setSelected] = useState<Set<string>>(
+    new Set(["sidebar", "toolbar"])
+  );
+
+  return (
+    <MenuTrigger>
+      <Button variant="outline">View ({selected.size} selected)</Button>
+      <MenuPopover>
+        <Menu
+          selectionMode="multiple"
+          selectedKeys={selected}
+          onSelectionChange={(keys) =>
+            setSelected(new Set(keys as Set<string>))
+          }
+        >
+          <MenuHeader>Show/Hide Panels</MenuHeader>
+          <MenuItem id="sidebar">Sidebar</MenuItem>
+          <MenuItem id="toolbar">Toolbar</MenuItem>
+          <MenuItem id="statusbar">Status Bar</MenuItem>
+          <MenuItem id="minimap">Minimap</MenuItem>
+          <MenuItem id="breadcrumb">Breadcrumb</MenuItem>
+        </Menu>
+      </MenuPopover>
+    </MenuTrigger>
+  );
 };
 
 export const WithSelectionMultiple: Story = {
-  render: () => {
-    const [selected, setSelected] = useState<Set<string>>(
-      new Set(["sidebar", "toolbar"])
-    );
-
-    return (
-      <MenuTrigger>
-        <Button variant="outline">View ({selected.size} selected)</Button>
-        <MenuPopover>
-          <Menu
-            selectionMode="multiple"
-            selectedKeys={selected}
-            onSelectionChange={(keys) =>
-              setSelected(new Set(keys as Set<string>))
-            }
-          >
-            <MenuHeader>Show/Hide Panels</MenuHeader>
-            <MenuItem id="sidebar">Sidebar</MenuItem>
-            <MenuItem id="toolbar">Toolbar</MenuItem>
-            <MenuItem id="statusbar">Status Bar</MenuItem>
-            <MenuItem id="minimap">Minimap</MenuItem>
-            <MenuItem id="breadcrumb">Breadcrumb</MenuItem>
-          </Menu>
-        </MenuPopover>
-      </MenuTrigger>
-    );
-  },
+  render: () => <MultipleSelectionDemo />,
 };
 
 export const WithDisabledItems: Story = {
@@ -380,9 +385,15 @@ export const ContextMenu: Story = {
         Right-click anywhere in this area
       </p>
       <MenuTrigger trigger="longPress">
-        <div className="nm:min-h-50 nm:flex nm:items-center nm:justify-center nm:bg-muted/50 nm:rounded-md nm:cursor-context-menu">
-          <p className="nm:text-muted-foreground">Context Menu Area</p>
-        </div>
+        <Pressable>
+          <div
+            role="button"
+            tabIndex={0}
+            className="nm:min-h-50 nm:flex nm:items-center nm:justify-center nm:bg-muted/50 nm:rounded-md nm:cursor-context-menu"
+          >
+            <p className="nm:text-muted-foreground">Context Menu Area</p>
+          </div>
+        </Pressable>
         <MenuPopover>
           <Menu>
             <MenuItem>

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import type { SortDescriptor, Key } from "@react-types/shared";
 import {
   Table,
@@ -71,7 +71,7 @@ export const Sortable: Story = {
       direction: "ascending",
     });
 
-    const sort = ({ column, direction }: any) => {
+    const sort = ({ column, direction }: SortDescriptor) => {
       const sorted = [...list].sort((a, b) => {
         const first = a[column as keyof typeof a];
         const second = b[column as keyof typeof b];

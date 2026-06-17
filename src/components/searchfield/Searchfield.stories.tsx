@@ -130,7 +130,7 @@ export const CustomSearchField: Story = {
 // 8. Compact SearchField
 export const Compact: Story = {
   render: () => (
-    <SearchField>
+    <SearchField aria-label="Quick search">
       <SearchFieldGroup className="nm:h-8">
         <SearchIcon
           aria-hidden

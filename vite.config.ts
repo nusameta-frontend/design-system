@@ -33,7 +33,14 @@ export default defineConfig({
       formats: ["es", "cjs"],
     },
     rolldownOptions: {
-      external: ["react", "react-dom", "react/jsx-runtime"],
+      // Externalize every bare import (all runtime deps + their subpaths) so no
+      // third-party CJS — e.g. use-sync-external-store, pulled in transitively by
+      // react-aria-components — gets inlined and forces rolldown's dynamic
+      // require() interop shim. That shim breaks ESM consumers like Next 16 /
+      // Turbopack ("dynamic usage of require is not supported"). Only our own
+      // source (relative, absolute, or "@/" alias) is bundled.
+      external: (id) =>
+        !id.startsWith(".") && !path.isAbsolute(id) && !id.startsWith("@/"),
       output: {
         banner: '"use client";',
         globals: {

@@ -1,5 +1,11 @@
 # design-system
 
+## 1.0.0-beta.6
+
+### Patch Changes
+
+- bd30214: Externalize all third-party runtime dependencies in the Vite/rolldown build so the ESM bundle (`dist/index.es.js`) no longer inlines a dynamic `require()` interop shim. Fixes "dynamic usage of require is not supported" thrown by Next 16 / Turbopack consumers.
+
 ## 1.0.0-beta.5
 
 ### Minor Changes

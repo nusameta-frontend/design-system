@@ -6,6 +6,7 @@
   },
   "changesets": [
     "cozy-suns-wait",
+    "externalize-deps-turbopack",
     "fast-canyons-tan",
     "forty-brooms-fetch",
     "modern-toolchain-upgrade",
